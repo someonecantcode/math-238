@@ -1,0 +1,126 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\begin{center}
+    \Large \textbf{Homework 1: Introduction to Differential Equations} \\
+    \normalsize
+    MATH 238: Differential Equations \\
+    \vspace{0.2cm}
+    Name:\underline{\hspace{6cm}} \hfill Date:\underline{\hspace{3cm}}
+\end{center}
+
+\vspace{0.4cm}
+
+\textbf{Instructions:} You have received a latex document. Write your answer in this document. Write your name and date in the space provided. Show all your work and clearly justify your answers. Recompile your work. This assignment is intended to introduce the basic ideas and language of differential equations and allow you to practice writing in Latex.
+
+\section*{Problems}
+
+\begin{enumerate}
+
+\item \textbf{What is a Differential Equation?}
+
+Which of the following equations are differential equations" Explain your reasoning.
+\begin{enumerate}
+    \item $y = 3x^2 + 1$
+    \item $\displaystyle \frac{dy}{dx} = 5x^4$
+    \item $\displaystyle \frac{d^2y}{dx^2} + y = 0$
+    \item $x^2 + y^2 = 9$
+\end{enumerate}
+
+\item \textbf{Order of a Differential Equation}
+
+Determine the order of each differential equation below. Explain.
+
+\begin{enumerate}
+    \item $\displaystyle \frac{dy}{dx} = \sin x$
+    \item $\displaystyle \frac{d^2y}{dx^2} - 4\frac{dy}{dx} + y = 0$
+    \item $\displaystyle \left(\frac{d^3y}{dx^3}\right)^2 + y = 1$
+\end{enumerate}
+
+\item \textbf{Linear vs. Nonlinear}
+
+State whether each differential equation is \textbf{linear or nonlinear}. Justify your response.
+
+\begin{enumerate}
+    \item $\displaystyle \frac{dy}{dx} + 2y = e^x$
+    \item $\displaystyle \frac{dy}{dx} = y^2$
+    \item $\displaystyle x^2\frac{d^2y}{dx^2} + y = 0$
+\end{enumerate}
+
+\item \textbf{Checking a Solution}
+
+Verify whether the given function is a solution of the differential equation.
+
+\begin{enumerate}
+    \item Check whether $y = x^2$ is a solution of
+    \[
+    \frac{dy}{dx} = 2x
+    \]
+    
+    \item Check whether $y = e^{-2x}$ is a solution of
+    \[
+    \frac{dy}{dx} + 2y = 0
+    \]
+\end{enumerate}
+
+\item \textbf{Verifying solutions}
+
+Verify that the given function is a solution to the given differential equation.
+
+\begin{enumerate}
+    \item $\frac{dy}{dx} + 4xy = 8x^3$, $y = 2x^2 - 1 + c_1e^{-2x^2}$ 
+    \item $x^2\frac{dy}{dx} + xy = 10sinx$, $y = \frac{5}{x} + \frac{10}{x} \int_1^x\frac{sint}{t}dt$
+\end{enumerate}
+
+\item \textbf{General vs. Particular Solutions}
+
+\begin{enumerate}
+    \item Explain the difference between a \textbf{general solution} and a \textbf{particular solution} of a differential equation.
+    
+    \item Identify which of the following is a general solution:
+    \[
+    y = Ce^{3x}, \quad y = 5e^{3x}
+    \]
+\end{enumerate}
+
+\item \textbf{Initial Value Problem}
+
+Consider the differential equation
+\[
+\frac{dy}{dx} = 3x^2
+\]
+
+\begin{enumerate}
+    \item Find the general solution.
+    \item Find the particular solution that satisfies $y(0) = 4$.
+\end{enumerate}
+
+\item \textbf{Modeling with Differential Equations}
+
+Suppose that the rate of change of a population $P(t)$ is proportional to the size of the population.
+
+\begin{enumerate}
+    \item Write a differential equation that models this situation.
+    \item Identify the dependent and independent variables.
+\end{enumerate}
+
+\item \textbf{Slope Fields (Conceptual)}
+
+Without solving, describe what information a slope field provides about solutions to a differential equation.
+
+\end{enumerate}
+
+\vfill
+\begin{center}
+\textit{End of Assignment}
+\end{center}
+
+\end{document}
