@@ -1,12 +1,30 @@
 \documentclass[12pt]{article}
 
-\usepackage{amsmath, amssymb}
-\usepackage{geometry}
-\geometry{margin=1in}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{csquotes, tikz}
+% \geometry{margin=1in}
+\usepackage[left=0.5in, right=0.5in, top=0.5in, bottom=1in]{geometry}
 
 \setlength{\parskip}{0.8em}
 \setlength{\parindent}{0pt}
 
+\newtheoremstyle{solution}
+  {15pt}
+  {15pt}
+  {}
+  {}
+  {\bfseries}
+  {: }
+  { }
+  {}
+
+\theoremstyle{solution}
+\newtheorem*{solution}{SOLUTION}
+
+\usetikzlibrary{calc,shapes}
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+
+%------------------------
 \begin{document}
 
 \begin{center}
@@ -14,26 +32,40 @@
     \normalsize
     MATH 238: Differential Equations \\
     \vspace{0.2cm}
-    Name:\underline{\hspace{6cm}} \hfill Date:\underline{\hspace{3cm}}
+    Name:\underline{\hspace{1cm}Brendan Tea\hspace{1cm}} \hfill Date:\underline{\hspace{0.5cm}\today\hspace{0.5cm}}
 \end{center}
 
-\vspace{0.4cm}
+% \vspace{0.4cm}
 
 \textbf{Instructions:} You have received a latex document. Write your answer in this document. Write your name and date in the space provided. Show all your work and clearly justify your answers. Recompile your work. This assignment is intended to introduce the basic ideas and language of differential equations and allow you to practice writing in Latex.
-
+\vspace{-0.4cm}
 \section*{Problems}
 
 \begin{enumerate}
 
 \item \textbf{What is a Differential Equation?}
 
-Which of the following equations are differential equations" Explain your reasoning.
+Which of the following equations are differential equations? Explain your reasoning.
 \begin{enumerate}
     \item $y = 3x^2 + 1$
     \item $\displaystyle \frac{dy}{dx} = 5x^4$
     \item $\displaystyle \frac{d^2y}{dx^2} + y = 0$
     \item $x^2 + y^2 = 9$
 \end{enumerate}
+
+\begin{solution}
+    \boxed{\text{b \& d}} are differential equations because definition of a differential equation. 
+
+    \blockquote[Zill 2024, p. 3]{%
+        An equation containing the derivatives of one or more unknown functions (or 
+        dependent variables), with respect to one or more independent variables, is 
+        said to be a differential equation (DE).%
+    }
+
+    Namely, as you can see in A \& D, there are no derivatives in general. Thus, A \& D are not differential equations.
+    B is a differential equation because it has a first derivative with an unknown function $y(x)$ that is respect to one of the independent variables $x$. 
+    C is a differential equation because it has a second derivative with an unknown function $y(x)$ that is repsect to one of the variables $x$.
+\end{solution}
 
 \item \textbf{Order of a Differential Equation}
 
@@ -45,6 +77,23 @@ Determine the order of each differential equation below. Explain.
     \item $\displaystyle \left(\frac{d^3y}{dx^3}\right)^2 + y = 1$
 \end{enumerate}
 
+\newpage
+
+\begin{solution}
+    We simply take the highest order of the derivative from each equation.
+    \tikzmark{bl}
+            \begin{enumerate}
+                \item Order 1, \quad $\displaystyle \frac{dy}{dx}$
+                \item Order 2, \quad $\displaystyle \frac{d^2y}{dx^2}$
+                \item Order 3, \quad $\displaystyle \frac{d^3y}{dx^3}$
+            \end{enumerate}
+    \tikzmark{br}
+\end{solution}
+\tikz[overlay,remember picture]{\draw[black]
+  ($(bl)+(-0.2em,-0.8em)$) rectangle
+  ($(br)+(0.1em,0.6em)$);}
+\vspace{-1cm}
+
 \item \textbf{Linear vs. Nonlinear}
 
 State whether each differential equation is \textbf{linear or nonlinear}. Justify your response.
@@ -54,6 +103,32 @@ State whether each differential equation is \textbf{linear or nonlinear}. Justif
     \item $\displaystyle \frac{dy}{dx} = y^2$
     \item $\displaystyle x^2\frac{d^2y}{dx^2} + y = 0$
 \end{enumerate}
+
+\begin{solution}
+    We use the defination of a linear differential equation.
+
+    \blockquote[Zill 2024, p. 5]{%
+        An $n$th-order ordinary differential equation $F\left(x, y, y', \ldots, y^{(n)}\right) = 0$ is said to be
+        \textbf{linear} if $F$ is linear in $y, y', \ldots, y^{(n)}$. This means that an $n$th-order ODE is linear when 
+       $F\left(x, y, y', \ldots, y^{(n)}\right) = 0$ is the following.
+        %
+    }
+    \begin{equation}
+        a_{n}(x) \frac{d^{n} y}{dx^{n}} + a_{n-1}(x) \frac{d^{n-1} y}{dx^{n-1}} + \cdots + a_{1}(x) \frac{d y}{dx}  + a_0(x)y - g(x) = 0
+    \end{equation}
+
+    \tikzmark{bl}
+            \begin{enumerate}
+                \item Linear, \quad \ \ \ \  All derivatives don't have any powers and coefficients are dependent to $x$.
+                \item Nonlinear, \quad \hspace{-0.2cm} The $0$th derivative has a power not equal to $1$, thus it is a nonlinear DE. 
+                \item Linear, \quad \ \ \ \ All derivatives don't have any powers and coefficients are dependent to $x$
+            \end{enumerate}
+    \tikzmark{br}
+\end{solution}
+\tikz[overlay,remember picture]{\draw[black]
+  ($(bl)+(43.5em,-0.8em)$) rectangle
+  ($(br)+(0.2em,0.9em)$);}
+\vspace{-1.25cm}
 
 \item \textbf{Checking a Solution}
 
@@ -71,6 +146,33 @@ Verify whether the given function is a solution of the differential equation.
     \]
 \end{enumerate}
 
+\newpage
+\begin{solution} The process is to check the left hand side is equal to the right hand side.
+    \begin{figure}[h]
+        \centering
+        \begin{minipage}[t]{0.5\textwidth}
+            \begin{align*}
+                        (a) \quad  & y = 2x \\
+                                &  \frac{dy}{dx} = \frac{d}{dx} x^2\\
+                \Longrightarrow & \frac{dy}{dx} = 2x \\
+                \therefore \quad & \boxed{y = x^2 \text{ is a solution.}}
+            \end{align*}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.45\textwidth}
+            \begin{align*}
+                        (b) \quad  & y = e^{-2x} \\
+                                &  \frac{dy}{dx} = \frac{d}{dx} e^{-2x}\\
+                                & \frac{dy}{dx} = -2e^{-2x} \\\\
+                                & \frac{dy}{dx} + 2y = -2e^{-2x} + 2y \\
+                                & \frac{dy}{dx} + 2y = -2e^{-2x} + 2\left(e^{-2x}\right) \\
+                \Longrightarrow & \frac{dy}{dx} + 2y = 0\\
+                \therefore \quad & \boxed{y = e^{-2x} \text{ is a solution.}}
+            \end{align*}
+        \end{minipage}
+    \end{figure}
+\end{solution}
+
 \item \textbf{Verifying solutions}
 
 Verify that the given function is a solution to the given differential equation.
@@ -79,6 +181,10 @@ Verify that the given function is a solution to the given differential equation.
     \item $\frac{dy}{dx} + 4xy = 8x^3$, $y = 2x^2 - 1 + c_1e^{-2x^2}$ 
     \item $x^2\frac{dy}{dx} + xy = 10sinx$, $y = \frac{5}{x} + \frac{10}{x} \int_1^x\frac{sint}{t}dt$
 \end{enumerate}
+
+\begin{solution}
+    
+\end{solution}
 
 \item \textbf{General vs. Particular Solutions}
 
@@ -103,6 +209,11 @@ Consider the differential equation
     \item Find the particular solution that satisfies $y(0) = 4$.
 \end{enumerate}
 
+
+\begin{solution}
+    
+\end{solution}
+
 \item \textbf{Modeling with Differential Equations}
 
 Suppose that the rate of change of a population $P(t)$ is proportional to the size of the population.
@@ -112,10 +223,18 @@ Suppose that the rate of change of a population $P(t)$ is proportional to the si
     \item Identify the dependent and independent variables.
 \end{enumerate}
 
+
+\begin{solution}
+    
+\end{solution}
+
 \item \textbf{Slope Fields (Conceptual)}
 
 Without solving, describe what information a slope field provides about solutions to a differential equation.
 
+\begin{solution}
+    
+\end{solution}
 \end{enumerate}
 
 \vfill
