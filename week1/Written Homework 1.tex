@@ -1,7 +1,9 @@
 \documentclass[12pt]{article}
 
 \usepackage{amsmath, amssymb, amsthm}
-\usepackage{csquotes, tikz}
+\usepackage{csquotes, tikz, cancel, framed}
+
+
 % \geometry{margin=1in}
 \usepackage[left=0.5in, right=0.5in, top=0.5in, bottom=1in]{geometry}
 
@@ -22,6 +24,7 @@
 \newtheorem*{solution}{SOLUTION}
 
 \usetikzlibrary{calc,shapes}
+
 \newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
 
 %------------------------
@@ -150,24 +153,24 @@ Verify whether the given function is a solution of the differential equation.
 \begin{solution} The process is to check the left hand side is equal to the right hand side.
     \begin{figure}[h]
         \centering
-        \begin{minipage}[t]{0.5\textwidth}
+        \begin{minipage}[t]{0.48\textwidth}
             \begin{align*}
                         (a) \quad  & y = 2x \\
                                 &  \frac{dy}{dx} = \frac{d}{dx} x^2\\
                 \Longrightarrow & \frac{dy}{dx} = 2x \\
-                \therefore \quad & \boxed{y = x^2 \text{ is a solution.}}
+                \therefore \quad & \boxed{y = x^2 \text{ is a solution of }  \frac{dy}{dx} = 2x . }
             \end{align*}
         \end{minipage}
         \hfill
-        \begin{minipage}[t]{0.45\textwidth}
+        \begin{minipage}[t]{0.49\textwidth}
             \begin{align*}
                         (b) \quad  & y = e^{-2x} \\
-                                &  \frac{dy}{dx} = \frac{d}{dx} e^{-2x}\\
+                                & \frac{dy}{dx} = \frac{d}{dx} e^{-2x}\\
                                 & \frac{dy}{dx} = -2e^{-2x} \\\\
                                 & \frac{dy}{dx} + 2y = -2e^{-2x} + 2y \\
                                 & \frac{dy}{dx} + 2y = -2e^{-2x} + 2\left(e^{-2x}\right) \\
                 \Longrightarrow & \frac{dy}{dx} + 2y = 0\\
-                \therefore \quad & \boxed{y = e^{-2x} \text{ is a solution.}}
+               \therefore \quad & \boxed{y = e^{-2x} \text{ is a solution of } \frac{dy}{dx} + 2y = 0.}
             \end{align*}
         \end{minipage}
     \end{figure}
@@ -179,12 +182,37 @@ Verify that the given function is a solution to the given differential equation.
 
 \begin{enumerate}
     \item $\frac{dy}{dx} + 4xy = 8x^3$, $y = 2x^2 - 1 + c_1e^{-2x^2}$ 
-    \item $x^2\frac{dy}{dx} + xy = 10sinx$, $y = \frac{5}{x} + \frac{10}{x} \int_1^x\frac{sint}{t}dt$
+    \item $x^2\frac{dy}{dx} + xy = 10\sin x$, $y = \frac{5}{x} + \frac{10}{x} \int_1^x\frac{\sin t}{t}dt$
 \end{enumerate}
 
-\begin{solution}
+\begin{solution} The process is finding the derivative values to substitute in where we can use the same process from question 5 of checking the left hand side is equal to the right hand side.
+
+    \begin{align*}
+                (a) \quad & y = 2x^2 -1 + c_1e^{-2x^{2}} \\
+                        & \frac{dy}{dx} = \frac{d}{dx} \left(2x^2 -1 + c_1e^{-2x^{2}} \right) \\
+                        & \frac{dy}{dx} = 4x -4xc_1e^{-2x^2} \\\\
+                        & \frac{dy}{dx} + 4xy = 8x^3 \\
+                        & \left(4x -4xc_1e^{-2x^2}\right) + 4x\left(2x^2 -1 + c_1e^{-2x^{2}}\right) = 8x^3 \\
+                        & \cancel{4x} \cancel{-4xc_1e^{-2x^2}} + 8x^3 \cancel{-4x}  \cancel{+4xc_1e^{-2x^{2}}} = 8x^3 \\
+       \Longrightarrow  & 8x^3 = 8x^3 \\
+       \therefore \quad & \boxed{y = 2x^2 - 1 + c_1e^{-2x^2} \text{ is a solution to the differential equation } \frac{dy}{dx} + 4xy = 8x^3}
+    \end{align*}
+
+    \begin{align*}
+                (b) \quad & y = \frac{5}{x} + \frac{10}{x} \int_1^x\frac{\sin t}{t}dt \\
+                        & \frac{dy}{dx} = \frac{d}{dx} \left(\frac{5}{x} + \frac{10}{x} \int_1^x\frac{\sin t}{t}dt\right) \\
+                        & \frac{dy}{dx} = -\frac{5}{x^2} - \frac{10}{x^2}\int_1^x\frac{\sin t}{t}dt +\frac{10}{x}\frac{\sin x}{x} \\
+                        & \frac{dy}{dx} = -\frac{1}{x^2} \left(5+10\int_1^x\frac{\sin t}{t}dt +10\sin x\right) \\\\
+                        & x^2\frac{dy}{dx} + xy = 10\sin x\\
+                        & \cancel{x^2}\left(-\frac{1}{\cancel{x^2}} \left(5+10\int_1^x\frac{\sin t}{t}dt +10\sin x\right)\right) + \cancel{x}\left(\frac{5}{\cancel{x}} + \frac{10}{\cancel{x}} \int_1^x\frac{\sin t}{t}dt\right) = 10\sin x \\
+                        & \left(-5-10\int_1^x\frac{\sin t}{t}dt+10\sin x\right)+\left(5+10\int_1^x\frac{\sin t}{t}dt\right)=10\sin x\\
+                        & 10\sin x + \cancel{\left(-5-10\int_1^x\frac{\sin t}{t}dt\right)+\left(5+10\int_1^x\frac{\sin t}{t}dt\right)}=10\sin x \\
+        \Longrightarrow & 10\sin x = 10\sin x \\
+       \therefore \quad & \boxed{y = \frac{5}{x} + \frac{10}{x} \int_1^x\frac{\sin t}{t}dt \text{ is a solution to the differential equation } x^2\frac{dy}{dx} + xy = 10\sin x}
+    \end{align*}
     
 \end{solution}
+
 
 \item \textbf{General vs. Particular Solutions}
 
@@ -197,6 +225,23 @@ Verify that the given function is a solution to the given differential equation.
     \]
 \end{enumerate}
 
+\vspace{1cm}
+\begin{solution}  \ \ \
+
+    \begin{enumerate}
+        \item \tikzmark{bl} \hspace{0.125cm}
+            A \textbf{general solution} of a DE is solution with parameters usually formed when given initial \ values. 
+            A \textbf{particular solution} of a DE is solution that is free of parameters such as constants \ or coefficients. \tikzmark{br} \vspace{0.2cm}
+        \item \hspace{-0.22cm} \boxed{ \ y=Ce^{3x}} is a general solution.
+    \end{enumerate}
+
+\end{solution}
+\tikz[overlay,remember picture]{\draw[black]
+  ($(bl)+(-0.2em,1em)$) rectangle
+  ($(br)+(35em,-0.5em)$);}
+\vspace{-1cm}
+
+\newpage
 \item \textbf{Initial Value Problem}
 
 Consider the differential equation
@@ -210,8 +255,28 @@ Consider the differential equation
 \end{enumerate}
 
 
-\begin{solution}
-    
+\begin{solution} \ \ \
+
+     \begin{figure}[h]
+        \centering
+        \begin{minipage}[t]{0.48\textwidth}
+             \begin{align*}
+                            (a) \quad & \frac{dy}{dx} = 3x^2 \\
+                                      & dy = 3x^2 dx  \\
+                                      & \int y = \int 3x^2 dx \\
+                     \Longrightarrow  & \boxed{y = x^3 + C} \text{ is the general solution.}\\
+            \end{align*}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.49\textwidth}
+            \begin{align*}
+                (b)\quad &y(x) = x^3 + C \\
+                 &y(0) = (0)^3 + C = 4\\
+                 &y(0) =  C = 4 \\
+                \Longrightarrow & \boxed{y = x^3 + 4} \text{ is the particular solution.}\\
+            \end{align*}
+        \end{minipage}
+    \end{figure} 
 \end{solution}
 
 \item \textbf{Modeling with Differential Equations}
@@ -224,22 +289,35 @@ Suppose that the rate of change of a population $P(t)$ is proportional to the si
 \end{enumerate}
 
 
-\begin{solution}
-    
+\begin{solution} \ \
+    \begin{enumerate}
+        \item \boxed{\frac{dP}{dt} = kt, k \in \mathbb{R}}. We are told that the rate of change of a population $P(t)$ is proportional to the size of the population which translates to $\frac{dP}{dt} \propto P$. 
+        \item \boxed{P \text{ is dependent. } t \text{ is independent.}} 
+    \end{enumerate}
 \end{solution}
 
 \item \textbf{Slope Fields (Conceptual)}
 
 Without solving, describe what information a slope field provides about solutions to a differential equation.
 
-\begin{solution}
-    
+\begin{solution} \ \ \
+
+    \tikzmark{bl} \hspace{0.125cm}
+        A slope field or a direction field provides information about the gradient as a line segment at all points. 
+        This allows us to gauge information of the solutions of differential equation such as when it is 
+        increasing or decreasing, flow or direction, and the general shape of the solution curves. 
+    \tikzmark{br}
 \end{solution}
+
 \end{enumerate}
+\tikz[overlay,remember picture]{\draw[black]
+  ($(bl)+(-0.2em,1em)$) rectangle
+  ($(br)+(4.4em,-1em)$);}
+\vspace{-1cm}
+
 
 \vfill
 \begin{center}
 \textit{End of Assignment}
 \end{center}
-
 \end{document}
