@@ -1,0 +1,130 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, graphicx, subcaption}
+\usepackage{csquotes, tikz, cancel, framed}
+
+\graphicspath{{./Images}}
+
+% \geometry{margin=1in}
+\usepackage[left=0.5in, right=0.5in, top=0.5in, bottom=1in]{geometry}
+
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0pt}
+
+\newtheoremstyle{solution}
+  {15pt}
+  {15pt}
+  {}
+  {}
+  {\bfseries}
+  {: }
+  { }
+  {}
+
+\theoremstyle{solution}
+\newtheorem*{solution}{SOLUTION}
+
+\usetikzlibrary{calc,shapes}
+
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+
+% ------------------------------------------------------------
+\title{MATH 238 Homework \#2}
+\author{Brendan Tea}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Homework for Section 2.1}
+
+\begin{enumerate}
+    \item Use computer software to obtain a direction field for the given differential equation. Also sketch an approximate solution curve passing through each of the given points
+    $$
+    \frac{dy}{dx} = e^x \sin(y)
+    $$
+    \begin{enumerate}
+        \item $y(-1) = 4.5$
+        \item $y(-1) = -4.5$
+        \item $y(-1) = 1$
+        \item $y(-1) = -1$
+    \end{enumerate}
+    Give the equilibrium solutions as solution functions.
+
+    \begin{solution} \ \
+
+       \begin{figure}[h]
+            \centering
+            \begin{minipage}[t]{0.48\textwidth}
+                \vspace{0pt}
+                \begin{align*}
+                            (a) \quad &  \frac{dy}{dx} = e^x \sin(y) \\
+                                      & e^x \sin(y) = 0  \\
+                                      & e^x \neq 0, \ \sin(y) = 0 \\
+                     \Longrightarrow  & \boxed{y =\pi n, 0, \ \in \mathbb{Z}} \text{ is the general solution.}\\
+                \end{align*}
+
+                Equilibrium equations occur when $\frac{dy}{dx} = 0$ allowing us to the 
+                find the $y(x)$. 
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{0.48\textwidth}
+                \vspace{0pt}
+                \centering
+                \includegraphics[width=0.75\textwidth, keepaspectratio]{p1.png}
+                  \caption{Direction field of $\frac{dy}{dx} = e^{x}\sin(y)$}
+            \end{minipage}
+        \end{figure}
+
+    \end{solution}
+
+    \item The given figure represents the graph of $f(x)$ when $dy/dx = f(x)$. By hand, sketch a direction field over an appropriate grid and include it as an image.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\linewidth]{HW2 Graph 1.png}
+    \end{figure}
+
+\newpage
+
+    \item The given figure represents the graph of $f(y)$ when $dy/dx = f(y)$. By hand, sketch a direction field over an appropriate grid and include it as an image.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\linewidth]{HW2 Graph 2.png}
+    \end{figure}
+
+    \item Consider the autonomous first-order differential equation $dy/dx = 2y - y^2$ and the initial condition $y(0)= y_0$. By hand, sketch the graph of a typical solution $y(x)$ when $y_0$ has the given valuesand include them as images.
+
+    \begin{enumerate}
+        \item $y_0 < 0$
+        \item $0< y_0 < 2$
+        \item $y_0 > 2$
+    \end{enumerate}
+\end{enumerate}
+
+\section*{Homework for Section 2.2}
+
+\begin{enumerate}
+
+    \item Solve the initial-value problem
+    $$
+    \frac{dy}{x^2+e^x} = \frac{ydx}{y^2+1}, y(0)= 1
+    $$
+
+    \item Solve the initial-value problem
+    $$
+    x + 3y^2 \sqrt{x^1+1} \frac{dy}{dx} = 0, y(0) = 1
+    $$
+
+    \item A glucose solution is administered intravenously into the bloodstream at a constant rate $r$. As the glucose is added, it is converted into other substances and removed from the bloodstream at a rate that is proportional to the concentration at that time. Thus a model for the concentration $C = C(t)$ of the glucose solution in the bloodstream is
+    $$
+    \frac{dC}{dt} = r - kC
+    $$
+    where $k$ is a positive constant.
+    \begin{enumerate}
+        \item Suppose that the concentration at time $t=0$ is $C_0$. Determine the concentration at any time $t$ by solving the differential equation.
+        \item Assuming that $C0 < \frac{r}{k}$, find limit: $\lim t \to \infty C(t)$ and interpret your answer.
+    \end{enumerate}
+    
+\end{enumerate}
+
+\end{document}
