@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{amsmath, amssymb, amsthm, graphicx, subcaption}
+\usepackage{amsmath, amssymb, amsthm, graphicx}
 \usepackage{csquotes, tikz, cancel, framed}
 
 \graphicspath{{./Images}}
@@ -33,7 +33,7 @@
 \date{\today}
 
 \begin{document}
-
+\vspace{-5pt}
 \maketitle
 
 \section*{Homework for Section 2.1}
@@ -61,11 +61,11 @@
                             (a) \quad &  \frac{dy}{dx} = e^x \sin(y) \\
                                       & e^x \sin(y) = 0  \\
                                       & e^x \neq 0, \ \sin(y) = 0 \\
-                     \Longrightarrow  & \boxed{y =\pi n, 0, \ \in \mathbb{Z}} \text{ is the general solution.}\\
+                     \Longrightarrow  & \boxed{y=0,\ y =\pi n, \ n \in \mathbb{Z}} \text{ are the equilibrium solutions.}\\
                 \end{align*}
 
                 Equilibrium equations occur when $\frac{dy}{dx} = 0$ allowing us to the 
-                find the $y(x)$. 
+                find the $y(x)$.  
             \end{minipage}
             \hfill
             \begin{minipage}[t]{0.48\textwidth}
@@ -78,12 +78,23 @@
 
     \end{solution}
 
+    \newpage
     \item The given figure represents the graph of $f(x)$ when $dy/dx = f(x)$. By hand, sketch a direction field over an appropriate grid and include it as an image.
     \begin{figure}[h!]
         \centering
         \includegraphics[width=0.5\linewidth]{HW2 Graph 1.png}
     \end{figure}
 
+    \begin{solution}
+
+        It is pretty easy to guess the function and we can graph the
+        direction field as the form of
+         $$\frac{dy}{dx} = \frac{\left(x+3\right)\left(x+2\right)\left(x-2\right)}{3}$$.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.5\linewidth]{p2.png}
+        \end{figure}
+    \end{solution}
 \newpage
 
     \item The given figure represents the graph of $f(y)$ when $dy/dx = f(y)$. By hand, sketch a direction field over an appropriate grid and include it as an image.
@@ -92,6 +103,14 @@
         \includegraphics[width=0.5\linewidth]{HW2 Graph 2.png}
     \end{figure}
 
+    \begin{solution} \ \
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.5\linewidth]{p3.png}
+        \end{figure}
+    \end{solution}
+
     \item Consider the autonomous first-order differential equation $dy/dx = 2y - y^2$ and the initial condition $y(0)= y_0$. By hand, sketch the graph of a typical solution $y(x)$ when $y_0$ has the given valuesand include them as images.
 
     \begin{enumerate}
@@ -99,21 +118,77 @@
         \item $0< y_0 < 2$
         \item $y_0 > 2$
     \end{enumerate}
+
+
+    \newpage
+    \begin{solution}
+        We can simply graph the direction field and pick our starting point 
+        $(0, y_0)$ on the direction field and follow the slopes to create our solution curve.
+        
+        \begin{enumerate}
+            \item $y_0 < 0$
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.5\linewidth]{p3.png}
+            \end{figure}
+            \item $0< y_0 < 2$
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.5\linewidth]{p3.png}
+            \end{figure}
+            \item $y_0 > 2$
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.5\linewidth]{p3.png}
+            \end{figure}
+        
+        \end{enumerate}
+    \end{solution}
 \end{enumerate}
 
+\newpage
 \section*{Homework for Section 2.2}
 
 \begin{enumerate}
 
     \item Solve the initial-value problem
     $$
-    \frac{dy}{x^2+e^x} = \frac{ydx}{y^2+1}, y(0)= 1
+    \frac{dy}{x^2+e^x} = \frac{ydx}{y^2+1},\ y(0)= 1
     $$
+
+    \begin{solution}
+        \begin{align*}
+                        \frac{dy}{x^2+e^x} &= \frac{ydx}{y^2+1} \\
+                        \frac{y^2+1}{y}dy &= \left(x^2+e^x \right)dx \\
+                        \int \frac{y^2+1}{y}dy &= \int x^2+e^xdx\\
+                        \int y + y^{-1} dy &= \frac{x^3}{3} + e^x + C \\
+       \Longrightarrow  \frac{y^2}{2} + \ln|y| &= \frac{x^3}{3} + e^x + C\\\\
+                        y(0) &= 1 \\
+                        \frac{(1)^2}{2} + \ln|(1)| &= \frac{(0)^3}{3} + e^{(0)} + C \\
+                        \frac{1}{2} + 0 &= 0 + 1 + C\\
+        \Longrightarrow \quad & \boxed{C = -\frac{1}{2}}
+        \end{align*}
+    \end{solution}
 
     \item Solve the initial-value problem
     $$
-    x + 3y^2 \sqrt{x^1+1} \frac{dy}{dx} = 0, y(0) = 1
-    $$
+    x + 3y^2 \sqrt{x+1} \frac{dy}{dx} = 0, \ y(0) = 1
+    $$  
+
+    \begin{solution}
+        \begin{align*}
+            x + 3y^2 \sqrt{x+1} \frac{dy}{dx} &= 0 \\
+            3y^2 dy &= \frac{-x}{\sqrt{x+1}} dx \\
+            \int 3y^2 dy &= \int \frac{-x}{\sqrt{x+1}} dx \\
+            y^3 &= - \int \frac{(x+1) - 1}{\sqrt{x+1}} dx \\
+            y^3 &= - \int \frac{(x+1)}{\sqrt{x+1}} - \frac{1}{\sqrt{x+1}} dx \\
+            y^3 &= - \int \sqrt{x+1} - \frac{1}{\sqrt{x+1}} dx \\
+            \Longrightarrow  y^3 &= - \left(\frac{2}{3}(x+1)^{\frac{3}{2}} -2(x+1)^{\frac{1}{2}} \right) + C \\\\
+         y(0) &= 1 \\
+         (1)^3 &= - \left(\frac{2}{3}((0)+1)^{\frac{3}{2}} -2((0)+1)^{\frac{1}{2}} \right) + C \\
+            \Longrightarrow \quad & \boxed{C = -\frac{1}{3}}
+        \end{align*}
+    \end{solution}
 
     \item A glucose solution is administered intravenously into the bloodstream at a constant rate $r$. As the glucose is added, it is converted into other substances and removed from the bloodstream at a rate that is proportional to the concentration at that time. Thus a model for the concentration $C = C(t)$ of the glucose solution in the bloodstream is
     $$
@@ -122,9 +197,59 @@
     where $k$ is a positive constant.
     \begin{enumerate}
         \item Suppose that the concentration at time $t=0$ is $C_0$. Determine the concentration at any time $t$ by solving the differential equation.
-        \item Assuming that $C0 < \frac{r}{k}$, find limit: $\lim t \to \infty C(t)$ and interpret your answer.
+        \item Assuming that $C_0 < \frac{r}{k}$, find limit: $\displaystyle \lim_{t \to \infty} C(t)$ and interpret your answer.
     \end{enumerate}
-    
+
+    \begin{solution} \ \
+    \begin{enumerate}
+        \item Given that $C(0) = C_0$, we can solve the differential equation by integrating and 
+        Determine the concentration at any time $t$.
+        \begin{align*}
+             \frac{dC}{dt}  &= r - kC \\
+             \frac{dC}{r - kC}  &= dt \\
+             \int \frac{dC}{r - kC}  &= \int dt \\
+             -\frac{1}{k} \ln|r-kC| &= t + C_1 \\
+             |r-kC| &= e^{-k(t + C_1) } \\
+             r-kC &= e^{-k(t) } e^{-kC_1} \\
+             C(t) &= \frac{r -e^{-k(t) } e^{-kC_1}}{k} \\
+             C(t) &= \frac{r}{k} - \frac{e^{-kC_1}}{k} e^{-kt} \\
+            \Longrightarrow \quad & \boxed{C(t) = \frac{r}{k} + C e^{-kt}}
+        \end{align*}
+        \item To find $\displaystyle \lim_{t \to \infty} C(t)$, assuming that $C_0 < \frac{r}{k}$
+        implies that the constant is negative: $C < 0 $. We can interpret this as when the
+        concentration is less than $\frac{r}{k}$, the concentration will try to increase towards 
+        and approach $\frac{r}{k}$. We can see this happen vice versa when the concentration is larger,
+        it decreases and stabalizes back to $\frac{r}{k}$.
+
+           
+
+            
+
+        \begin{figure}[h]
+                \centering
+                \begin{minipage}[t]{0.48\textwidth} \
+                    \vspace{0pt}
+                    \begin{align*}
+                        \text{Given } C_0 < \frac{r}{k}, \  C(0) &= \frac{r}{k} + C < \frac{r}{k} \\
+                        \Longrightarrow \quad &  C < 0 \\
+                        C(t) &= \frac{r}{k} - C e^{-kt} \\
+                        \lim_{t \to \infty} C(t) &= \frac{r}{k} - \lim_{t \to \infty} C e^{-kt} \\
+                        \lim_{t \to \infty} C(t) &= \frac{r}{k} - 0 \\
+                        \Longrightarrow \quad & \boxed{\lim_{t \to \infty} C(t) = \frac{r}{k}}
+                    \end{align*}
+                   
+                \end{minipage}  
+                \hfill
+                \begin{minipage}[t]{0.48\textwidth}
+                        \vspace{0pt}
+                        \includegraphics[width=0.8\linewidth]{q3.png}
+                \end{minipage}
+            \end{figure}
+        \end{enumerate}    
+
+\end{solution}
 \end{enumerate}
+
+
 
 \end{document}
