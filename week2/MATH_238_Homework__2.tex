@@ -61,18 +61,18 @@
                             (a) \quad &  \frac{dy}{dx} = e^x \sin(y) \\
                                       & e^x \sin(y) = 0  \\
                                       & e^x \neq 0, \ \sin(y) = 0 \\
-                     \Longrightarrow  & \boxed{y=0,\ y =\pi n, \ n \in \mathbb{Z}} \text{ are the equilibrium solutions.}\\
+                     \Longrightarrow  & \boxed{y=0,\ y =\pi n, \ n \in \mathbb{Z}} \text{ are the equilibrium solutions.}
                 \end{align*}
 
-                Equilibrium equations occur when $\frac{dy}{dx} = 0$ allowing us to the 
-                find the $y(x)$.  
+                Equilibrium equations occur for autonomous DE's $\frac{dy}{dx} = f(y)$ when  
+                $f(c) = 0 \iff y(x) = c$. 
             \end{minipage}
             \hfill
             \begin{minipage}[t]{0.48\textwidth}
                 \vspace{0pt}
                 \centering
                 \includegraphics[width=0.75\textwidth, keepaspectratio]{p1.png}
-                  \caption{Direction field of $\frac{dy}{dx} = e^{x}\sin(y)$}
+                  \caption{Computer sketch of direction field of $\frac{dy}{dx} = e^{x}\sin(y)$ through given points.}
             \end{minipage}
         \end{figure}
 
@@ -80,37 +80,53 @@
 
     \newpage
     \item The given figure represents the graph of $f(x)$ when $dy/dx = f(x)$. By hand, sketch a direction field over an appropriate grid and include it as an image.
-    \begin{figure}[h!]
-        \centering
-        \includegraphics[width=0.5\linewidth]{HW2 Graph 1.png}
-    \end{figure}
+    % \begin{figure}[h!]
+    %     \centering
+    %     \includegraphics[width=0.5\linewidth]{HW2 Graph 1.png}
+    % \end{figure}
 
     \begin{solution}
 
-        It is pretty easy to guess the function and we can graph the
-        direction field as the form of
-         $$\frac{dy}{dx} = \frac{\left(x+3\right)\left(x+2\right)\left(x-2\right)}{3}$$.
+        We can graph the direction field by plugging in each point $(x_0, y_0)$ into the DE and graphing the slope 
+        with its corresponding point. A trick we can use is that we can shift the slopes vertically to save time.
+        
         \begin{figure}[h]
             \centering
-            \includegraphics[width=0.5\linewidth]{p2.png}
+            \begin{minipage}[t]{0.48\textwidth}
+                \vspace{0pt}
+                \includegraphics[width=1\linewidth]{HW2 Graph 1.png}
+                \caption{Given graph of $\frac{dy}{dx} = f(x)$}
+            \end{minipage}
+            \begin{minipage}[t]{0.48\textwidth}
+                \vspace{0pt}
+                \includegraphics[width=1\linewidth]{p2.png}
+                \caption{Hand drawn direction field of the DE.}
+            \end{minipage}
         \end{figure}
     \end{solution}
-\newpage
 
     \item The given figure represents the graph of $f(y)$ when $dy/dx = f(y)$. By hand, sketch a direction field over an appropriate grid and include it as an image.
-    \begin{figure}[h!]
-        \centering
-        \includegraphics[width=0.5\linewidth]{HW2 Graph 2.png}
-    \end{figure}
 
-    \begin{solution} \ \
+    \begin{solution}
+        We must be careful here to see that it is $f(y)$. This is autonomous equation and we can use its horizontal translation property to save time.
+
 
         \begin{figure}[h]
             \centering
-            \includegraphics[width=0.5\linewidth]{p3.png}
+            \begin{minipage}[t]{0.48\textwidth}
+                \vspace{0pt}
+                \includegraphics[width=.8\linewidth]{HW2 Graph 2.png}
+                \caption{Given graph of $\frac{dy}{dx} = f(y)$}
+            \end{minipage}
+            \begin{minipage}[t]{0.48\textwidth}
+                \vspace{0pt}
+                \includegraphics[width=.8\linewidth]{p3.png}
+                \caption{Hand drawn direction field of the DE.}
+            \end{minipage}
         \end{figure}
     \end{solution}
 
+    \newpage
     \item Consider the autonomous first-order differential equation $dy/dx = 2y - y^2$ and the initial condition $y(0)= y_0$. By hand, sketch the graph of a typical solution $y(x)$ when $y_0$ has the given valuesand include them as images.
 
     \begin{enumerate}
@@ -119,27 +135,27 @@
         \item $y_0 > 2$
     \end{enumerate}
 
-
-    \newpage
     \begin{solution}
-        We can simply graph the direction field and pick our starting point 
-        $(0, y_0)$ on the direction field and follow the slopes to create our solution curve.
-        
+        We can simply graph the slope at a each varying range on the x-axis and use the
+        Translation Property of Autonomous ODEs that states that $y_{T}(x) = y(x-x_0)$ is also 
+        a solution to $\frac{dy}{dx} = f(y), / y(x_0) = y_0$. This means we can simply copy and paste
+        the same slope on the entire x directions.
+       
         \begin{enumerate}
             \item $y_0 < 0$
             \begin{figure}[h]
                 \centering
-                \includegraphics[width=0.5\linewidth]{p3.png}
+                \includegraphics[width=0.4\linewidth]{p4a.png}
             \end{figure}
             \item $0< y_0 < 2$
             \begin{figure}[h]
                 \centering
-                \includegraphics[width=0.5\linewidth]{p3.png}
+                \includegraphics[width=0.4\linewidth]{p4b.png}
             \end{figure}
             \item $y_0 > 2$
             \begin{figure}[h]
                 \centering
-                \includegraphics[width=0.5\linewidth]{p3.png}
+                \includegraphics[width=0.4\linewidth]{p4c.png}
             \end{figure}
         
         \end{enumerate}
@@ -166,7 +182,7 @@
                         y(0) &= 1 \\
                         \frac{(1)^2}{2} + \ln|(1)| &= \frac{(0)^3}{3} + e^{(0)} + C \\
                         \frac{1}{2} + 0 &= 0 + 1 + C\\
-        \Longrightarrow \quad & \boxed{C = -\frac{1}{2}}
+        \Longrightarrow & \boxed{C = -\frac{1}{2}, \ \frac{y^2}{2} + \ln|y| = \frac{x^3}{3} + e^x -\frac{1}{2}}
         \end{align*}
     \end{solution}
 
@@ -175,6 +191,7 @@
     x + 3y^2 \sqrt{x+1} \frac{dy}{dx} = 0, \ y(0) = 1
     $$  
 
+    \vspace{-1cm}
     \begin{solution}
         \begin{align*}
             x + 3y^2 \sqrt{x+1} \frac{dy}{dx} &= 0 \\
@@ -186,7 +203,7 @@
             \Longrightarrow  y^3 &= - \left(\frac{2}{3}(x+1)^{\frac{3}{2}} -2(x+1)^{\frac{1}{2}} \right) + C \\\\
          y(0) &= 1 \\
          (1)^3 &= - \left(\frac{2}{3}((0)+1)^{\frac{3}{2}} -2((0)+1)^{\frac{1}{2}} \right) + C \\
-            \Longrightarrow \quad & \boxed{C = -\frac{1}{3}}
+            \Longrightarrow \quad & \boxed{C = -\frac{1}{3}, \ y^3 = - \left(\frac{2}{3}(x+1)^{\frac{3}{2}} -2(x+1)^{\frac{1}{2}} \right)  -\frac{1}{3}} 
         \end{align*}
     \end{solution}
 
@@ -199,52 +216,72 @@
         \item Suppose that the concentration at time $t=0$ is $C_0$. Determine the concentration at any time $t$ by solving the differential equation.
         \item Assuming that $C_0 < \frac{r}{k}$, find limit: $\displaystyle \lim_{t \to \infty} C(t)$ and interpret your answer.
     \end{enumerate}
+    
 
     \begin{solution} \ \
     \begin{enumerate}
         \item Given that $C(0) = C_0$, we can solve the differential equation by integrating and 
         Determine the concentration at any time $t$.
-        \begin{align*}
-             \frac{dC}{dt}  &= r - kC \\
-             \frac{dC}{r - kC}  &= dt \\
-             \int \frac{dC}{r - kC}  &= \int dt \\
-             -\frac{1}{k} \ln|r-kC| &= t + C_1 \\
-             |r-kC| &= e^{-k(t + C_1) } \\
-             r-kC &= e^{-k(t) } e^{-kC_1} \\
-             C(t) &= \frac{r -e^{-k(t) } e^{-kC_1}}{k} \\
-             C(t) &= \frac{r}{k} - \frac{e^{-kC_1}}{k} e^{-kt} \\
-            \Longrightarrow \quad & \boxed{C(t) = \frac{r}{k} + C e^{-kt}}
-        \end{align*}
+             
+        \begin{figure}[h]
+                \centering
+                \begin{minipage}[t]{0.48\textwidth} \
+                    \vspace{0pt}
+                     \begin{align*}
+                        \frac{dC}{dt}  &= r - kC \\
+                        \frac{dC}{r - kC}  &= dt \\
+                        \int \frac{dC}{r - kC}  &= \int dt \\
+                        -\frac{1}{k} \ln|r-kC| &= t + C_1 \\
+                        |r-kC| &= e^{-k(t + C_1) } \\
+                        r-kC &= e^{-k(t) } e^{-kC_1} \\
+                        C(t) &= \frac{r -e^{-k(t) } e^{-kC_1}}{k} \\
+                        C(t) &= \frac{r}{k} - \frac{e^{-kC_1}}{k} e^{-kt} \\
+                     \Longrightarrow   C(t) &= \frac{r}{k} + A e^{-kt} 
+                    \end{align*}   
+                \end{minipage}  
+                \hfill
+                \begin{minipage}[t]{0.48\textwidth}
+                        \vspace{0pt}
+                        \begin{align*}
+                            & \text{Solve for A: } C(0) = C_0 \\
+                            C(0) &= C_0 = \frac{r}{k} + A e^{-k(0)} \\
+                            A &= \left(C_0 - \frac{r}{k} \right) \\
+                            \Longrightarrow \quad & \boxed{C(t) = \frac{r}{k} + \left(C_0 - \frac{r}{k}\right) e^{-kt}}
+                        \end{align*}   
+                \end{minipage}
+        \end{figure}
+
+
+
         \item To find $\displaystyle \lim_{t \to \infty} C(t)$, assuming that $C_0 < \frac{r}{k}$
-        implies that the constant is negative: $C < 0 $. We can interpret this as when the
+        implies that the constant $A$ is negative: $A < 0 $. We can interpret this as when the
         concentration is less than $\frac{r}{k}$, the concentration will try to increase towards 
         and approach $\frac{r}{k}$. We can see this happen vice versa when the concentration is larger,
         it decreases and stabalizes back to $\frac{r}{k}$.
 
            
-
-            
-
         \begin{figure}[h]
                 \centering
                 \begin{minipage}[t]{0.48\textwidth} \
                     \vspace{0pt}
                     \begin{align*}
-                        \text{Given } C_0 < \frac{r}{k}, \  C(0) &= \frac{r}{k} + C < \frac{r}{k} \\
-                        \Longrightarrow \quad &  C < 0 \\
-                        C(t) &= \frac{r}{k} - C e^{-kt} \\
-                        \lim_{t \to \infty} C(t) &= \frac{r}{k} - \lim_{t \to \infty} C e^{-kt} \\
-                        \lim_{t \to \infty} C(t) &= \frac{r}{k} - 0 \\
+                        \text{Given } C_0 < \frac{r}{k}, \  C(0) &= \frac{r}{k} + \left(C_0 - \frac{r}{k} \right) < \frac{r}{k} \\
+                        & \left(C_0 - \frac{r}{k} \right) < 0 \\
+                        \Longrightarrow \quad &  A < 0 \\
+                        C(t) &= \frac{r}{k} + A e^{-kt} \\
+                        \lim_{t \to \infty} C(t) &= \frac{r}{k} + \lim_{t \to \infty} A e^{-kt} \\
+                        \lim_{t \to \infty} C(t) &= \frac{r}{k} + 0 \\
                         \Longrightarrow \quad & \boxed{\lim_{t \to \infty} C(t) = \frac{r}{k}}
                     \end{align*}
-                   
                 \end{minipage}  
                 \hfill
                 \begin{minipage}[t]{0.48\textwidth}
                         \vspace{0pt}
-                        \includegraphics[width=0.8\linewidth]{q3.png}
+                        \includegraphics[width=0.65\linewidth]{q3.png}
+                        \caption{Direction field showing general behavior}
                 \end{minipage}
-            \end{figure}
+        \end{figure}
+
         \end{enumerate}    
 
 \end{solution}
