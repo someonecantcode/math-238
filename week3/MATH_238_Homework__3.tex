@@ -34,7 +34,6 @@
 \date{\today}
 
 \begin{document}
-
 \maketitle
 
 \section*{Homework for Section 2.3: 50 points}
@@ -47,7 +46,10 @@ It is usually easier to do the homework on paper and then type the solutions in 
     $$
 
     \begin{solution}
-        A unique solution exists when both $\frac{a_0(x)}{a_1(x)}$ and $\frac{}{}$
+        A unique solution exists when both
+        $\frac{a_0(x)}{a_1(x)}$ and $\frac{q(x)}{a_1(x)}$ are both
+        continuous. In a rectangular region, it would be 
+        \boxed{R = [a, b] \times [c, d] \text{ where } a_1(x) \neq 0 \text{ and } a_1(x), a_0(x), q(x) \text{ are continuous}.}
     \end{solution}
 
     \item (2 points) On what rectangular regions does the equation below possess a unique solution?
@@ -55,20 +57,74 @@ It is usually easier to do the homework on paper and then type the solutions in 
     \frac{dy}{dx} + p(x) y = q(x) 
     $$
 
+    \begin{solution}
+        A unique solution exists in a standard first order linear equation when
+        $p(x)$ and $q(x)$ are both continuous. In a rectangular region, it would be
+        \boxed{R = [a, b] \times [c, d] \text{ where both} p(x), q(x) \text{ are continuous}.}
+    \end{solution}
+
+    \newpage
     \item (6 points) Solve the equation below
     $$
     \frac{dP}{dt} + 5tP = P + 2t - 2
     $$
 
+    \begin{solution} \
+
+        To approach this problem, we must first put it into the standard
+        first order linear equation $y' + P(x)y = H(x)$. After that, we will find 
+        the integrating factor $\mu(x)$.
+        \begin{align*}
+                            & \frac{dP}{dt} + 5tP = P + 2t - 2 \\
+                            & \frac{dP}{dt} + (5t-1)P =  2t - 2 \\
+                            & P(t) = 5t-1, \quad H(t) = 2t -2 \\
+                            & \mu(t) = e^{\int P(t) dt} \\
+                            & \mu(t) = e^{\int 5t-1 dt} \\
+                            & \mu(t) = e^{\frac{5t^2}{2} - t} \\
+                            & \mu(t) \left(\frac{dP}{dt} + (5t-1)P =  2t - 2\right) \\
+            \Longrightarrow & \frac{d}{dt} (\mu(t) P) = \mu(t) (2t - 2) \\
+            & \int \frac{d}{dt} (\mu(t) P) dt = \int \mu(t) (2t - 2) dt \\
+            & \mu(t) P = \int e^{\frac{5t^2}{2} - t} (2t-2) dt \\
+            & e^{\frac{5t^2}{2} - t} P = \int e^{\frac{5}{2}\left(t-\frac{1}{5}\right)^2 - \frac{1}{10}} (2t-2) dt \\
+            & e^{\frac{5t^2}{2} - t} P = e^{-\frac{1}{10}} \int e^{\frac{5}{2}\left(t-\frac{1}{5}\right)^2} (2t-2) dt,
+            \quad  u = t - \frac{1}{5} \Longrightarrow t = u + \frac{1}{5}, \quad dt = du, \quad (2t-2) = (2u - \frac{8}{5}) \\
+            & e^{\frac{5t^2}{2} - t} P = e^{-\frac{1}{10}} \int (2u - \frac{8}{5}) e^{\frac{5}{2}u^2} du  \\
+            & e^{\frac{5t^2}{2} - t} P = e^{-\frac{1}{10}} \left(\int 2u e^{\frac{5}{2}u^2} du - \int \frac{8}{5}e^{\frac{5}{2}u^2} du  \right) \\
+            & e^{\frac{5t^2}{2} - t} P = e^{-\frac{1}{10}} \left(\frac{2}{5}e^{\frac{5}{2} u^2} - \int \frac{8}{5}e^{\frac{5}{2}u^2} du \right) \\
+            & \text{Remark: } \mathrm{erfi}(x) = \frac{2}{\sqrt{\pi}} \int_{0}^{x} e^{t^2} dt  \\
+            & e^{\frac{5t^2}{2} - t} P = e^{-\frac{1}{10}} \left(\frac{2}{5}e^{\frac{5}{2} (t - \frac{1}{5})^2} - \frac{8}{5}\sqrt{\frac{\pi}{10}} \mathrm{erfi}\left(\sqrt{\frac{5}{2}} \left(t - \frac{1}{5}\right) \right) + C \right)  \\
+            & P(t) = \frac{\left(\frac{2}{5}e^{\frac{5}{2} (t - \frac{1}{5})^2} - \frac{8}{5}\sqrt{\frac{\pi}{10}} \mathrm{erfi}\left(\sqrt{\frac{5}{2}} \left(t - \frac{1}{5}\right) \right) \right) + C} {e^{\frac{5t^2}{2} - t + \frac{1}{10}}} \\
+           \Longrightarrow & \boxed{P(t) = \frac{2}{5} - \frac{8}{5} \sqrt{\frac{\pi}{10}} e^{-\frac{5}{2} (t - \frac{1}{5})^2} \mathrm{erfi}\left(\sqrt{\frac{5}{2}} \left(t - \frac{1}{5}\right) \right) + C e^{-\frac{5}{2} (t - \frac{1}{5})^2} }
+        \end{align*}
+        
+    \end{solution}
+
+    \newpage
     \item (7 points) Solve the equation below
     $$
     2L\frac{di}{dt} + 3Ri = E, i(0) = i_0
     $$
     where $L, R$ and $E$ are constants. 
 
+    \begin{solution}
+        \begin{align*}
+            & 2L\frac{di}{dt} + 3Ri = E, i(0) = i_0 \\
+            & \frac{di}{dt} + \frac{3R}{2L}i = E \\
+            & \mu(t) = e^{\frac{3R}{2L}t} \\
+            & \frac{d}{dt} (e^{\frac{3R}{2L}t} i) = e^{\frac{3R}{2L}t} E \\
+            & e^{\frac{3R}{2L}t} i = \int e^{\frac{3R}{2L}t} E dt \\
+            & e^{\frac{3R}{2L}t} i = \frac{2L}{3R} e^{\frac{3R}{2L}t} E + C \\
+            & i(t) = \frac{2LE}{3R} + C e^{-\frac{3R}{2L}t} \\
+            & i(0) = i_0 = \frac{2LE}{3R} + C \\
+            & C = i_0 - \frac{2LE}{3R} \\
+            \Longrightarrow & \boxed{i(t)  = \frac{2LE}{3R} + \left(i_0 - \frac{2LE}{3R}\right) e^{-\frac{3R}{2L}t}}
+        \end{align*}
+
+    \end{solution}
+
     \item (7 points) Solve the equation below
     $$
-    cos^2xsinx \frac{dy}{dx} + \left(cos^3x\right)y= 4
+    \cos^2x \sin x \frac{dy}{dx} + \left(\cos^3x\right)y= 4
     $$
 
     \item (10 points) Solve the equation below
@@ -82,7 +138,11 @@ It is usually easier to do the homework on paper and then type the solutions in 
     $$
     where
     $$
-    f(x) = \left\{ \begin{array}{ll} x^2 \quad x < 1 \\ 2x-1 \quad x \ge 1 \end{array} \right. 
+    f(x) = 
+    \begin{cases} 
+    x^2 & x < 1 \\[2mm]
+    2x - 1 & x \ge 1
+    \end{cases}
     $$
     Graph the right side and one of the the solutions on separate graphs.
 
