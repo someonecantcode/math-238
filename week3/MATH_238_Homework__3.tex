@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, graphicx}
+\usepackage{tikz, cancel, framed}
+
+\graphicspath{{./Images}}
+
+% \geometry{margin=1in}
+\usepackage[left=0.5in, right=0.5in, top=0.5in, bottom=1in]{geometry}
+
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0pt}
+
+\newtheoremstyle{solution}
+  {15pt}
+  {15pt}
+  {}
+  {}
+  {\bfseries}
+  {: }
+  { }
+  {}
+
+\theoremstyle{solution}
+\newtheorem*{solution}{SOLUTION}
+
+\usetikzlibrary{calc,shapes}
+
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+
+% ------------------------------------------------------------
+
+\title{MATH 238 Homework 3}
+\author{Brendan Tea}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Homework for Section 2.3: 50 points}
+
+It is usually easier to do the homework on paper and then type the solutions in the latex document compiling frequently to catch the errors early! Each of the ordinary differential equation in first-order linear and will be referred to as a equation.
+\begin{enumerate}
+    \item (2 points) On what rectangular regions does the equation below possess a unique solution?
+    $$
+    a_1(x) \frac{dy}{dx} + a_0(x) y = q(x) 
+    $$
+
+    \begin{solution}
+        A unique solution exists when both $\frac{a_0(x)}{a_1(x)}$ and $\frac{}{}$
+    \end{solution}
+
+    \item (2 points) On what rectangular regions does the equation below possess a unique solution?
+    $$
+    \frac{dy}{dx} + p(x) y = q(x) 
+    $$
+
+    \item (6 points) Solve the equation below
+    $$
+    \frac{dP}{dt} + 5tP = P + 2t - 2
+    $$
+
+    \item (7 points) Solve the equation below
+    $$
+    2L\frac{di}{dt} + 3Ri = E, i(0) = i_0
+    $$
+    where $L, R$ and $E$ are constants. 
+
+    \item (7 points) Solve the equation below
+    $$
+    cos^2xsinx \frac{dy}{dx} + \left(cos^3x\right)y= 4
+    $$
+
+    \item (10 points) Solve the equation below
+    $$
+    (x+1) \frac{dy}{dx} + (x+2)y = 2xe^{-x}
+    $$
+
+    \item (16 points) Solve the equation below
+    $$
+    \frac{dy}{dx} + 6xy = f(x)
+    $$
+    where
+    $$
+    f(x) = \left\{ \begin{array}{ll} x^2 \quad x < 1 \\ 2x-1 \quad x \ge 1 \end{array} \right. 
+    $$
+    Graph the right side and one of the the solutions on separate graphs.
+
+\end{enumerate}
+\end{document} 
