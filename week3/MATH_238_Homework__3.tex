@@ -5,7 +5,7 @@
 \graphicspath{{./Images}}
 
 % \geometry{margin=1in}
-\usepackage[left=0.5in, right=0.5in, top=0.5in, bottom=1in]{geometry}
+\usepackage[left=0.5in, right=0.5in, top=0.25in, bottom=1in]{geometry}
 
 \setlength{\parskip}{0.8em}
 \setlength{\parindent}{0pt}
@@ -77,33 +77,58 @@ It is usually easier to do the homework on paper and then type the solutions in 
     $$
 
     \begin{solution} \
-
         To approach this problem, we must first put it into the standard
         first order linear equation $y' + P(x)y = H(x)$. After that, we will find 
         the integrating factor $\mu(x)$.
-        \begin{align*}
+        
+         \begin{figure}[h]
+                \centering
+                \begin{minipage}[t]{0.49\textwidth} \
+                    \vspace{0pt}
+                    \begin{align*}
                             & \frac{dP}{dt} + 5tP = P + 2t - 2 \\
                             & \frac{dP}{dt} + (5t-1)P =  2t - 2 \\
                             & P(t) = 5t-1, \quad H(t) = 2t -2 \\
                             & \mu(t) = e^{\int P(t) dt} \\
                             & \mu(t) = e^{\int 5t-1 dt} \\
                             & \mu(t) = e^{\frac{5t^2}{2} - t} \\
+                            & \mu(t) = e^{\frac{5}{2}\left(t^2-\frac{2}{5}t+\frac{1}{25}\right) - \frac{1}{10}}\\
+                            & \text{We don't care about the constant } e^{-\frac{1}{10}}\\\\ \\
+            \Longrightarrow & \mu(t) = e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} \\
                             & \mu(t) \left(\frac{dP}{dt} + (5t-1)P =  2t - 2\right) \\
-            \Longrightarrow & \frac{d}{dt} (\mu(t) P) = \mu(t) (2t - 2) \\
-            & \int \frac{d}{dt} (\mu(t) P) dt = \int \mu(t) (2t - 2) dt \\
-            & \mu(t) P = \int e^{\frac{5t^2}{2} - t} (2t-2) dt \\
-            & e^{\frac{5t^2}{2} - t} P = \int e^{\frac{5}{2}\left(t-\frac{1}{5}\right)^2 - \frac{1}{10}} (2t-2) dt \\
-            & e^{\frac{5t^2}{2} - t} P = e^{-\frac{1}{10}} \int e^{\frac{5}{2}\left(t-\frac{1}{5}\right)^2} (2t-2) dt,
-            \quad  u = t - \frac{1}{5} \Longrightarrow t = u + \frac{1}{5}, \quad dt = du, \quad (2t-2) = (2u - \frac{8}{5}) \\
-            & e^{\frac{5t^2}{2} - t} P = e^{-\frac{1}{10}} \int (2u - \frac{8}{5}) e^{\frac{5}{2}u^2} du  \\
-            & e^{\frac{5t^2}{2} - t} P = e^{-\frac{1}{10}} \left(\int 2u e^{\frac{5}{2}u^2} du - \int \frac{8}{5}e^{\frac{5}{2}u^2} du  \right) \\
-            & e^{\frac{5t^2}{2} - t} P = e^{-\frac{1}{10}} \left(\frac{2}{5}e^{\frac{5}{2} u^2} - \int \frac{8}{5}e^{\frac{5}{2}u^2} du \right) \\
-            & \text{Remark: } \mathrm{erfi}(x) = \frac{2}{\sqrt{\pi}} \int_{0}^{x} e^{t^2} dt  \\
-            & e^{\frac{5t^2}{2} - t} P = e^{-\frac{1}{10}} \left(\frac{2}{5}e^{\frac{5}{2} (t - \frac{1}{5})^2} - \frac{8}{5}\sqrt{\frac{\pi}{10}} \mathrm{erfi}\left(\sqrt{\frac{5}{2}} \left(t - \frac{1}{5}\right) \right) + C \right)  \\
-            & P(t) = \frac{\left(\frac{2}{5}e^{\frac{5}{2} (t - \frac{1}{5})^2} - \frac{8}{5}\sqrt{\frac{\pi}{10}} \mathrm{erfi}\left(\sqrt{\frac{5}{2}} \left(t - \frac{1}{5}\right) \right) \right) + C} {e^{\frac{5t^2}{2} - t + \frac{1}{10}}} \\
-           \Longrightarrow & \boxed{P(t) = \frac{2}{5} - \frac{8}{5} \sqrt{\frac{\pi}{10}} e^{-\frac{5}{2} (t - \frac{1}{5})^2} \mathrm{erfi}\left(\sqrt{\frac{5}{2}} \left(t - \frac{1}{5}\right) \right) + C e^{-\frac{5}{2} (t - \frac{1}{5})^2} }
-        \end{align*}
-        
+                            \Longrightarrow & \frac{d}{dt} (\mu(t) P) = \mu(t) (2t - 2) \\
+                                    & \int \frac{d}{dt} (\mu(t) P) dt = \int \mu(t) (2t - 2) dt \\
+                                    & \mu(t) P = \int e^{\frac{5t^2}{2} - t} (2t-2) dt 
+                    \end{align*}    
+                \end{minipage}  
+                \hfill
+                \begin{minipage}[t]{0.49\textwidth}
+                        \vspace{0pt}
+                                             \begin{align*}
+                                    & \mu(t) P = \int e^{\frac{5t^2}{2} - t} (2t-2) dt  \\
+                                    & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P = \int e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} (2t-2) dt \\
+                                    & u = t - \frac{1}{5} \Longrightarrow t = u + \frac{1}{5} \\
+                                    & dt = du, \quad (2t-2) = (2u - \frac{8}{5}) \\\\
+                                    & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P =  \int \left(2u - \frac{8}{5}\right) e^{\frac{5}{2}u^2} du  \\
+                                    & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P =  \left(\int 2u e^{\frac{5}{2}u^2} du - \frac{8}{5} \int e^{\frac{5}{2}u^2} du  \right) \\
+                                    & v = u^2 \Longrightarrow dv = 2u \ du \\\\
+                                    & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P = \int e^{\frac{5}{2}v} dv  - \frac{8}{5} \int e^{\frac{5}{2}u^2} du \\
+                                    & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P = \frac{2}{5}e^{\frac{5}{2} u^2} - \frac{8}{5} \int e^{\left(\sqrt{\frac{5}{2}}u\right)^2} du \\
+                                    & m = \sqrt{\frac{5}{2}}u \Longrightarrow \sqrt{\frac{2}{5}} dm = du  \\
+                                    & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P = \frac{2}{5}e^{\frac{5}{2} u^2} - \frac{8}{5} \int e^{m^2} \sqrt{\frac{2}{5}} dm  \\\\
+                                    & \text{Remark: } \mathrm{erfi}(x) = \frac{2}{\sqrt{\pi}} \int_{0}^{x} e^{t^2} dt  \\
+                                    & C \cdot \mathrm{erfi}(x) = C \frac{2}{\sqrt{\pi}} \int_{0}^{x} e^{t^2} dt = \int e^{m^2} du \\
+                                    & C = \frac{\sqrt{\pi}}{2} \\
+                                    & 
+                        \end{align*}
+                \end{minipage}
+                \vspace{-0.1cm}
+                \begin{align*}
+                    \Longrightarrow e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P &= \frac{2}{5}e^{\frac{5}{2} u^2} - \frac{\sqrt{\pi}}{2} \frac{8}{5} \sqrt{\frac{2}{5}}\mathrm{erfi}(m) + C \\
+                    e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P &= \frac{2}{5}e^{\frac{5}{2} \left(t - \frac{1}{5} \right)^2} - \frac{4}{5} \sqrt{\frac{2\pi}{5}} \mathrm{erfi}\left(\sqrt{\frac{5}{2}} \left(t^2-\frac{1}{5}\right)\right) + C \\
+                    & \boxed{P = \frac{2}{5} - \frac{4}{5} \sqrt{\frac{2\pi}{5}} \mathrm{erfi}\left(\sqrt{\frac{5}{2}} \left(t^2-\frac{1}{5}\right)\right)e^{-\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} + C e^{-\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2}}
+                \end{align*}
+        \end{figure}
     \end{solution}
 
     \newpage
@@ -116,15 +141,16 @@ It is usually easier to do the homework on paper and then type the solutions in 
     \begin{solution}
         \begin{align*}
             & 2L\frac{di}{dt} + 3Ri = E, i(0) = i_0 \\
-            & \frac{di}{dt} + \frac{3R}{2L}i = E \\
-            & \mu(t) = e^{\frac{3R}{2L}t} \\
-            & \frac{d}{dt} (e^{\frac{3R}{2L}t} i) = e^{\frac{3R}{2L}t} E \\
-            & e^{\frac{3R}{2L}t} i = \int e^{\frac{3R}{2L}t} E dt \\
-            & e^{\frac{3R}{2L}t} i = \frac{2L}{3R} e^{\frac{3R}{2L}t} E + C \\
-            & i(t) = \frac{2LE}{3R} + C e^{-\frac{3R}{2L}t} \\
-            & i(0) = i_0 = \frac{2LE}{3R} + C \\
-            & C = i_0 - \frac{2LE}{3R} \\
-            \Longrightarrow & \boxed{i(t)  = \frac{2LE}{3R} + \left(i_0 - \frac{2LE}{3R}\right) e^{-\frac{3R}{2L}t}}
+            & \frac{di}{dt} + \frac{3R}{2L}i = \frac{E}{2L} \\
+            & \mu(t) = e^{\frac{3R}{2L}t} \\\\
+            & \mu(t) \left(\frac{di}{dt} + \frac{3R}{2L}i = \frac{E}{2L} \right)\\    
+            \Longrightarrow & \frac{d}{dt} (e^{\frac{3R}{2L}t} i) = e^{\frac{3R}{2L}t} \frac{E}{2L} \\
+            & e^{\frac{3R}{2L}t} i = \int e^{\frac{3R}{2L}t} \frac{E}{2L} dt \\
+            & e^{\frac{3R}{2L}t} i = \frac{\cancel{2L}}{3R} e^{\frac{3R}{2L}t} \frac{E}{\cancel{2L}} + C \\
+            & i(t) = \frac{E}{3R} + C e^{-\frac{3R}{2L}t} \\\\
+            & i(0) = i_0 = \frac{E}{3R} + C \\
+            & C = i_0 - \frac{E}{3R} \\
+            \Longrightarrow & \boxed{i(t)  = \frac{E}{3R} + \left(i_0 - \frac{E}{3R}\right) e^{-\frac{3R}{2L}t}}
         \end{align*}
 
     \end{solution}
@@ -138,12 +164,12 @@ It is usually easier to do the homework on paper and then type the solutions in 
         \begin{align*}
             & \cos^2x \sin x \frac{dy}{dx} + \left(\cos^3x\right)y= 4 \\
             & \frac{dy}{dx} + \left(\cot x \right)y= 4 \sec^2 x \csc x\\
-            & \mu(x) = e^{\ln |\sin x|} = \sin x \\
-            & \frac{d}{dx} (e^{\sin x} y) = \sin x 4 \sec^2 x \\
-            & \sin x y = \int \sin x 4 \sec^2 x, \quad u = \cos x, \ du = -\sin x  \\
-            & \sin x y = -\int 4u^{-2} du \\
-            & \sin x y = 4(\cos x)^{-1} + C \\
-            \Longrightarrow & \boxed{y(x) = \frac{4}{\sin x \cos x} + C \csc x}
+            & \mu(x) = e^{\ln |\sin x|} = \sin x \\\\
+            & \mu(x)\left(\frac{dy}{dx} + \left(\cot x \right)y= 4 \sec^2 x \csc x\right)\\
+        \Longrightarrow    & \frac{d}{dx} (e^{\sin x} y) = \cancel{\sin x} 4 \sec^2 x \cancel{\csc x} \\
+            & y \sin x  = \int \sec^2 x dx \\
+            & y \sin x  = \tan x + C \\
+            \Longrightarrow & \boxed{y(x) = 4\sec{x}+ C \csc x}
         \end{align*}
     \end{solution}
 
@@ -161,7 +187,9 @@ It is usually easier to do the homework on paper and then type the solutions in 
             & \mu(x) = e^{\int \frac{x+1+1}{x+1} dx} \\
             & \mu(x) = e^{\int 1 + \frac{1}{x+1} dx} \\
             & \mu(x) = e^{x+\ln|x+1|} = (x+1)e^x \\\\
-            & \frac{d}{dx} \left((x+1)e^x y \right) = \cancel{(x+1) e^x} \frac{2x\cancel{e^{-x}}}{\cancel{x+1}} \\
+            & \mu(x) \left(\frac{dy}{dx} + \frac{x+2}{x+1}y = \frac{2xe^{-x}}{x+1}\right)\\
+            & \left((x+1)e^x\right) \left(\frac{dy}{dx} + \frac{x+2}{x+1}y = \frac{2xe^{-x}}{x+1}\right)\\
+        \Longrightarrow    & \frac{d}{dx} \left((x+1)e^x y \right) = \cancel{(x+1) e^x} \frac{2x\cancel{e^{-x}}}{\cancel{x+1}} \\
             & (x+1)e^x y = \int 2x dx \\
            \Longrightarrow & \boxed{y = \frac{x^2 + C}{(x+1)e^x}}
         \end{align*}
