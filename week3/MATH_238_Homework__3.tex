@@ -54,238 +54,239 @@ middle, xlabel={$x$}, ylabel={$y$} }}
 
 \section*{Homework for Section 2.3: 50 points}
 
-It is usually easier to do the homework on paper and then type the solutions in the latex document compiling frequently to catch the errors early! Each of the ordinary differential equation in first-order linear and will be referred to as a equation.
+It is usually easier to do the homework on paper and then type the solutions in
+the latex document compiling frequently to catch the errors early! Each of the
+ordinary differential equation in first-order linear and will be referred to as
+a equation.
 \begin{enumerate}
     \item (2 points) On what rectangular regions does the equation below possess a unique solution?
-    $$
-    a_1(x) \frac{dy}{dx} + a_0(x) y = q(x) 
-    $$
+          $$
+              a_1(x) \frac{dy}{dx} + a_0(x) y = q(x)
+          $$
 
-    \begin{solution}
-        A unique solution exists when both
-        $\frac{a_0(x)}{a_1(x)}$ and $\frac{q(x)}{a_1(x)}$ are both
-        continuous. In a rectangular region, it would be 
-        \boxed{R = [a, b] \times [c, d] \text{ where } a_1(x) \neq 0 \text{ and } a_1(x), \ a_0(x), \ q(x) \text{ are continuous}.}\footnote{If $a_1(x) \neq 0 \text{ and } a_1(x), \ a_0(x), \ q(x)$ are continous, then $\frac{a_0(x)}{a_1(x)}$ and $\frac{q(x)}{a_1(x)}$ are also continous.}
-    \end{solution}
+          \begin{solution}
+              A unique solution exists when both
+              $\frac{a_0(x)}{a_1(x)}$ and $\frac{q(x)}{a_1(x)}$ are both
+              continuous. In a rectangular region, it would be
+              \boxed{R = [a, b] \times [c, d] \text{ where } a_1(x) \neq 0 \text{ and } a_1(x), \ a_0(x), \ q(x) \text{ are continuous}.}\footnote{If $a_1(x) \neq 0 \text{ and } a_1(x), \ a_0(x), \ q(x)$ are continous, then $\frac{a_0(x)}{a_1(x)}$ and $\frac{q(x)}{a_1(x)}$ are also continous.}
+          \end{solution}
 
     \item (2 points) On what rectangular regions does the equation below possess a unique solution?
-    $$
-    \frac{dy}{dx} + p(x) y = q(x) 
-    $$
+          $$
+              \frac{dy}{dx} + p(x) y = q(x)
+          $$
 
-    \begin{solution}
-        A unique solution exists in a standard first order linear equation when
-        $p(x)$ and $q(x)$ are both continuous. In a rectangular region, it would be
-        \boxed{R = [a, b] \times [c, d] \text{ where both } p(x), \ q(x) \text{ are continuous}.}
-    \end{solution}
+          \begin{solution}
+              A unique solution exists in a standard first order linear equation when
+              $p(x)$ and $q(x)$ are both continuous. In a rectangular region, it would be
+              \boxed{R = [a, b] \times [c, d] \text{ where both } p(x), \ q(x) \text{ are continuous}.}
+          \end{solution}
 
-    \newpage
+          \newpage
     \item (6 points) Solve the equation below
-    $$
-    \frac{dP}{dt} + 5tP = P + 2t - 2
-    $$
+          $$
+              \frac{dP}{dt} + 5tP = P + 2t - 2
+          $$
 
-    \begin{solution} \
-        To approach this problem, we must first put it into the standard
-        first order linear equation $y' + P(x)y = H(x)$. After that, we will find 
-        the integrating factor $\mu(x)$.
-        
-         \begin{figure}[h]
-                \centering
-                \begin{minipage}[t]{0.49\textwidth} \
-                    \vspace{0pt}
-                    \begin{align*}
-                            & \frac{dP}{dt} + 5tP = P + 2t - 2 \\
-                            & \frac{dP}{dt} + (5t-1)P =  2t - 2 \\
-                            & P(t) = 5t-1, \quad H(t) = 2t -2 \\
-                            & \mu(t) = e^{\int P(t) dt} \\
-                            & \mu(t) = e^{\int 5t-1 dt} \\
-                            & \mu(t) = e^{\frac{5t^2}{2} - t} \\
-                            & \mu(t) = e^{\frac{5}{2}\left(t^2-\frac{2}{5}t+\frac{1}{25}\right) - \frac{1}{10}}\\
-                            & \text{We don't care about the constant } e^{-\frac{1}{10}}\\\\ \\
-            \Longrightarrow & \mu(t) = e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} \\
-                            & \mu(t) \left(\frac{dP}{dt} + (5t-1)P =  2t - 2\right) \\
-                            \Longrightarrow & \frac{d}{dt} (\mu(t) P) = \mu(t) (2t - 2) \\
-                                    & \int \frac{d}{dt} (\mu(t) P) dt = \int \mu(t) (2t - 2) dt \\
-                                    & \mu(t) P = \int e^{\frac{5t^2}{2} - t} (2t-2) dt 
-                    \end{align*}    
-                \end{minipage}  
-                \hfill
-                \begin{minipage}[t]{0.49\textwidth}
-                        \vspace{0pt}
-                                             \begin{align*}
-                                    & \mu(t) P = \int e^{\frac{5t^2}{2} - t} (2t-2) dt  \\
-                                    & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P = \int e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} (2t-2) dt \\
-                                    & u = t - \frac{1}{5} \Longrightarrow t = u + \frac{1}{5} \\
-                                    & dt = du, \quad (2t-2) = (2u - \frac{8}{5}) \\\\
-                                    & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P =  \int \left(2u - \frac{8}{5}\right) e^{\frac{5}{2}u^2} du  \\
-                                    & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P =  \left(\int 2u e^{\frac{5}{2}u^2} du - \frac{8}{5} \int e^{\frac{5}{2}u^2} du  \right) \\
-                                    & v = u^2 \Longrightarrow dv = 2u \ du \\\\
-                                    & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P = \int e^{\frac{5}{2}v} dv  - \frac{8}{5} \int e^{\frac{5}{2}u^2} du \\
-                                    & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P = \frac{2}{5}e^{\frac{5}{2} u^2} - \frac{8}{5} \int e^{\left(\sqrt{\frac{5}{2}}u\right)^2} du \\
-                                    & m = \sqrt{\frac{5}{2}}u \Longrightarrow \sqrt{\frac{2}{5}} dm = du  \\
-                                    & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P = \frac{2}{5}e^{\frac{5}{2} u^2} - \frac{8}{5} \int e^{m^2} \sqrt{\frac{2}{5}} dm  \\\\
-                                    & \text{Remark: } \mathrm{erfi}(x) = \frac{2}{\sqrt{\pi}} \int_{0}^{x} e^{t^2} dt  \\
-                                    & C \cdot \mathrm{erfi}(x) = C \frac{2}{\sqrt{\pi}} \int_{0}^{x} e^{t^2} dt = \int e^{m^2} du \\
-                                    & C = \frac{\sqrt{\pi}}{2} \\
-                                    & 
-                        \end{align*}
-                \end{minipage}
-                \vspace{-0.1cm}
-                \begin{align*}
-                    \Longrightarrow e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P &= \frac{2}{5}e^{\frac{5}{2} u^2} - \frac{\sqrt{\pi}}{2} \frac{8}{5} \sqrt{\frac{2}{5}}\mathrm{erfi}(m) + C \\
-                    e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P &= \frac{2}{5}e^{\frac{5}{2} \left(t - \frac{1}{5} \right)^2} - \frac{4}{5} \sqrt{\frac{2\pi}{5}} \mathrm{erfi}\left(\sqrt{\frac{5}{2}} \left(t^2-\frac{1}{5}\right)\right) + C \\
-                    & \boxed{P = \frac{2}{5} - \frac{4}{5} \sqrt{\frac{2\pi}{5}} \mathrm{erfi}\left(\sqrt{\frac{5}{2}} \left(t^2-\frac{1}{5}\right)\right)e^{-\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} + C e^{-\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2}}
-                \end{align*}
-        \end{figure}
-    \end{solution}
+          \begin{solution} \
+              To approach this problem, we must first put it into the standard
+              first order linear equation $y' + P(x)y = H(x)$. After that, we will find
+              the integrating factor $\mu(x)$.
 
-    \newpage
+              \begin{figure}[h]
+                  \centering
+                  \begin{minipage}[t]{0.49\textwidth} \
+                      \vspace{0pt}
+                      \begin{align*}
+                                          & \frac{dP}{dt} + 5tP = P + 2t - 2                                                  \\
+                                          & \frac{dP}{dt} + (5t-1)P =  2t - 2                                                 \\
+                                          & P(t) = 5t-1, \quad H(t) = 2t -2                                                   \\
+                                          & \mu(t) = e^{\int P(t) dt}                                                         \\
+                                          & \mu(t) = e^{\int 5t-1 dt}                                                         \\
+                                          & \mu(t) = e^{\frac{5t^2}{2} - t}                                                   \\
+                                          & \mu(t) = e^{\frac{5}{2}\left(t^2-\frac{2}{5}t+\frac{1}{25}\right) - \frac{1}{10}} \\
+                                          & \text{We don't care about the constant } e^{-\frac{1}{10}}                        \\\\ \\
+                          \Longrightarrow & \mu(t) = e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2}                            \\
+                                          & \mu(t) \left(\frac{dP}{dt} + (5t-1)P =  2t - 2\right)                             \\
+                          \Longrightarrow & \frac{d}{dt} (\mu(t) P) = \mu(t) (2t - 2)                                         \\
+                                          & \int \frac{d}{dt} (\mu(t) P) dt = \int \mu(t) (2t - 2) dt                         \\
+                                          & \mu(t) P = \int e^{\frac{5t^2}{2} - t} (2t-2) dt
+                      \end{align*}
+                  \end{minipage}
+                  \hfill
+                  \begin{minipage}[t]{0.49\textwidth}
+                      \vspace{0pt}
+                      \begin{align*}
+                           & \mu(t) P = \int e^{\frac{5t^2}{2} - t} (2t-2) dt                                                                                              \\
+                           & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P = \int e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} (2t-2) dt                                \\
+                           & u = t - \frac{1}{5} \Longrightarrow t = u + \frac{1}{5}                                                                                       \\
+                           & dt = du, \quad (2t-2) = (2u - \frac{8}{5})                                                                                                    \\\\
+                           & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P =  \int \left(2u - \frac{8}{5}\right) e^{\frac{5}{2}u^2} du                                   \\
+                           & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P =  \left(\int 2u e^{\frac{5}{2}u^2} du - \frac{8}{5} \int e^{\frac{5}{2}u^2} du  \right)      \\
+                           & v = u^2 \Longrightarrow dv = 2u \ du                                                                                                          \\\\
+                           & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P = \int e^{\frac{5}{2}v} dv  - \frac{8}{5} \int e^{\frac{5}{2}u^2} du                          \\
+                           & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P = \frac{2}{5}e^{\frac{5}{2} u^2} - \frac{8}{5} \int e^{\left(\sqrt{\frac{5}{2}}u\right)^2} du \\
+                           & m = \sqrt{\frac{5}{2}}u \Longrightarrow \sqrt{\frac{2}{5}} dm = du                                                                            \\
+                           & e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P = \frac{2}{5}e^{\frac{5}{2} u^2} - \frac{8}{5} \int e^{m^2} \sqrt{\frac{2}{5}} dm             \\\\
+                           & \text{Remark: } \mathrm{erfi}(x) = \frac{2}{\sqrt{\pi}} \int_{0}^{x} e^{t^2} dt                                                               \\
+                           & C \cdot \mathrm{erfi}(x) = C \frac{2}{\sqrt{\pi}} \int_{0}^{x} e^{t^2} dt = \int e^{m^2} du                                                   \\
+                           & C = \frac{\sqrt{\pi}}{2}                                                                                                                      \\
+                           &
+                      \end{align*}
+                  \end{minipage}
+                  \vspace{-0.1cm}
+                  \begin{align*}
+                      \Longrightarrow e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P & = \frac{2}{5}e^{\frac{5}{2} u^2} - \frac{\sqrt{\pi}}{2} \frac{8}{5} \sqrt{\frac{2}{5}}\mathrm{erfi}(m) + C                                                                                                                             \\
+                      e^{\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} P                 & = \frac{2}{5}e^{\frac{5}{2} \left(t - \frac{1}{5} \right)^2} - \frac{4}{5} \sqrt{\frac{2\pi}{5}} \mathrm{erfi}\left(\sqrt{\frac{5}{2}} \left(t^2-\frac{1}{5}\right)\right) + C                                                         \\
+                                                                                      & \boxed{P = \frac{2}{5} - \frac{4}{5} \sqrt{\frac{2\pi}{5}} \mathrm{erfi}\left(\sqrt{\frac{5}{2}} \left(t^2-\frac{1}{5}\right)\right)e^{-\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2} + C e^{-\frac{5}{2}\left(t^2-\frac{1}{5}\right)^2}}
+                  \end{align*}
+              \end{figure}
+          \end{solution}
+
+          \newpage
     \item (7 points) Solve the equation below
-    $$
-    2L\frac{di}{dt} + 3Ri = E, i(0) = i_0
-    $$
-    where $L, R$ and $E$ are constants. 
+          $$
+              2L\frac{di}{dt} + 3Ri = E, i(0) = i_0
+          $$
+          where $L, R$ and $E$ are constants.
 
-    \begin{solution}
-        \begin{align*}
-            & 2L\frac{di}{dt} + 3Ri = E, i(0) = i_0 \\
-            & \frac{di}{dt} + \frac{3R}{2L}i = \frac{E}{2L} \\
-            & \mu(t) = e^{\frac{3R}{2L}t} \\\\
-            & \mu(t) \left(\frac{di}{dt} + \frac{3R}{2L}i = \frac{E}{2L} \right)\\    
-            \Longrightarrow & \frac{d}{dt} (e^{\frac{3R}{2L}t} i) = e^{\frac{3R}{2L}t} \frac{E}{2L} \\
-            & e^{\frac{3R}{2L}t} i = \int e^{\frac{3R}{2L}t} \frac{E}{2L} dt \\
-            & e^{\frac{3R}{2L}t} i = \frac{\cancel{2L}}{3R} e^{\frac{3R}{2L}t} \frac{E}{\cancel{2L}} + C \\
-            & i(t) = \frac{E}{3R} + C e^{-\frac{3R}{2L}t} \\\\
-            & i(0) = i_0 = \frac{E}{3R} + C \\
-            & C = i_0 - \frac{E}{3R} \\
-            \Longrightarrow & \boxed{i(t)  = \frac{E}{3R} + \left(i_0 - \frac{E}{3R}\right) e^{-\frac{3R}{2L}t}}
-        \end{align*}
+          \begin{solution}
+              \begin{align*}
+                                  & 2L\frac{di}{dt} + 3Ri = E, i(0) = i_0                                                      \\
+                                  & \frac{di}{dt} + \frac{3R}{2L}i = \frac{E}{2L}                                              \\
+                                  & \mu(t) = e^{\frac{3R}{2L}t}                                                                \\\\
+                                  & \mu(t) \left(\frac{di}{dt} + \frac{3R}{2L}i = \frac{E}{2L} \right)                         \\
+                  \Longrightarrow & \frac{d}{dt} (e^{\frac{3R}{2L}t} i) = e^{\frac{3R}{2L}t} \frac{E}{2L}                      \\
+                                  & e^{\frac{3R}{2L}t} i = \int e^{\frac{3R}{2L}t} \frac{E}{2L} dt                             \\
+                                  & e^{\frac{3R}{2L}t} i = \frac{\cancel{2L}}{3R} e^{\frac{3R}{2L}t} \frac{E}{\cancel{2L}} + C \\
+                                  & i(t) = \frac{E}{3R} + C e^{-\frac{3R}{2L}t}                                                \\\\
+                                  & i(0) = i_0 = \frac{E}{3R} + C                                                              \\
+                                  & C = i_0 - \frac{E}{3R}                                                                     \\
+                  \Longrightarrow & \boxed{i(t)  = \frac{E}{3R} + \left(i_0 - \frac{E}{3R}\right) e^{-\frac{3R}{2L}t}}
+              \end{align*}
 
-    \end{solution}
+          \end{solution}
 
     \item (7 points) Solve the equation below
-    $$
-    \cos^2x \sin x \frac{dy}{dx} + \left(\cos^3x\right)y= 4
-    $$
+          $$
+              \cos^2x \sin x \frac{dy}{dx} + \left(\cos^3x\right)y= 4
+          $$
 
-    \begin{solution}
-        \begin{align*}
-            & \cos^2x \sin x \frac{dy}{dx} + \left(\cos^3x\right)y= 4 \\
-            & \frac{dy}{dx} + \left(\cot x \right)y= 4 \sec^2 x \csc x\\
-            & \mu(x) = e^{\ln |\sin x|} = \sin x \\\\
-            & \mu(x)\left(\frac{dy}{dx} + \left(\cot x \right)y= 4 \sec^2 x \csc x\right)\\
-        \Longrightarrow    & \frac{d}{dx} (e^{\sin x} y) = \cancel{\sin x} 4 \sec^2 x \cancel{\csc x} \\
-            & y \sin x  = \int \sec^2 x dx \\
-            & y \sin x  = \tan x + C \\
-            \Longrightarrow & \boxed{y(x) = 4\sec{x}+ C \csc x}
-        \end{align*}
-    \end{solution}
+          \begin{solution}
+              \begin{align*}
+                                  & \cos^2x \sin x \frac{dy}{dx} + \left(\cos^3x\right)y= 4                     \\
+                                  & \frac{dy}{dx} + \left(\cot x \right)y= 4 \sec^2 x \csc x                    \\
+                                  & \mu(x) = e^{\ln |\sin x|} = \sin x                                          \\\\
+                                  & \mu(x)\left(\frac{dy}{dx} + \left(\cot x \right)y= 4 \sec^2 x \csc x\right) \\
+                  \Longrightarrow & \frac{d}{dx} (e^{\sin x} y) = \cancel{\sin x} 4 \sec^2 x \cancel{\csc x}    \\
+                                  & y \sin x  = \int \sec^2 x dx                                                \\
+                                  & y \sin x  = \tan x + C                                                      \\
+                  \Longrightarrow & \boxed{y(x) = 4\sec{x}+ C \csc x}
+              \end{align*}
+          \end{solution}
 
-    \newpage
+          \newpage
     \item (10 points) Solve the equation below
-    $$
-    (x+1) \frac{dy}{dx} + (x+2)y = 2xe^{-x}
-    $$
+          $$
+              (x+1) \frac{dy}{dx} + (x+2)y = 2xe^{-x}
+          $$
 
-    \begin{solution}
-        \begin{align*}
-            & (x+1) \frac{dy}{dx} + (x+2)y = 2xe^{-x} \\
-            & \frac{dy}{dx} + \frac{x+2}{x+1}y = \frac{2xe^{-x}}{x+1} \\
-            & \mu(x) = e^{\int \frac{x+2}{x+1} dx} \\
-            & \mu(x) = e^{\int \frac{x+1+1}{x+1} dx} \\
-            & \mu(x) = e^{\int 1 + \frac{1}{x+1} dx} \\
-            & \mu(x) = e^{x+\ln|x+1|} = (x+1)e^x \\\\
-            & \mu(x) \left(\frac{dy}{dx} + \frac{x+2}{x+1}y = \frac{2xe^{-x}}{x+1}\right)\\
-            & \left((x+1)e^x\right) \left(\frac{dy}{dx} + \frac{x+2}{x+1}y = \frac{2xe^{-x}}{x+1}\right)\\
-        \Longrightarrow    & \frac{d}{dx} \left((x+1)e^x y \right) = \cancel{(x+1) e^x} \frac{2x\cancel{e^{-x}}}{\cancel{x+1}} \\
-            & (x+1)e^x y = \int 2x dx \\
-           \Longrightarrow & \boxed{y = \frac{x^2 + C}{(x+1)e^x}}
-        \end{align*}
-    \end{solution}
+          \begin{solution}
+              \begin{align*}
+                                  & (x+1) \frac{dy}{dx} + (x+2)y = 2xe^{-x}                                                           \\
+                                  & \frac{dy}{dx} + \frac{x+2}{x+1}y = \frac{2xe^{-x}}{x+1}                                           \\
+                                  & \mu(x) = e^{\int \frac{x+2}{x+1} dx}                                                              \\
+                                  & \mu(x) = e^{\int \frac{x+1+1}{x+1} dx}                                                            \\
+                                  & \mu(x) = e^{\int 1 + \frac{1}{x+1} dx}                                                            \\
+                                  & \mu(x) = e^{x+\ln|x+1|} = (x+1)e^x                                                                \\\\
+                                  & \mu(x) \left(\frac{dy}{dx} + \frac{x+2}{x+1}y = \frac{2xe^{-x}}{x+1}\right)                       \\
+                                  & \left((x+1)e^x\right) \left(\frac{dy}{dx} + \frac{x+2}{x+1}y = \frac{2xe^{-x}}{x+1}\right)        \\
+                  \Longrightarrow & \frac{d}{dx} \left((x+1)e^x y \right) = \cancel{(x+1) e^x} \frac{2x\cancel{e^{-x}}}{\cancel{x+1}} \\
+                                  & (x+1)e^x y = \int 2x dx                                                                           \\
+                  \Longrightarrow & \boxed{y = \frac{x^2 + C}{(x+1)e^x}}
+              \end{align*}
+          \end{solution}
 
-    \newpage
+          \newpage
     \item (16 points) Solve the equation below
-    $$
-    \frac{dy}{dx} + 6xy = f(x)
-    $$
-    where
-    $$
-    f(x) = 
-    \begin{cases} 
-    x^2 & x < 1 \\[2mm]
-    2x - 1 & x \ge 1
-    \end{cases}
-    $$
-    Graph the right side and one of the the solutions on separate graphs.
+          $$
+              \frac{dy}{dx} + 6xy = f(x)
+          $$
+          where
+          $$
+              f(x) =
+              \begin{cases}
+                  x^2    & x < 1   \\[2mm]
+                  2x - 1 & x \ge 1
+              \end{cases}
+          $$
+          Graph the right side and one of the the solutions on separate graphs.
 
-    \begin{solution} \ \
+          \begin{solution} \ \
 
-        \begin{figure}[h]
-                \centering
-                \begin{minipage}[t]{0.48\textwidth} \
-                    \vspace{0pt}
-                        \begin{align*}
-                                    & \frac{dy}{dx} + 6xy = 2x - 1, \ x \ge 1 \\
-                                    & \mu(x) = e^{3x^2} \\
-                                    & \frac{d}{dx} (e^{3x^2} y) = e^{3x^2} (2x - 1) \\
-                                    & e^{3x^2} y = \int e^{3x^2} (2x - 1) dx \\
-                                    & e^{3x^2} y = \int 2x e^{3x^2} - e^{3x^2} dx \\
-                                    & e^{3x^2} y = \frac{1}{3} e^{3x^2} - \frac{1}{2}\sqrt{\frac{\pi}{3}} \mathrm{erfi}\left(\sqrt{3}x\right) + C \\
-                                \Longrightarrow   & \boxed{y(x) = \frac{1}{3} - \frac{1}{2}\sqrt{\frac{\pi}{3}} \mathrm{erfi}\left(\sqrt{3}x\right) e^{-3x^2} + C_1e^{-3x^2}, \quad x \ge 1 }
-                        \end{align*}
-                \end{minipage}  
-                \hfill
-                \begin{minipage}[t]{0.48\textwidth}
-                        \vspace{0pt}
-                        \begin{align*}
-                            & \frac{dy}{dx} + 6xy = x^2, \ x < 1 \\
-                            & \mu(x) = e^{3x^2} \\
-                            & \frac{d}{dx} (e^{3x^2} y) = e^{3x^2} x^2 \\
-                            & e^{3x^2} y = \int e^{3x^2} x^2 dx \\
-                            & u = x, dv = x e^{3x^2} dx \\
-                            & du = dx, v = \frac{1}{6} e^{3x^2}    \\
-                            & e^{3x^2} y = \frac{1}{6} xe^{3x^2} - \int \frac{1}{6} e^{3x^2} dx, \ u = \sqrt{3}x, \ \frac{du}{\sqrt{3}} = dx \\
-                            & e^{3x^2} y = \frac{1}{6} xe^{3x^2} - \frac{1}{12} \sqrt{\frac{\pi}{3}} \mathrm{erfi}(\sqrt{3}x) \\
-                            \Longrightarrow & \boxed{y(x) = \frac{x}{6} - \frac{\sqrt{\pi}\mathrm{erfi}(\sqrt{3}x)}{12 \sqrt{3}e^{3x^2}} + C_2e^{-3x^2}, \quad x < 1}
-                        \end{align*}    
-                \end{minipage}
-        \end{figure}
+              \begin{figure}[h]
+                  \centering
+                  \begin{minipage}[t]{0.48\textwidth} \
+                      \vspace{0pt}
+                      \begin{align*}
+                                          & \frac{dy}{dx} + 6xy = 2x - 1, \ x \ge 1                                                                                                   \\
+                                          & \mu(x) = e^{3x^2}                                                                                                                         \\
+                                          & \frac{d}{dx} (e^{3x^2} y) = e^{3x^2} (2x - 1)                                                                                             \\
+                                          & e^{3x^2} y = \int e^{3x^2} (2x - 1) dx                                                                                                    \\
+                                          & e^{3x^2} y = \int 2x e^{3x^2} - e^{3x^2} dx                                                                                               \\
+                                          & e^{3x^2} y = \frac{1}{3} e^{3x^2} - \frac{1}{2}\sqrt{\frac{\pi}{3}} \mathrm{erfi}\left(\sqrt{3}x\right) + C                               \\
+                          \Longrightarrow & \boxed{y(x) = \frac{1}{3} - \frac{1}{2}\sqrt{\frac{\pi}{3}} \mathrm{erfi}\left(\sqrt{3}x\right) e^{-3x^2} + C_1e^{-3x^2}, \quad x \ge 1 }
+                      \end{align*}
+                  \end{minipage}
+                  \hfill
+                  \begin{minipage}[t]{0.48\textwidth}
+                      \vspace{0pt}
+                      \begin{align*}
+                                          & \frac{dy}{dx} + 6xy = x^2, \ x < 1                                                                                      \\
+                                          & \mu(x) = e^{3x^2}                                                                                                       \\
+                                          & \frac{d}{dx} (e^{3x^2} y) = e^{3x^2} x^2                                                                                \\
+                                          & e^{3x^2} y = \int e^{3x^2} x^2 dx                                                                                       \\
+                                          & u = x, dv = x e^{3x^2} dx                                                                                               \\
+                                          & du = dx, v = \frac{1}{6} e^{3x^2}                                                                                       \\
+                                          & e^{3x^2} y = \frac{1}{6} xe^{3x^2} - \int \frac{1}{6} e^{3x^2} dx, \ u = \sqrt{3}x, \ \frac{du}{\sqrt{3}} = dx          \\
+                                          & e^{3x^2} y = \frac{1}{6} xe^{3x^2} - \frac{1}{12} \sqrt{\frac{\pi}{3}} \mathrm{erfi}(\sqrt{3}x)                         \\
+                          \Longrightarrow & \boxed{y(x) = \frac{x}{6} - \frac{\sqrt{\pi}\mathrm{erfi}(\sqrt{3}x)}{12 \sqrt{3}e^{3x^2}} + C_2e^{-3x^2}, \quad x < 1}
+                      \end{align*}
+                  \end{minipage}
+              \end{figure}
 
-        \begin{figure}[h]
-            \begin{minipage}[t]{0.48\textwidth}
-                \begin{tikzpicture}
-                    \begin{axis}[my style, xmin = 0, ymin = 0, ymax = 0.5]
-                         \addplot[domain=1:5,  samples = 100, red]{1/3 - 1/2*sqrt(pi/3)*erfi(sqrt(3)*x)*exp(-3*x^2)};
-                        
-                    \end{axis}
-                \end{tikzpicture}
-                \caption{Right Graph of solution curve when $C_1 = 0$}
-                
-            \end{minipage}
-            \hfill
-            \begin{minipage}[t]{0.48\textwidth}
-                \begin{tikzpicture}
-                    \begin{axis}[my style, ymin = 0, ymax = 0.75]
-                        \addplot[domain=1:5,  samples = 100, red]{1/3 - 1/2*sqrt(pi/3)*erfi(sqrt(3)*x)*exp(-3*x^2)-0.015};
-                        \addplot[domain=-5:1, samples = 100, blue]{x/6 - (sqrt(pi)*erfi(sqrt(3)*x))/(12*sqrt(3)*exp(3*x^2)) + 0.503611718084*exp(-3*x^2) };
-                    \end{axis}
-                \end{tikzpicture}
-                \caption{Graph of both solution curves when $C_1 = 0$ \newline $C_2 = 0.503611718084$}
-            \end{minipage}
-        \end{figure}
+              \begin{figure}[h]
+                  \begin{minipage}[t]{0.48\textwidth}
+                      \begin{tikzpicture}
+                          \begin{axis}[my style, xmin = 0, ymin = 0, ymax = 0.5]
+                              \addplot[domain=1:5,  samples = 100, red]{1/3 - 1/2*sqrt(pi/3)*erfi(sqrt(3)*x)*exp(-3*x^2)};
 
-        \begin{align*}
-            & \boxed{y(x) = 
-    \begin{cases} 
-    \frac{x}{6} - \frac{\sqrt{\pi}\mathrm{erfi}(\sqrt{3}x)}{12 \sqrt{3}e^{3x^2}} + C_2e^{-3x^2} & x < 1 \\[5mm]
-    \frac{1}{3} - \frac{1}{2}\sqrt{\frac{\pi}{3}} \mathrm{erfi}\left(\sqrt{3}x\right) e^{-3x^2} + C_1e^{-3x^2} & x \ge 1
-    \end{cases}}
-        \end{align*}
+                          \end{axis}
+                      \end{tikzpicture}
+                      \caption{Right Graph of solution curve when $C_1 = 0$}
 
+                  \end{minipage}
+                  \hfill
+                  \begin{minipage}[t]{0.48\textwidth}
+                      \begin{tikzpicture}
+                          \begin{axis}[my style, ymin = 0, ymax = 0.75]
+                              \addplot[domain=1:5,  samples = 100, red]{1/3 - 1/2*sqrt(pi/3)*erfi(sqrt(3)*x)*exp(-3*x^2)-0.015};
+                              \addplot[domain=-5:1, samples = 100, blue]{x/6 - (sqrt(pi)*erfi(sqrt(3)*x))/(12*sqrt(3)*exp(3*x^2)) + 0.503611718084*exp(-3*x^2) };
+                          \end{axis}
+                      \end{tikzpicture}
+                      \caption{Graph of both solution curves when $C_1 = 0$ \newline $C_2 = 0.503611718084$}
+                  \end{minipage}
+              \end{figure}
 
+              \begin{align*}
+                   & \boxed{y(x) =
+                      \begin{cases}
+                          \frac{x}{6} - \frac{\sqrt{\pi}\mathrm{erfi}(\sqrt{3}x)}{12 \sqrt{3}e^{3x^2}} + C_2e^{-3x^2}                & x < 1   \\[5mm]
+                          \frac{1}{3} - \frac{1}{2}\sqrt{\frac{\pi}{3}} \mathrm{erfi}\left(\sqrt{3}x\right) e^{-3x^2} + C_1e^{-3x^2} & x \ge 1
+                      \end{cases}}
+              \end{align*}
 
-    \end{solution}
+          \end{solution}
 \end{enumerate}
 
-\end{document} 
+\end{document}
