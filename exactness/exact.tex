@@ -57,8 +57,8 @@ This is not a formula but this is the general solving practice. Can be applied f
 \subsection{Luke Rawling shortcut method}
 
 Simply just take the derivatives instead of that weird definition method. You use pattern
-recognition to see which one is $f(x)$, the functions of $x$ are $h(x)$, and the functions of $y$ are $g(y)$.
-This is the process and assume $M_y = N_x$ or the ODE is exact in English.
+recognition to see which one is a function of both $x$ and $y$ which is our $f(x, y)$, the functions of $x$ are $h(x)$, and the functions of $y$ are $g(y)$.
+This is the process and assume $M_y = N_x$ or the ODE is exact in English. You may need to seperate out terms to isolate them.
 
 \begin{align*}
     & M(x,y) dx + N(x,y) dy = 0 \\
@@ -77,6 +77,7 @@ Example:
    & \int (y-1)dx +\int (x + 1)dy = 0 \\
    & xy-y  + xy +x  = 0 \\
    & 2xy -y + x  = 0 \\
+   & xy \text{ is our function with both } x \text{ and }y, \quad g(y) = -y, h(x) = x\\
    & 2f(x,y) + g(y) + h(x) = 0 \\
    \Longrightarrow & \boxed{xy - y + x = C}
 \end{align*}
