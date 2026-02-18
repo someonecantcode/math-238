@@ -48,9 +48,7 @@ Let us start back with this equation instead and work from there.
 
 $$  \vec{F}_{\text{net}} x = \int \vec{F}_{\text{net}} \, dx + \int x \, d(\vec{F}_{\text{net}}) $$
 
-In structurual mechanics, we deal with strain alongside complementary strain energy. 
-With the Crotti-Engesser Theorem,
-
+In structurual mechanics, we deal with both strain and complementary strain energy alongside work.
 
 \begin{definition}
     Strain Energy 
@@ -62,14 +60,37 @@ With the Crotti-Engesser Theorem,
 \begin{definition}
     Complementary Strain Energy
     \begin{equation}
-        U^{*} = \int x \, d\vec{F}_{\text{net}}
+        C = \int x \, d\vec{F}_{\text{net}}
     \end{equation}
 \end{definition}
 
-We can create a graph that results to the exact same thing we started with.
+\begin{figure}[h]
+                  \centering
+                  \begin{minipage}[h]{0.45\textwidth} \
+                      \vspace{0pt}
+                        \includegraphics[width=0.75\textwidth, keepaspectratio]{linear.png}
+                        \caption{Load-deflection curve for a linearly elastic member.}
+                  \end{minipage}
+                  \begin{minipage}[h]{0.45\textwidth}
+                      \vspace{0pt}
+                        \includegraphics[width=0.75\textwidth, keepaspectratio]{nonlinear.png}
+                        \caption{Load-deflection cruve for a non-linearly elastic member}
+                  \end{minipage}
+\end{figure}
+\cite{megson2005structural}
+
+Let the y axis be in terms of $P$, a force and a displacement $\Delta$. To calculate the area the of our 
+rectangle, we can use the same process from \ref{section:visual}.
+
+\begin{align*}
+    & \vec{F}_{\text{net}} x = \int \vec{F}_{\text{net}} \, dx + \int x \, d(\vec{F}_{\text{net}}) \\
+    & \text{Work} = U + C
+\end{align*}
+
+This shows that integration by parts in the balance of forces is about strain energy within internal structures 
+alongside external structures.
 
 
-virtual work and complementary virtual work  
 % https://pkel015.connect.amazon.auckland.ac.nz/SolidMechanicsBooks/Part_I/BookSM_Part_I/08_Energy/08_Energy_03_Complementary_Strain_Energy.pdf
-
+% http://freeit.free.fr/Knovel/Structural%20and%20Stress%20Analysis/31961_15.pdf
 
