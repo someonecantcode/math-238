@@ -1,7 +1,10 @@
 \documentclass{article}
 \usepackage{amsmath, amssymb, amsthm, graphicx}
-\usepackage{pgfplots, tikz, cancel, framed, hyperref}
+\usepackage{pgfplots, tikz, cancel, framed}
+\usepackage{biblatex}
+\usepackage[colorlinks=false,linkcolor=blue,filecolor=magenta,urlcolor=cyan, pdfpagemode=FullScreen]{hyperref}
 
+\addbibresource{references.bib}
 \graphicspath{{./Images}}
 
 
@@ -45,7 +48,7 @@
 middle, xlabel={$x$}, ylabel={$y$} }}
 
 %------------------------------
-\title{Connection of Integration by Parts to Balance of Forces \newline MATH 255 \#25972 Professor Rawlings}
+\title{Connection of Integration by Parts to Balance of Forces \newline MATH 255 \#25972 Professor Rawlings} 
 \author{Brendan Tea}
 \date{\today}
 %------------------------------
@@ -56,4 +59,5 @@ middle, xlabel={$x$}, ylabel={$y$} }}
 \include{Chapters/IntegrationbyParts.tex}
 \include{Chapters/BalanceofForces.tex}
 
+\printbibliography[title={References}]
 \end{document}

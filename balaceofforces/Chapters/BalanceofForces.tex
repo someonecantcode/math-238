@@ -20,7 +20,11 @@ physics forces is integration by parts in disguise.
     \end{equation}
 \end{definition}
 
-drafting work work energy theorem
+\subsection{Connection to Integration by Parts}
+
+To arrive back to integration by parts, we will have to do some algebraic manipulation. After which, we will
+use our differential derivation product rule trick.
+
 \begin{align*}
      \vec{F}_{\text{net}} &= 0       \\
      \vec{F}_{\text{net}} \, dx &= 0 \, dx \\
@@ -28,7 +32,44 @@ drafting work work energy theorem
      \vec{F}_{\text{net}} \, x &= C 
 \end{align*}
 
-Using differential form from 1.2.
+Using differential form from \ref{section:differential}.
 \begin{align*}
-    & d(\vec{F}_{\text{net}} x) = \vec{F}_{\text{net}} \, dx + x \, d(\vec{F}_{\text{net}}) + \cancelto{0}{d(C)}
+    & d(\vec{F}_{\text{net}} x) = \vec{F}_{\text{net}} \, dx + x \, d(\vec{F}_{\text{net}}) + \cancelto{0}{d(C)} \\
+    & \int d(\vec{F}_{\text{net}} x) = \int \vec{F}_{\text{net}} \, dx + \int x \, d(\vec{F}_{\text{net}}) \\
+    & \vec{F}_{\text{net}} x = \int \vec{F}_{\text{net}} \, dx + \int x \, d(\vec{F}_{\text{net}}) \\
+    \Longrightarrow & \boxed{\int \vec{F}_{\text{net}} \, dx = \vec{F}_{\text{net}} x - \int x \, d(\vec{F}_{\text{net}})}
 \end{align*}
+
+Just like that, we have the exact same equation. The next question is how should to interpret this.
+
+\subsection{Interpretation}
+Right off the bat, we can recognize the form of work. Now, we're left with this weird $\int x \, d(\vec{F}_{\text{net}})$ term. 
+Let us start back with this equation instead and work from there.
+
+$$  \vec{F}_{\text{net}} x = \int \vec{F}_{\text{net}} \, dx + \int x \, d(\vec{F}_{\text{net}}) $$
+
+In structurual mechanics, we deal with strain alongside complementary strain energy. 
+With the Crotti-Engesser Theorem,
+
+
+\begin{definition}
+    Strain Energy 
+    \begin{equation}
+        U = \int \vec{F}_{\text{net}} \, dx
+    \end{equation}
+\end{definition}
+
+\begin{definition}
+    Complementary Strain Energy
+    \begin{equation}
+        U^{*} = \int x \, d\vec{F}_{\text{net}}
+    \end{equation}
+\end{definition}
+
+We can create a graph that results to the exact same thing we started with.
+
+
+virtual work and complementary virtual work  
+% https://pkel015.connect.amazon.auckland.ac.nz/SolidMechanicsBooks/Part_I/BookSM_Part_I/08_Energy/08_Energy_03_Complementary_Strain_Energy.pdf
+
+
