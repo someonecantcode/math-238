@@ -1,0 +1,68 @@
+\section{Integration by Parts}
+If you're ever randomly asked  in a calculus class, your 
+best bet is probably integration by parts.
+We're often taught in school to recognize a specific form and
+to plug it into a formula. From that point onward, we usually move on 
+and never thing much more. 
+
+\begin{definition}
+    The formula for Integration by Parts is defined by the following:
+    \begin{equation} \label{eq:intbyparts}
+        \int u \, dv \ =\ uv - \int v \, du
+    \end{equation}
+\end{definition}
+
+This is usually derived through the specific form.
+\begin{align*}
+    & \int u(x) v'(x) \, dx = u(x) v(x) - \int u'(x) v(x) \, dx \\
+    & \text{Let } u = u(x), \ du = u'(x) \,dx, \ v = v(x),  dv = v'(x) \, dx \\
+  \Longrightarrow &  \int u \, dv \ =\ uv - \int v \, du
+\end{align*}
+
+\subsection{Visual Derivation}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{visual.png}
+    \caption{$u$ $v$ visual.}
+\end{figure}
+
+Let the area of the rectangular be calculated through width times height and the curve being
+in a function of $u$ and $v$. Additionally, let the axes be $u$ and $v$. Then, by simply adding up the 
+parts of the whole, we get the area of that same rectangle.
+
+\begin{align*}
+    & u(v) \, v(u) = \int u(v) \, dv  + \int v(u) \, du \\
+    & \text{Rearranging} \\
+    & \int u(v) \, dv \ =\ u(v) \, v(u) - \int v(u) \, du \\ 
+    \Longrightarrow & \int u \, dv \ =\ uv - \int v \, du
+\end{align*}
+
+\newpage
+\subsubsection{Young's Inequality}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Youngs.png}
+    \caption{The area of the rectangle $a$,$b$ can't be larger than sum of the areas under the functions (red) and (yellow). (WIKIPEDIA)}
+\end{figure}
+
+As a remark, this is process is very similair to Young's inequality for products which states the following:
+
+\begin{equation}
+    a b ~\leq~ \int_0^a f(x)\,dx + \int_0^b f^{-1}(x)\,dx
+\end{equation}
+
+\subsection{Differential Derivation}
+
+Another way (simpler) is simply use the product rule in differential form and integrate.
+After rearranging, you will arrive at the same solution.
+
+\begin{align*}
+    & \text{Given: } u(x), \ v(x) \\
+    & \frac{d}{dx} \left( u(x) \, v(x) \right) = u(x) \, \frac{dv}{dx} + v(x) \, \frac{du}{dx} \\
+    & d \left( u(x) \, v(x) \right) = u(x) \, dv + v(x) \, du \\
+    & \int d\left(u(x) \, v(x)\right) =\ \int u(x) \, dv \ + \int v(x) \, du \\
+    & u(x) \, v(x) =\ \int u(x) \, dv \ + \int v(x) \, du \\
+\Longrightarrow    & \int u \, dv \ =\ uv - \int v \, du
+\end{align*}

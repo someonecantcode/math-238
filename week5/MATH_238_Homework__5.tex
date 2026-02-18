@@ -24,6 +24,9 @@
 \theoremstyle{solution}
 \newtheorem*{solution}{SOLUTION}
 
+\theoremstyle{definition}
+\newtheorem{definition}{DEFINITION}
+
 \usetikzlibrary{calc,shapes}
 
 \newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
@@ -56,6 +59,7 @@ middle, xlabel={$x$}, ylabel={$y$} }}
 In Problems 1, 2, 3, 4, 5, 6, 7, 8, 9, \textbf{10}, 11, \textbf{12}, 13, \textbf{14}, 15, and 16, 
 the indicated function $y_1(x)$ is a solution of the given differential equation. 
 Use reduction of order or formula \eqref{eq:reduction}, as instructed, to find a second solution $y_2(x)$.
+
 
 \begin{equation} \label{eq:reduction}
     y_2(x) = y_1(x) \int \frac{e^{-\int P(x) dx}}{y_{1}^{2}(x)} dx , \quad y''+ P(x)y'+ Q(x)y=0 \tag{5}
