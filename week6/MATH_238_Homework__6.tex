@@ -279,7 +279,7 @@ $\boldsymbol{x \, = \, \pi}$ (\textbf{Problem 42})]
     \begin{align*}
         & C_{1} = -4, \quad C_{2} = 1 \\
         & y_{1g}(x) = C_{1}\cos\left(2 x\right) + C_{2}\sin\left(2 x\right) + 5 \\
-    \Longrightarrow & \boxed{y_{1g}(x) = -4\cos\left(2 x\right) + \sin\left(2 x\right) + 5}
+    \Longrightarrow & \boxed{y_{1}(x) = -4\cos\left(2 x\right) + \sin\left(2 x\right) + 5}
     \end{align*}
 
     Now the same thing for $y_{2}(x)$ for the range of $x \geq \pi$. We should recognize this is just the homogenous, complementary part from $y_{1}(x)$ so 
@@ -298,14 +298,29 @@ $\boldsymbol{x \, = \, \pi}$ (\textbf{Problem 42})]
         & y_{2g}(x) = C_{1}\cos\left(2 x\right) + C_{2}\sin\left(2 x\right) \\
         & y_{2g}(0) = C_{1} \\
         & y_{1}(0) = y_{2}(0) \\
-        & C_{1} = 0 \\\\
+        & C_{1} = 1 \\\\
         & y_{1}'(0) = y_{2}'(0) \\
         & y_{1}'(x) = 8\sin\left(2 x\right) + 2 \cos\left(2 x\right) \\
         & y_{1}'(0) = 2 \\
-        & y_{2g}(x) = -2C_{1}\sin\left(2 x\right) + 2C_{2}\cos\left(2 x\right)
+        & y_{2g}'(x) = -2C_{1}\sin\left(2 x\right) + 2C_{2}\cos\left(2 x\right) \\
+        & y_{2g}'(0) = 2C_{2} \\
+        & y_{1}'(0) = y_{2}'(0) \\
+        & 2 = 2C_{2} \\
+        & C_{2} = 1 \\\\
+        & y_{2g}(x) = C_{1}\cos\left(2 x\right) + C_{2}\sin\left(2 x\right) \\
+        \Longrightarrow & \boxed{y_{2}(x) = \cos\left(2 x\right) + \sin\left(2 x\right)}
     \end{align*}
-\end{solution}
 
+    Combining everything.
+
+    \begin{equation*}
+        \boxed{y(x) = \begin{cases}
+                  -4\cos\left(2 x\right) + \sin\left(2 x\right) + 5    & 0 \leq x \leq \pi  \\[2mm]
+                  \cos\left(2 x\right) + \sin\left(2 x\right)     & x \geq \pi
+              \end{cases}}
+    \end{equation*}
+
+\end{solution}
 
 \section*{Homework for Section 4.6: 50 points}
 \addcontentsline{toc}{section}{Homework for Section 4.3: 50 points}
