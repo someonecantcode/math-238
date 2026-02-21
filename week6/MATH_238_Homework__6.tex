@@ -327,18 +327,91 @@ $\boldsymbol{x \, = \, \pi}$ (\textbf{Problem 42})]
 In Problems 1 - 20 solve each differential equation by 
 variation of parameters.
 
+For second order, we will assume our particular solution comes in this form.
+\begin{equation}
+    y_{p}(x) = u_{1}y_{1} + u_{2}y_{2}
+\end{equation}
+
+After a process, we will arrive with these pairs of equations.
+\begin{align*}
+    \text{Assume: } & u_{1}'(x) y_{1}(x) + u_{2}'(x) y_{2}(x) = 0 \\
+    \Longrightarrow & u_{1}'(x)y_{1}'(x) + u_{2}'(x)y_{2}(x) = f(x)
+\end{align*}
+
+By Cramer's Rule.
+\begin{equation}
+    u_{1}'(x) = \frac{W_{1}}{W}
+\end{equation}
+
+\begin{equation}
+    u_{2}'(x) = \frac{W_{2}}{W}
+\end{equation}
 
 \subsection*{Problem 4.6.4}
 \addcontentsline{toc}{subsection}{Problem 4.6.4}
 \vspace{-0.5cm}
 \begin{flalign*}
-    & \text{Given: } y''+y=\sec \theta \tan \theta& \\
+    & \text{Given: } y''+y=\sec \theta \tan \theta & \\
     & \text{Find:  } y_g(x) &
 \end{flalign*}
 
 \begin{solution}
+We simply use auxiliary equations for our complimentary equation and 
+Cramer's rule to find our $u_{1}'$ and $u_{2}'$ to find our particular solution $y_p(x)$.
 
+Solving for $y_{c}(x)$
+\begin{align*}
+    & y''+y=\sec \theta \tan \theta \\
+    & m^2 + 1 = 0 \\
+    & m = \pm i \\
+    \Longrightarrow & \boxed{y_{c}(x) = C_{1} \cos \left(\theta\right) + C_{2} \sin \left(\theta\right)}
+\end{align*}
+
+Solving for determinants $W, \, W_{1}, \, W_{2}$.
+\begin{align*}
+    & y_{p}(x) = u_{1}y_{1} + u_{2}y_{2} \\
+    & y_{1}(x) =  \cos \left(\theta\right), \ y_{2}(\theta) =  \sin \left(x\right), \ f(\theta) = \sec \theta \tan \theta \\
+    & W = \begin{vmatrix}
+         \phantom{+}\cos \left(\theta\right) & \sin \left(\theta\right) \\
+         -\sin \left(\theta\right) & \cos \left(\theta\right) \\
+    \end{vmatrix} = 1 \\
+    & W_{1} = \begin{vmatrix}
+         0 & \sin \left(\theta\right) \\
+         \sec \theta \tan \theta & \cos \left(\theta\right)  
+    \end{vmatrix} = -\tan^{2} \left(\theta\right) \\
+    & W_{2} = \begin{vmatrix}
+         \phantom{+}\cos \left(\theta\right) & 0 \\
+         -\sin \left(x\right) & \sec \theta \tan \theta
+    \end{vmatrix} = \tan \left(\theta\right)
+\end{align*}
    
+Solving for $u_{1}(\theta)$ and $u_{2}(\theta)$.
+\begin{align*}
+    & u_{1}(\theta) = \int \frac{W_{1}}{W} d\theta \\
+    & u_{1}(\theta) = \int -\tan^{2}\left(\theta\right) d\theta \\
+    & u_{1}(\theta) = \int \left( 1 - \sec^{2}\left(\theta\right) \right) d\theta \\
+    & u_{1}(\theta) = \theta  - \tan\left(\theta\right) \\\\
+    & u_{2}(\theta) = \int \frac{W_{2}}{W} d\theta \\
+    & u_{2}(\theta) = \int \tan\left(\theta\right) d\theta \\
+    & u_{2}(\theta) = \ln |\sec\left(\theta\right)|
+\end{align*}
+
+Solving for $y_p\left(\theta\right)$
+\begin{align*}
+    & y_{p}(x) = u_{1}y_{1} + u_{2}y_{2} \\
+    & y_{p}(x) = \left(\theta  - \tan\left(\theta\right)\right)\left(\cos \left(\theta\right)\right) + \left(\ln |\sec\left(\theta\right)|\right) \left(\sin \left(\theta\right)\right) \\
+    & y_{p}(x) = \theta \cos \left(\theta\right) - \sin \left(\theta\right) + \sin \left(\theta\right) \ln |\sec\left(\theta\right)|
+\end{align*}
+
+Now combine and sum $y_{c}$ and $y_{p}$. Additionally, see how there is a repeated solution $\sin \left(\theta\right)$ 
+that will get swallowed up by constant in $y_{c}$.
+
+\begin{align*}
+    & y_{g}(\theta) = y_{c}(\theta) + y_{p}(\theta) \\
+    & y_{g}(\theta) = C_{1} \cos \left(\theta\right) + C_{2} \sin \left(\theta\right) + \theta \cos \left(\theta\right) \cancel{- \sin \left(\theta\right)} + \sin \left(\theta\right) \ln |\sec\left(\theta\right)| \\
+    \Longrightarrow & \boxed{y_{g}(\theta) = C_{1} \cos \left(\theta\right) + C_{2} \sin \left(\theta\right) + \theta \cos \left(\theta\right) + \sin \left(\theta\right) \ln |\sec\left(\theta\right)|}
+\end{align*}
+
 \end{solution}
 
 
@@ -352,7 +425,8 @@ variation of parameters.
 \end{flalign*}
 
 \begin{solution}
-    
+We simply use auxiliary equations for our complimentary equation and 
+Cramer's rule to find our $u_{1}'$ and $u_{2}'$ to find our particular solution $y_p(x)$.
 \end{solution}
 
 
