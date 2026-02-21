@@ -1,0 +1,177 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, graphicx}
+\usepackage{pgfplots, tikz, cancel, framed, hyperref}
+
+\graphicspath{{./Images}}
+
+
+% \geometry{margin=1in}
+\usepackage[left=.75in, right=.75in, top=0.75in, bottom=1in]{geometry}
+\pgfplotsset{compat=1.18}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0pt}
+
+\newtheoremstyle{solution}
+  {15pt}
+  {15pt}
+  {}
+  {}
+  {\bfseries}
+  {: }
+  { }
+  {}
+
+\theoremstyle{solution}
+\newtheorem*{solution}{SOLUTION}
+
+\theoremstyle{definition}
+\newtheorem{definition}{DEFINITION}
+
+\usetikzlibrary{calc,shapes}
+
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+\pgfmathdeclarefunction{erf}{1}{%
+  \pgfmathparse{(2/sqrt(pi))*((#1) - ((#1)^3)/3 + ((#1)^5)/10 - ((#1)^7)/42 + ((#1)^9)/216)}%
+}
+
+
+\pgfmathdeclarefunction{erfi}{1}{%
+  \pgfmathparse{(2/sqrt(pi))*((#1) + ((#1)^3)/3 + ((#1)^5)/10 + ((#1)^7)/42 + ((#1)^9)/216)}%
+}
+
+
+
+\pgfplotsset{my style/.append style={axis x line=middle, axis y line=
+middle, xlabel={$x$}, ylabel={$y$} }}
+
+% ------------------------------------------------------------
+
+\title{MATH 238 Homework 6}
+\author{Brendan Tea}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section*{Homework for Section 4.4: 50 points}
+\addcontentsline{toc}{section}{Homework for Section 4.2: 50 points}
+\vspace{-0.5cm}
+In Problems 27 - 36 solve the given initial-value problem.
+
+\subsection*{Problem 4.4.30}
+\addcontentsline{toc}{subsection}{Problem 4.4.30}
+\vspace{-0.5cm}
+
+\begin{flalign*}
+    & \text{Given: } y''+4y'+4y=\left(3+x\right)e^{-2x}; \quad y(0) = 2, \ y'(0) = 5& \\
+    & \text{Find:  } \hspace{0.15cm} y(x) &
+\end{flalign*}
+\begin{solution}
+When we are solving for our general solution, we must first solve for our
+complimentary solution, using auxiliary equations, and solve for
+our paricular solution, using the method of undetermined coefficients.
+
+Solving auxiliary equation for $y_c(x)$.
+    \begin{align*}
+        & y''+4y'+4y=0 \\
+        & m^{2}+4m+4=0 \\
+        & m = (m+2)^{2}, \ m = -2, -2 \\
+    \Longrightarrow  & \boxed{y_c(x) = C_{1} e^{-2x} + C_{2} xe^{-2x}}
+    \end{align*}    
+
+Method of undetermined coefficients for $y_p(x)$.
+Notice how there are multiple repeated roots for $e^{--2x}$.
+    \begin{align*}
+    \text{Assume: }     & y_p(x) = x^{2}(Ax+B)e^{-2x} \\
+                        & y_p(x) = (Ax^{3}+Bx^{2})e^{-2x} \\
+                        & y_p'(x) = (3Ax^2 + 2Bx - 2Ax^3 - 2Bx^2)e^{-2x} \\
+                        & y_p'(x) = (-2Ax^3 + 3Ax^2 - 2Bx^2 + 2Bx)e^{-2x} \\
+                        & y_p''(x) = (-6Ax^2 + 6Ax - 4Bx + 2B +4Ax^3-6Ax^2+4Bx^2-4Bx)e^{-2x} \\
+                        & y_p''(x) = (4Ax^3-12Ax^2+4Bx^2 + 6Ax - 8Bx + 2B  )e^{-2x}
+    \end{align*}
+Substitute $y_p(x)$ and solve for constants.
+    \begin{align*}
+        & y_p(x)''+4y_p(x)'+4y_p(x) = \left(3+x\right)e^{-2x} \\
+        & (4Ax^3-12Ax^2+4Bx^2 + 6Ax - 8Bx + 2B  )\cancel{e^{-2x}} + 4(-2Ax^3 + 3Ax^2 - 2Bx^2 + 2Bx)\cancel{e^{-2x}} + 4(Ax^{3}+Bx^{2})\cancel{e^{-2x}} = \left(3+x\right)\cancel{e^{-2x}} \\
+        & (\cancel{4Ax^3}\cancel{-12Ax^2}+\cancel{4Bx^2} + 6Ax \cancel{- 8Bx} + 2B ) + (\cancel{-8Ax^3} + \cancel{12Ax^2} \cancel{-8Bx^2} +\cancel{ 8Bx}) + (\cancel{4Ax^3}+\cancel{4Bx^2}) = 3+x \\
+        & 6Ax + 2B = 3 + x\\
+    \Longrightarrow    & \begin{cases}
+            & 6Ax = x \\
+            & B = 3 \\
+        \end{cases} \\
+        & A = \frac{1}{6}, \ B = 3 \\
+    \Longrightarrow & \boxed{y_p(x) = \left(\frac{1}{6}x^{3}+3x^{2}\right)e^{-2x}}
+    \end{align*}
+
+Combine to create $y_g(x)$
+    \begin{align*}
+        & y_g(x) = y_c(x) + y_p(x)  \\
+    \Longrightarrow    & \boxed{y_g(x) = C_{1} e^{-2x} + C_{2} xe^{-2x} + \left(\frac{1}{6}x^{3}+3x^{2}\right)e^{-2x}}
+    \end{align*}
+
+Now we have to solve the IVP and obtain our constants.
+\end{solution}
+
+\subsection*{Problem 4.4.34}
+\addcontentsline{toc}{subsection}{Problem 4.4.34}
+\vspace{-0.5cm}
+\begin{flalign*}
+    & \text{Given: } \frac{d^{2}x}{dt^{2}} + \omega^{2}x = F_{0} \cos \gamma t; \quad x(0) = 0, \ x'(0) = 0 & \\
+    & \text{Find:  } \hspace{0.15cm} y(x) &
+\end{flalign*}
+
+\subsection*{Problem 4.4.42}
+\vspace{-0.5cm}
+\addcontentsline{toc}{subsection}{Problem 4.4.42}
+In Problems 41 and \textbf{42} solve the given initial-value problem in which 
+the input function $g(x)$ is discontinuous. [\textit{Hint}: Solve each problem on two intervals, and 
+then find a solution so that $y$ and $y'$ are continuous at $x \, = \, \pi / 2$ (Problem 41) and
+$\boldsymbol{x \, = \, \pi}$ (\textbf{Problem 42})]
+
+\begin{flalign*}
+    & \text{Given: } y''+4y=g(x), \ y(0) = 1, \ y'(0) = 2, \ \text{where} & \\
+    & g(x) = \begin{cases}
+                  20    & 0 \leq x \leq \pi  \\[2mm]
+                  0     & x \geq \pi
+              \end{cases} & \\
+    & \text{Find:  } \hspace{0.15cm} y(x) &
+\end{flalign*}
+
+
+
+\section*{Homework for Section 4.6: 50 points}
+\addcontentsline{toc}{section}{Homework for Section 4.3: 50 points}
+In Problems 1 - 20 solve each differential equation by 
+variation of parameters.
+
+
+\subsection*{Problem 4.6.4}
+\addcontentsline{toc}{subsection}{Problem 4.6.4}
+\vspace{-0.5cm}
+\begin{flalign*}
+    & \text{Given: } y''+y=\sec \theta \tan \theta& \\
+    & \text{Find:  } y_g(x) &
+\end{flalign*}
+
+\begin{solution}
+
+   
+\end{solution}
+
+
+
+\subsection*{Problem 4.6.10}
+\addcontentsline{toc}{subsection}{Problem 4.6.10}
+\vspace{-0.5cm}
+\begin{flalign*}
+    & \text{Given: } 4y''-y=e^{\frac{x}{2}} + 3& \\
+    & \text{Find:  } y_g(x) &
+\end{flalign*}
+
+\begin{solution}
+    
+\end{solution}
+
+
+\end{document}
