@@ -224,7 +224,7 @@ then find a solution so that $y$ and $y'$ are continuous at $x \, = \, \pi / 2$ 
 $\boldsymbol{x \, = \, \pi}$ (\textbf{Problem 42})]
 
 \begin{flalign*}
-    & \text{Given: } y''+4y=g(x), \ y(0) = 1, \ y'(0) = 2, \ \text{where} & \\
+    & \text{Given: } y''-2y'+10y=g(x), \ y(0) = 0, \ y'(0) = 0, \ \text{where} & \\
     & g(x) = \begin{cases}
                   20    & 0 \leq x \leq \pi  \\[2mm]
                   0     & x \geq \pi
@@ -241,21 +241,22 @@ $\boldsymbol{x \, = \, \pi}$ (\textbf{Problem 42})]
 
     Solving for $y_{1c}(x)$ for range of $0 \leq x \leq \pi$. 
     \begin{align*}
-        & y'' + 4y = 20 \\
-        & m^2 + 4 = 0 \\
-        & m = \pm 2i \\
-        \Longrightarrow & \boxed{y_{1c}(x) = C_{1}\cos\left(2 x\right) + C_{2}\sin\left(2 x\right)}
+        & y'' - 2y' + 10y = 20 \\
+        & m^2 - 2m + 10 = 0 \\
+        & m = \frac{2\pm \sqrt{4-40}}{2} \\
+        & m = \frac{2 \pm 6i}{2} \\
+        & m = 1 + 3i, 1 - 3i \\
+        \Longrightarrow & \boxed{y_{1c}(x) = e^{x} \left(C_{1}\cos\left(3 x\right) + C_{2}\sin\left(3 x\right)\right)}
     \end{align*}
 
     Solving for $y_{1p}(x)$ for range of $0 \leq x \leq \pi$. 
     \begin{align*}
         \text{Assume: } & y_{1p}(x) = A \\
                         & y_{1p}^{(n)}(x) = 0, \quad n \in \mathbb{Z}^{+}, \ n \geq 1 \\
-                        & y_{1p}'' + 4y_{1p} = 20 \\
-                        & 4A = 20 \\
-                        & A = 5\\
-                        \Longrightarrow & y_{1p}(x) = 5
-    \end{align*}
+                        & \cancel{y_{p}''} - 2\cancel{y_{p}'} + 10y_{p} = 20 \\
+                        & 10A = 20 \\
+                        & A = 2 \\
+                        \Longrightarrow & y_{1p}(x) = 52    \end{align*}
 
     Solving for $y_{1g}(x)$ and $y_{1g}'(x)$.
     \begin{align*}
