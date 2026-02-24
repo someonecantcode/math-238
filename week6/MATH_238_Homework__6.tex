@@ -202,7 +202,7 @@ Plugging in.
         & x_g(0) = C_{1} + \frac{F_{0}}{\omega^{2} - \gamma^{2}} = 0 \\
         & x_g(0) = C_{1} = -\frac{F_{0}}{\omega^{2} - \gamma^{2}} \\
         & x_g'(0) = -\omega C_{1} \sin(\omega (0)) +\omega C_{2} \cos(\omega (0)) - \frac{F_{0} \gamma}{\omega^{2} - \gamma^{2}} \sin(\gamma (0)) \\
-        & x_g'(0) = \omega C_{2} = 0
+        & x_g'(0) = \omega C_{2} = 0 \\
         & x_g'(0) = C_{2} = 0 
     \end{align*}
 
@@ -227,7 +227,7 @@ $\boldsymbol{x \, = \, \pi}$ (\textbf{Problem 42})]
     & \text{Given: } y''-2y'+10y=g(x), \ y(0) = 0, \ y'(0) = 0, \ \text{where} & \\
     & g(x) = \begin{cases}
                   20    & 0 \leq x \leq \pi  \\[2mm]
-                  0     & x \geq \pi
+                  0     & x > \pi
               \end{cases} & \\
     & \text{Find:  } \hspace{0.15cm} y(x) &
 \end{flalign*}
@@ -256,68 +256,79 @@ $\boldsymbol{x \, = \, \pi}$ (\textbf{Problem 42})]
                         & \cancel{y_{p}''} - 2\cancel{y_{p}'} + 10y_{p} = 20 \\
                         & 10A = 20 \\
                         & A = 2 \\
-                        \Longrightarrow & y_{1p}(x) = 52    \end{align*}
+                        \Longrightarrow & y_{1p}(x) = 2    \end{align*}
 
     Solving for $y_{1g}(x)$ and $y_{1g}'(x)$.
     \begin{align*}
         & y_{1g}(x) = y_{1c}(x) + y_{1p}(x) \\
-        & y_{1g}(x) = C_{1}\cos\left(2 x\right) + C_{2}\sin\left(2 x\right) + 5 \\
-        & y_{1g}'(x) = -2C_{1}\sin\left(2 x\right) + 2 C_{2}\cos\left(2 x\right)
+        & y_{1g}(x) = e^{x} \left(C_{1}\cos\left(3 x\right) + C_{2}\sin\left(3 x\right)\right) + 2 \\
+        & y_{1g}'(x) = e^{x} \left(C_{1}\cos\left(3 x\right) + C_{2}\sin\left(3 x\right)\right) + e^{x} \left(-3C_{1}\sin\left(3 x\right) + 3C_{2}\cos\left(3 x\right)\right) \\
+        & y_{1g}'(x) = e^{x} \left(\left(C_{1} + 3C_{2}\right)\cos\left(3 x\right) + \left(C_{2} - 3C_{1}\right)\sin\left(3 x\right)  \right)
     \end{align*}
 
     Plugging in for constants.
     \begin{align*}
-        & y(0) = 1, \ y'(0) = 2 \\
-        & y_{1g}(0) = C_{1}\cos\left(2 (0)\right) + C_{2}\sin\left(2 (0) \right) + 5 = 1 \\
-        & y_{1g}(0) = C_{1} + 5 = 1 \\
-        & y_{1g}(0) = C_{1} = -4 \\
-        & y_{1g}'(0) = -2C_{1}\sin\left(2 (0)\right) + 2 C_{2}\cos\left(2 (0)\right) = 2 \\
-        & y_{1g}'(0) = 2 C_{2} = 2 \\
-        & y_{1g}'(0) = C_{2} = 1
+        & y(0) = 0, \ y'(0) = 0 \\
+        & y_{1g}(0) = \cancel{e^{\left(0\right)}} \left(C_{1}\cos\left(3 \left(0\right)\right) + \cancel{C_{2}\sin\left(3 \left(0\right)\right)}\right) + 2 = 0 \\
+        & y_{1g}(0) = C_{1} + 2 = 0 \\
+        & y_{1g}(0) = C_{1} = -2 \\
+        & y_{1g}'(0) = \cancel{e^{\left(0\right)}} \left(\left(C_{1} + 3C_{2}\right)\cos\left(3 \left(0\right)\right) + \cancel{\left(C_{2} - 3C_{1}\right)\sin\left(3 \left(0\right)\right)}  \right) = 0 \\
+        & y_{1g}'(0) = C_{1} + 3C_{2} = 0 \\
+        & y_{1g}'(0) = (-2) + 3C_{2} = 0 \\
+        & y_{1g}'(0) = C_{2} = \frac{2}{3}
     \end{align*}
 
-    Combine for $y_{1g}(x)$ for range of $0 \leq x \leq \pi$. 
+    Combine for $y_{1}(x)$ for range of $0 \leq x \leq \pi$. 
     \begin{align*}
-        & C_{1} = -4, \quad C_{2} = 1 \\
-        & y_{1g}(x) = C_{1}\cos\left(2 x\right) + C_{2}\sin\left(2 x\right) + 5 \\
-    \Longrightarrow & \boxed{y_{1}(x) = -4\cos\left(2 x\right) + \sin\left(2 x\right) + 5}
+        & C_{1} = -2, \quad C_{2} = \frac{2}{3} \\
+        & y_{1g}(x) = e^{x} \left(C_{1}\cos\left(3 x\right) + C_{2}\sin\left(3 x\right)\right) + 2 \\
+    \Longrightarrow & \boxed{y_{1}(x) = e^{x} \left(-2\cos\left(3 x\right) + \frac{2}{3}\sin\left(3 x\right)\right) + 2}
     \end{align*}
 
-    Now the same thing for $y_{2}(x)$ for the range of $x \geq \pi$. We should recognize this is just the homogenous, complementary part from $y_{1}(x)$ so 
+    Now the same thing for $y_{2}(x)$ for the range of $x > \pi$. We should recognize this is just the homogenous, complementary part from $y_{1}(x)$ so 
     we can skip and state the following. There is no particular solution as it is homogenous.
     \begin{align*}
-        & y'' + 4y = 0 \\
+        & y'' -2y' + 10y= 0 \\
     \Longrightarrow    & y_{2g}(x) = y_{1c}(x) \\
-        & \boxed{y_{2g}(x) = C_{1}\cos\left(2 x\right) + C_{2}\sin\left(2 x\right)}
+        & \boxed{y_{2g}(x) =  e^{x} \left(C_{3}\cos\left(3 x\right) + C_{4}\sin\left(3 x\right)\right)}
     \end{align*}    
 
     Now have to have to satisfy continuity and smoothness continuity for our constants.
     \begin{align*}
-        & y_{1}(0) = y_{2}(0) \\
-        & y_{1g}(x) = -4\cos\left(2 x\right) + \sin\left(2 x\right) + 5 \\
-        & y_{1g}(0) = 1 \\
-        & y_{2g}(x) = C_{1}\cos\left(2 x\right) + C_{2}\sin\left(2 x\right) \\
-        & y_{2g}(0) = C_{1} \\
-        & y_{1}(0) = y_{2}(0) \\
-        & C_{1} = 1 \\\\
-        & y_{1}'(0) = y_{2}'(0) \\
-        & y_{1}'(x) = 8\sin\left(2 x\right) + 2 \cos\left(2 x\right) \\
-        & y_{1}'(0) = 2 \\
-        & y_{2g}'(x) = -2C_{1}\sin\left(2 x\right) + 2C_{2}\cos\left(2 x\right) \\
-        & y_{2g}'(0) = 2C_{2} \\
-        & y_{1}'(0) = y_{2}'(0) \\
-        & 2 = 2C_{2} \\
-        & C_{2} = 1 \\\\
-        & y_{2g}(x) = C_{1}\cos\left(2 x\right) + C_{2}\sin\left(2 x\right) \\
-        \Longrightarrow & \boxed{y_{2}(x) = \cos\left(2 x\right) + \sin\left(2 x\right)}
+        & y_{1}(\pi) = y_{2}(\pi) \\
+        & y_{1}(x) = e^{x} \left(-2\cos\left(3 x\right) + \frac{2}{3}\sin\left(3 x\right)\right) + 2 \\
+        & y_{1}(x) = e^{\left(\pi\right)}\left(-2\cos\left(3 \left(\pi\right)\right) + \cancel{\frac{2}{3}\sin\left(3 \left(\pi\right)\right)}\right) + 2\\
+        & y_{1}(\pi) = 2e^{\pi} + 2\\
+        & y_{2}(x) = e^{x} \left(C_{3}\cos\left(3 x\right) + C_{4}\sin\left(3 x\right)\right) \\
+        & y_{2}(\pi) = e^{\left(\pi\right)}\left(C_{3}\cos\left(3 \left(\pi\right)\right) + \cancel{c_{4}\sin\left(3 \left(\pi\right)\right)}\right) \\
+        & y_{2}(\pi) = -C_{3}e^{\pi} \\
+        & y_{1}(\pi) = y_{2}(\pi) \\
+        & 2e^{\pi} + 2 = -C_{3}e^{\pi} \\
+        & C_{3} = -2-2e^{-\pi}\\\\
+        & y_{1}'(\pi) = y_{2}'(\pi) \\
+        & y_{1}'(x) = e^{x} \left(\left(C_{1} + 3C_{2}\right)\cos\left(3 x\right) + \left(C_{2} - 3C_{1}\right)\sin\left(3 x\right)  \right) \\
+        & y_{1}'(x) = e^{\left(\pi\right)} \left(\left(C_{1} + 3C_{2}\right)\cos\left(3 \left(\pi\right)\right) + \cancel{\left(C_{2} - 3C_{1}\right)\sin\left(3 \left(\pi\right)\right)}   \right)\\
+        & y_{1}'(\pi) = -e^{\pi}\left(C_{1} + 3C_{2}\right)  \\
+        & y_{1}'(\pi) = -e^{\pi}\left(-2 + 3\frac{2}{3}\right) \\
+        & y_{1}'(\pi) = 0 \\
+        & y_{2}'(x) = e^{x} \left(\left(C_{3} + 3C_{4}\right)\cos\left(3 x\right) + \left(C_{3} - 3C_{4}\right)\sin\left(3 x\right)  \right) \\
+        & y_{2}'(\pi) = -e^{\pi}\left(C_{3} + 3C_{4}\right) \\
+        & y_{1}'(\pi) = y_{2}'(\pi) \\
+        & 0 = \cancel{-e^{\pi}}\left(C_{3} + 3C_{4}\right) \\
+        & 0 = -2-2e^{-\pi} + 3C_{4}\\
+        & C_{4} = \frac{2+2e^{-\pi}}{3} \\\\
+        & y_{2g}(x) = e^{x} \left(C_{3}\cos\left(3 x\right) + C_{4}\sin\left(3 x\right)\right) \\
+        & y_{2}(x) = e^{x} \left(\left(-2-2e^{-\pi}\right)\cos\left(3 x\right) +\left(\frac{2+2e^{-\pi}}{3}\right) \sin\left(3 x\right)\right) \\
+        \Longrightarrow & \boxed{y_{2}(x) = e^{x}\left(1+e^{-\pi}\right) \left(-2\cos\left(3 x\right) + \frac{2}{3}\sin\left(3 x\right)\right)}
     \end{align*}
 
     Combining everything.
 
     \begin{equation*}
+        \Longrightarrow
         \boxed{y(x) = \begin{cases}
-                  -4\cos\left(2 x\right) + \sin\left(2 x\right) + 5    & 0 \leq x \leq \pi  \\[2mm]
-                  \cos\left(2 x\right) + \sin\left(2 x\right)     & x \geq \pi
+                  e^{x} \left(-2\cos\left(3 x\right) + \frac{2}{3}\sin\left(3 x\right)\right) + 2    & 0 \leq x \leq \pi  \\[2mm]
+                  e^{x}\left(1+e^{-\pi}\right) \left(-2\cos\left(3 x\right) + \frac{2}{3}\sin\left(3 x\right)\right)     & x > \pi
               \end{cases}}
     \end{equation*}
 
