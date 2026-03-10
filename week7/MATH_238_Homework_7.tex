@@ -95,6 +95,17 @@ In Problems 1 - 18, use \hyperlink{def:Laplace}{\textbf{Definition 7.1.1}} to fi
       \end{cases} & \\
   \end{flalign*}
   \begin{solution}
+    Using definition \hyperlink{def:Laplace}{\textbf{Definition 7.1.1}}, we split the integral 
+    to conform with the piece $f(t)$ function.
+
+    \begin{align*}
+      \mathscr{L}\{f(t)\} &= \int_{0}^{\infty} e^{-st} f(t) \, dt \\
+      \mathscr{L}\{f(t)\} &= \int_{0}^{1} e^{-st} f(t) \, dt + \int_{1}^{\infty} e^{-st} f(t) \, dt \\
+      \mathscr{L}\{f(t)\} &= \cancelto{0}{\int_{0}^{1} e^{-st} (0) \, dt} + \int_{1}^{\infty} e^{-st} \left(2t+1\right) \, dt \\
+      \mathscr{L}\{f(t)\} &= \int_{1}^{\infty} e^{-st} \left(2t+1\right) \, dt \\
+      \mathscr{L}\{f(t)\} &= \left[-\frac{\left(2t+1\right)}{s}e^{-st}-\frac{2}{s^{2}}e^{-st} \right]_{t=0}^{t=\infty} \\
+      \mathscr{L}\{f(t)\} &= 
+    \end{align*}
 
   \end{solution}
 
