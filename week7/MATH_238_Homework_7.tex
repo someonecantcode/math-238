@@ -1,0 +1,156 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, graphicx}
+\usepackage{pgfplots, tikz, cancel, framed, hyperref}
+\usepackage{mathrsfs}
+
+\graphicspath{{./Images}}
+
+
+% \geometry{margin=1in}
+\usepackage[left=.5in, right=.5in, top=0.75in, bottom=1in]{geometry}
+\pgfplotsset{compat=1.18}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0pt}
+
+\newtheoremstyle{solution}
+  {15pt}
+  {15pt}
+  {}
+  {}
+  {\bfseries}
+  {: }
+  { }
+  {}
+
+\theoremstyle{solution}
+\newtheorem*{solution}{SOLUTION}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{DEFINITION}
+
+\usetikzlibrary{calc,shapes}
+
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+\pgfmathdeclarefunction{erf}{1}{%
+  \pgfmathparse{(2/sqrt(pi))*((#1) - ((#1)^3)/3 + ((#1)^5)/10 - ((#1)^7)/42 + ((#1)^9)/216)}%
+}
+
+
+\pgfmathdeclarefunction{erfi}{1}{%
+  \pgfmathparse{(2/sqrt(pi))*((#1) + ((#1)^3)/3 + ((#1)^5)/10 + ((#1)^7)/42 + ((#1)^9)/216)}%
+}
+
+
+
+\pgfplotsset{my style/.append style={axis x line=middle, axis y line=
+middle, xlabel={$x$}, ylabel={$y$} }}
+
+% ------------------------------------------------------------
+
+\title{MATH 238 Homework 7}
+\author{Brendan Tea}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section*{Homework for Section 7.1: 20 points}
+\addcontentsline{toc}{section}{Homework for Section 7.2: 20 points}
+\vspace{-0.5cm}
+In Problems 1 - 18, use \ref{def:Laplace 7.1.1} Definition 7.1.1 to find $\mathscr{L} \{ f(t) \}$.
+
+\begin{definition}[7.1.1] \label{def:Laplace 7.1.1}
+  \ \newline
+  Let $f$ be a function defined for $t \geq 0$. Then the integral
+    \begin{equation}
+        \mathscr{L}\{f(t)\} = \int_{0}^{\infty} e^{-st} f(t) \, dt
+    \end{equation}
+  is said to be the \textbf{Laplace transform} of $f$, provided that the integral converges.  
+\end{definition}
+
+  \subsection*{Problem 7.1.4}
+  \addcontentsline{toc}{subsection}{Problem 7.1.4}
+  \vspace{-0.5cm}
+
+  \begin{flalign*}
+      \begin{cases}
+          20    & 0 \leq x \leq \pi  \\[2mm]
+          0     & x > \pi
+      \end{cases} & \\
+  \end{flalign*}
+  \begin{solution}
+
+  \end{solution}
+
+  \subsection*{Problem 7.1.12}
+  \addcontentsline{toc}{subsection}{Problem 7.1.12}
+  \vspace{-0.5cm}
+
+  \begin{flalign*}
+      & \text{Given: } y''+4y'+4y=\left(3+x\right)e^{-2x}; \quad y(0) = 2, \ y'(0) = 5& \\
+      & \text{Find:  } \hspace{0.15cm} y(x) &
+  \end{flalign*}
+  \begin{solution}
+
+  \end{solution}
+
+\section*{Homework for Section 7.2: 70 points}
+\addcontentsline{toc}{section}{Homework for Section 7.2: 20 points}
+\vspace{-0.5cm}
+In Problems 27 - 36 solve the given initial-value problem.
+
+  \subsection*{Problem 7.2.4}
+  \addcontentsline{toc}{subsection}{Problem 7.2.4}
+  \vspace{-0.5cm}
+
+  \begin{flalign*}
+      & \text{Given: } y''+4y'+4y=\left(3+x\right)e^{-2x}; \quad y(0) = 2, \ y'(0) = 5& \\
+      & \text{Find:  } \hspace{0.15cm} y(x) &
+  \end{flalign*}
+  \begin{solution}
+
+  \end{solution}
+
+  \subsection*{Problem 7.2.12}
+  \addcontentsline{toc}{subsection}{Problem 7.2.12}
+  \vspace{-0.5cm}
+
+  \begin{flalign*}
+      & \text{Given: } y''+4y'+4y=\left(3+x\right)e^{-2x}; \quad y(0) = 2, \ y'(0) = 5& \\
+      & \text{Find:  } \hspace{0.15cm} y(x) &
+  \end{flalign*}
+  \begin{solution}
+
+  \end{solution}
+
+\section*{Homework for Section 7.3: 10 points}
+\addcontentsline{toc}{section}{Homework for Section 7.2: 20 points}
+\vspace{-0.5cm}
+In Problems 27 - 36 solve the given initial-value problem.
+
+  \subsection*{Problem 7.3.22}
+  \addcontentsline{toc}{subsection}{Problem 7.3.22}
+  \vspace{-0.5cm}
+
+  \begin{flalign*}
+      & \text{Given: } y''+4y'+4y=\left(3+x\right)e^{-2x}; \quad y(0) = 2, \ y'(0) = 5& \\
+      & \text{Find:  } \hspace{0.15cm} y(x) &
+  \end{flalign*}
+  \begin{solution}
+
+  \end{solution}
+
+  \subsection*{Problem 7.3.24}
+  \addcontentsline{toc}{subsection}{Problem 7.3.24}
+  \vspace{-0.5cm}
+
+  \begin{flalign*}
+      & \text{Given: } y''+4y'+4y=\left(3+x\right)e^{-2x}; \quad y(0) = 2, \ y'(0) = 5& \\
+      & \text{Find:  } \hspace{0.15cm} y(x) &
+  \end{flalign*}
+  \begin{solution}
+
+  \end{solution}
+
+\end{document}
