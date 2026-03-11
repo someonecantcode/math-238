@@ -239,37 +239,70 @@ In Problems 1 - 18, use \hyperlink{def:Laplace 7.1.1}{\textbf{Definition 7.1.1}}
 \end{flalign*}
 \begin{solution}
   Using the table from \hyperlink{def:Theorem 7.1.1}{\textbf{Theorem 7.1.1}}, we can use 
-  the linear property of the Laplacian and evaluate. Here we are using the power rule.
+  the linear property of the Laplacian and evaluate.
 
   \begin{align*}
-    \mathscr{L}\{f(t)\} &= \mathscr{L}\left\{\left(2t-1\right)^{3} \right\} \\
-                        &= \mathscr{L}\left\{8t^{3}-3\left(2t\right)^{2}\left(1\right)+3\left(2t\right)\left(1\right)^{2}-\left(1\right)^{3} \right\} \\
-                        &= \mathscr{L}\left\{8t^{3}-12t^{2}+6t-1 \right\} \\
-                        &= \mathscr{L}\left\{8t^{3} \right\} + \mathscr{L}\left\{-12t^{2} \right\} + \mathscr{L}\left\{6t \right\} - \mathscr{L}\left\{1 \right\} \\
-                        &= 8\mathscr{L}\left\{t^{3} \right\} - 12\mathscr{L}\left\{t^{2} \right\} + 6\mathscr{L}\left\{t \right\} - \mathscr{L}\left\{1 \right\} \\
-                        &= 8\left(\frac{3!}{s^{3+1}}\right) - 12\left(\frac{2!}{s^{2+1}}\right) + 6\left(\frac{1!}{s^{1+1}}\right) - \left(\frac{1}{s}\right) \\
-    \mathscr{L}\{f(t)\} &= \frac{48}{s^{4}}-\frac{24}{s^{3}}+\frac{6}{s^{2}}-\frac{1}{s}
+    \mathscr{L}\{f(t)\} &= \mathscr{L}\left\{\cos^{2} t \right\} \\
+                        &= \mathscr{L}\left\{\frac{1+\cos\left(2t\right)}{2} \right\} \\
+                        &= \frac{1}{2} \mathscr{L}\left\{1 \right\} + \frac{1}{2} \mathscr{L}\left\{\cos\left(2t\right) \right\} \\
+                        &= \frac{1}{2} \left(\frac{1}{s} \right) + \frac{1}{2} \left(\frac{s}{s^2 + 2^2} \right) \\
+    \mathscr{L}\{f(t)\} &= \frac{1}{2} \left(\frac{1}{s} + \frac{s}{s^2 + 4} \right)
   \end{align*}
 
+  \vspace{-0.5cm}
   \begin{equation*}
-    \Longrightarrow \boxed{\mathscr{L}\{f(t)\} = \frac{48}{s^{4}}-\frac{24}{s^{3}}+\frac{6}{s^{2}}-\frac{1}{s}, \ s > 0}
+    \Longrightarrow \boxed{\mathscr{L}\{f(t)\} = \frac{1}{2} \left(\frac{1}{s} + \frac{s}{s^2 + 4} \right), \ s > 0}
   \end{equation*}
 
 \end{solution}
 \section*{Homework for Section 7.2: 70 points}
 \addcontentsline{toc}{section}{Homework for Section 7.2: 20 points}
 \vspace{-0.5cm}
-In Problems 27 - 36 solve the given initial-value problem.
+In Problems 1 - 30, use appropirate algebra and \hyperlink{def:Theorem 7.2.1}{\textbf{Theorem 7.2.1}}
+to find the given inverse Laplace transform $\mathscr{L}^{-1} \{ f(t) \}$.
+
+\phantomsection
+  \addcontentsline{toc}{subsection}{\textbf{Theorem 7.2.1}}
+  \begin{boxedtheorem}[7.2.1] \hypertarget{def:Theorem 7.2.1}{}
+  \ \newline
+    \textbf{Some Inverse Transforms }
+    \begin{enumerate}[label=(\alph*), itemsep=1ex]
+      \item $\displaystyle 1 = \mathscr{L}^{-1} \left\{ \frac{1}{s} \right\}$
+      \item $\displaystyle t^n = \mathscr{L}^{-1} \left\{ \frac{n!}{s^{n+1}} \right\}, \quad n = 1, 2, 3, \dots$
+      \item $\displaystyle e^{at} = \mathscr{L}^{-1} \left\{ \frac{1}{s - a} \right\}$
+      \item $\displaystyle \sin kt = \mathscr{L}^{-1} \left\{ \frac{k}{s^2 + k^2} \right\}$
+      \item $\displaystyle \cos kt = \mathscr{L}^{-1} \left\{ \frac{s}{s^2 + k^2} \right\}$
+      \item $\displaystyle \sinh kt = \mathscr{L}^{-1} \left\{ \frac{k}{s^2 - k^2} \right\}$
+      \item $\displaystyle \cosh kt = \mathscr{L}^{-1} \left\{ \frac{s}{s^2 - k^2} \right\}$
+    \end{enumerate}
+  \end{boxedtheorem}
+  
 
   \subsection*{Problem 7.2.4}
   \addcontentsline{toc}{subsection}{Problem 7.2.4}
   \vspace{-0.5cm}
 
   \begin{flalign*}
-      & \text{Given: } y''+4y'+4y=\left(3+x\right)e^{-2x}; \quad y(0) = 2, \ y'(0) = 5& \\
-      & \text{Find:  } \hspace{0.15cm} y(x) &
+      & \text{Given: } \mathscr{L}^{-1} \left\{ \left(\frac{2}{s}-\frac{1}{s^{3}}\right)^{2} \right\}, \ f(t) = \left(\frac{2}{s}-\frac{1}{s^{3}}\right)^{2} & \\
+      & \text{Find:  } \mathscr{L}^{-1} \left\{ f(t) \right\} &
   \end{flalign*}
   \begin{solution}
+  Using the table from \hyperlink{def:Theorem 7.2.1}{\textbf{Theorem 7.2.1}}, we can use 
+  the linear property of the inverse Laplacian and evaluate. Here we will expand out the power
+  and use power rule.
+
+  \begin{align*}
+    \mathscr{L}^{-1} \{ f(t) \} &= \mathscr{L}^{-1} \left\{ \left(\frac{2}{s}-\frac{1}{s^{3}}\right)^{2} \right\} \\
+                                &= \mathscr{L}^{-1} \left\{ \frac{4}{s^{2}}-\frac{4}{s^{4}}+\frac{1}{s^{6}} \right\} \\
+                                &= 4\mathscr{L}^{-1} \left\{ \frac{1}{s^{2}}\right\} -4 \mathscr{L}^{-1} \left\{\frac{1}{s^{4}} \right\} + \mathscr{L}^{-1} \left\{\frac{1}{s^{6}} \right\} \\
+                                &= \frac{4}{1!}\mathscr{L}^{-1} \left\{ \frac{1!}{s^{1+1}}\right\} - \frac{4}{3!} \mathscr{L}^{-1} \left\{\frac{3!}{s^{3+1}} \right\} + \frac{1}{5!} \mathscr{L}^{-1} \left\{\frac{5!}{s^{5+1}} \right\} \\
+                                &= 4t-\frac{4}{6}t^{3}+\frac{1}{120}t^{5} \\
+    \mathscr{L}^{-1} \{ f(t) \} &= 4t-\frac{2}{3}t^{3}+\frac{1}{120}t^{5}
+  \end{align*}
+
+  \begin{equation*}
+    \Longrightarrow \boxed{\mathscr{L}\{f(t)\} = 4t-\frac{2}{3}t^{3}+\frac{1}{120}t^{5}, \ t \geq 0}
+  \end{equation*}
 
   \end{solution}
 
