@@ -534,6 +534,12 @@ In Problems 45 and \textbf{46} use the Laplace transform and these inverses to s
 
   \end{solution}
 
+%-------------------------------------------------%
+\newpage
+\section*{Homework for Section 7.3: 40 Points}
+\addcontentsline{toc}{section}{Homework for Section 7.3: 40 Points}
+\vspace{-0.5cm}
+In Problems 1 - 20, find either $F(s)$ or $f(t)$, as indicated.
 
 \begin{boxedtheorem}[7.3.1] \hypertarget{def:Theorem 7.3.1}{}
 \ \newline
@@ -547,64 +553,223 @@ In Problems 45 and \textbf{46} use the Laplace transform and these inverses to s
   \vspace{0.5cm}
 \end{boxedtheorem}
 
-% \section*{Homework for Section 7.3: 40 Points}
-% \addcontentsline{toc}{section}{Homework for Section 7.3: 40 Points}
-% \vspace{-0.5cm}
-% In Problems 27 - 36 solve the given initial-value problem.
+\subsection*{Section 7.3: 30 Points}
+\addcontentsline{toc}{subsection}{Section 7.3: 30 Points}
 
-% \subsection*{Section 7.3: 30 Points}
-% \addcontentsline{toc}{subsection}{Section 7.3: 30 Points}
+  \subsubsection*{Problem 7.3.4}
+  \addcontentsline{toc}{subsubsection}{Problem 7.3.4}
+  \vspace{-0.5cm}
 
-%   \subsubsection*{Problem 7.3.4}
-%   \addcontentsline{toc}{subsubsection}{Problem 7.3.4}
-%   \vspace{-0.5cm}
+  \begin{flalign*}
+      & \text{Given: } \mathscr{L} \left\{ t^{10}e^{-7t}\right\} & \\
+      & \text{Find:  } F(s) &
+  \end{flalign*}
+  \begin{solution}
+  Using the table from \hyperlink{def:Theorem 7.1.1}{\textbf{Theorem 7.1.1}} and
+  the Translation \hyperlink{def:Theorem 7.3.1}{\textbf{Theorem 7.3.1}}, we can obtain
+  our answer.
 
-%   \begin{flalign*}
-%       & \text{Given: } \mathscr{L}^{-1} \left\{ \left(\frac{2}{s}-\frac{1}{s^{3}}\right)^{2} \right\}, \ f(t) = \left(\frac{2}{s}-\frac{1}{s^{3}}\right)^{2} & \\
-%       & \text{Find:  } \mathscr{L}^{-1} \left\{ f(t) \right\} &
-%   \end{flalign*}
-%   \begin{solution}
-%   Using the table from \hyperlink{def:Theorem 7.2.1}{\textbf{Theorem 7.2.1}}, we can use 
-%   the linear property of the inverse Laplacian and evaluate. Here we will expand out the power
-%   and use power rule.
+  \begin{align*}
+    \mathscr{L} \left\{ t^{10}e^{-7t}\right\} &= \mathscr{L} \left\{ t^{10}\right\} \mid_{s \gets s-7} \\
+                                &= \frac{10!}{s^{10+1}} \mid_{s \gets s-7} \\
+                                &= \frac{10!}{\left(s-7\right)^{11}}
+  \end{align*}
 
-%   \begin{align*}
-%     \mathscr{L}^{-1} \{ f(t) \} &= \mathscr{L}^{-1} \left\{ \left(\frac{2}{s}-\frac{1}{s^{3}}\right)^{2} \right\} \\
-%                                 &= \mathscr{L}^{-1} \left\{ \frac{4}{s^{2}}-\frac{4}{s^{4}}+\frac{1}{s^{6}} \right\} \\
-%                                 &= 4\mathscr{L}^{-1} \left\{ \frac{1}{s^{2}}\right\} -4 \mathscr{L}^{-1} \left\{\frac{1}{s^{4}} \right\} + \mathscr{L}^{-1} \left\{\frac{1}{s^{6}} \right\} \\
-%                                 &= \frac{4}{1!}\mathscr{L}^{-1} \left\{ \frac{1!}{s^{1+1}}\right\} - \frac{4}{3!} \mathscr{L}^{-1} \left\{\frac{3!}{s^{3+1}} \right\} + \frac{1}{5!} \mathscr{L}^{-1} \left\{\frac{5!}{s^{5+1}} \right\} \\
-%                                 &= 4t-\frac{4}{6}t^{3}+\frac{1}{120}t^{5} \\
-%     \mathscr{L}^{-1} \{ f(t) \} &= 4t-\frac{2}{3}t^{3}+\frac{1}{120}t^{5}
-%   \end{align*}
+  \begin{equation*}
+    \Longrightarrow \boxed{F(s) = \frac{10!}{\left(s-7\right)^{11}}, \ t \geq 0}
+  \end{equation*}
 
-%   \begin{equation*}
-%     \Longrightarrow \boxed{\mathscr{L}\{f(t)\} = 4t-\frac{2}{3}t^{3}+\frac{1}{120}t^{5}, \ t \geq 0}
-%   \end{equation*}
+  \end{solution}
 
-%   \end{solution}
+  \subsubsection*{Problem 7.3.6}
+  \addcontentsline{toc}{subsubsection}{Problem 7.3.6}
+  \vspace{-0.5cm}
 
-%   \subsection*{Problem 7.3.22}
-%   \addcontentsline{toc}{subsection}{Problem 7.3.22}
-%   \vspace{-0.5cm}
+  \begin{flalign*}
+      & \text{Given: } \mathscr{L} \left\{e^{2t}\left(t-1\right)^{2} \right\} & \\
+      & \text{Find:  } F(s) &
+  \end{flalign*}
+  \begin{solution}
+  Using the table from \hyperlink{def:Theorem 7.1.1}{\textbf{Theorem 7.1.1}} and
+  the Translation \hyperlink{def:Theorem 7.3.1}{\textbf{Theorem 7.3.1}}, we can obtain
+  our answer.
 
-%   \begin{flalign*}
-%       & \text{Given: } y''+4y'+4y=\left(3+x\right)e^{-2x}; \quad y(0) = 2, \ y'(0) = 5& \\
-%       & \text{Find:  } \hspace{0.15cm} y(x) &
-%   \end{flalign*}
-%   \begin{solution}
+  \begin{align*}
+    \mathscr{L} \left\{ e^{2t}\left(t-1\right)^{2} \right\} &= \mathscr{L} \left\{ \left(t-1\right)^{2} \right\} \mid_{s \gets s-2} \\
+                                &= \mathscr{L} \left\{ t^{2}-2t+1 \right\} \mid_{s \gets s-2} \\
+                                &= \left(\mathscr{L} \left\{ t^{2} \right\} -2 \mathscr{L} \left\{t \right\} + \mathscr{L} \left\{1 \right\} \right) \mid_{s \gets s-2} \\
+                                &= \left(\frac{2!}{s^{2+1}}-2\frac{1!}{s^{1+1}}+\frac{1}{s}\right)\mid_{s \gets s-2} \\
+                                &=\left(\frac{2!}{s^{3}}-2\frac{1!}{s^{2}}+\frac{1}{s}\right)\mid_{s \gets s-2} \\
+                                &= \frac{2}{\left(s-2\right)^{3}}-\frac{2}{\left(s-2\right)^{2}}+\frac{1}{s-2}
+  \end{align*}
 
-%   \end{solution}
+  \begin{equation*}
+    \Longrightarrow \boxed{F(s) = \frac{2}{\left(s-2\right)^{3}}-\frac{2}{\left(s-2\right)^{2}}+\frac{1}{s-2}, \ t \geq 0}
+  \end{equation*}
 
-%   \subsection*{Problem 7.3.24}
-%   \addcontentsline{toc}{subsection}{Problem 7.3.24}
-%   \vspace{-0.5cm}
+  \end{solution}
 
-%   \begin{flalign*}
-%       & \text{Given: } y''+4y'+4y=\left(3+x\right)e^{-2x}; \quad y(0) = 2, \ y'(0) = 5& \\
-%       & \text{Find:  } \hspace{0.15cm} y(x) &
-%   \end{flalign*}
-%   \begin{solution}
+  \subsubsection*{Problem 7.3.10}
+  \addcontentsline{toc}{subsubsection}{Problem 7.3.10}
+  \vspace{-0.5cm}
 
-%   \end{solution}
+  \begin{flalign*}
+      & \text{Given: } \mathscr{L} \left\{e^{3t}\left(9-4t+10\sin\frac{t}{2}\right) \right\} & \\
+      & \text{Find:  } F(s) &
+  \end{flalign*}
+  \begin{solution}
+  Using the table from \hyperlink{def:Theorem 7.1.1}{\textbf{Theorem 7.1.1}} and
+  the Translation \hyperlink{def:Theorem 7.3.1}{\textbf{Theorem 7.3.1}}, we can obtain
+  our answer.
+
+  \begin{align*}
+    \mathscr{L} \left\{ e^{3t}\left(9-4t+10\sin\frac{t}{2}\right) \right\} &= \mathscr{L} \left\{ 9-4t+10\sin\frac{t}{2} \right\} \mid_{s \gets s-3} \\
+                                                                           &= \left(\mathscr{L} \left\{ 9 \right\} -4 \mathscr{L} \left\{t \right\} +10 \mathscr{L} \left\{\sin\frac{t}{2} \right\} \right) \mid_{s \gets s-3} \\
+                                                                           &= \left(9\frac{1}{s}+4\frac{1!}{s^{1+1}}+10\frac{\frac{1}{2}}{s^{2}+\frac{1}{4}}\right)\mid_{s \gets s-3} \\
+                                                                           &= \left(\frac{9}{s}+\frac{1}{s^{2}}+\frac{5}{s^{2}+\frac{1}{4}}\right)\mid_{s \gets s-3} \\
+                                                                           &= \left(\frac{9}{s}+\frac{1}{s^{2}}+\frac{20}{4s^{2}+1}\right)\mid_{s \gets s-3} \\
+                                                                           &= \frac{9}{s-3}+\frac{1}{\left(s-3\right)^{2}}+\frac{20}{4\left(s-3\right)^{2}+1}
+  \end{align*}
+
+  \begin{equation*}
+    \Longrightarrow \boxed{F(s) = \frac{9}{s-3}+\frac{1}{\left(s-3\right)^{2}}+\frac{20}{4\left(s-3\right)^{2}+1}, \ t \geq 0}
+  \end{equation*}
+
+  \end{solution}
+
+  \subsubsection*{Problem 7.3.12}
+  \addcontentsline{toc}{subsubsection}{Problem 7.3.12}
+  \vspace{-0.5cm}
+
+  \begin{flalign*}
+      & \text{Given: } \mathscr{L}^{-1} \left\{\frac{1}{\left(s-1\right)^{4}} \right\} & \\
+      & \text{Find:  } f(t) &
+  \end{flalign*}
+  \begin{solution}
+  Using the table from \hyperlink{def:Theorem 7.2.1}{\textbf{Theorem 7.2.1}} and
+  the Translation \hyperlink{def:Theorem 7.3.1}{\textbf{Theorem 7.3.1}}, we can obtain
+  our answer.
+
+  \begin{align*}
+    \mathscr{L}^{-1} \left\{\frac{1}{\left(s-1\right)^{4}} \right\} &= \mathscr{L}^{-1} \left\{\frac{1}{s^{4}} \mid_{s \to s+1} \right\} \\
+                                                                    &= \frac{1}{3!} \mathscr{L}^{-1} \left\{\frac{3!}{s^{3+1}} \mid_{s \to s+1} \right\}\\
+                                                                    &= \frac{1}{6} e^{t} t^3
+  \end{align*}
+
+  \begin{equation*}
+    \Longrightarrow \boxed{f(t) =\frac{e^{t} t^3}{6}, \ t \geq 0}
+  \end{equation*}
+
+  \end{solution}
+
+  \subsubsection*{Problem 7.3.14}
+  \addcontentsline{toc}{subsubsection}{Problem 7.3.14}
+  \vspace{-0.5cm}
+
+  \begin{flalign*}
+      & \text{Given: } \mathscr{L}^{-1} \left\{\frac{1}{s^{2}+2s+5} \right\} & \\
+      & \text{Find:  } f(t) &
+  \end{flalign*}
+  \begin{solution}
+  Using the table from \hyperlink{def:Theorem 7.2.1}{\textbf{Theorem 7.2.1}} and
+  the Translation \hyperlink{def:Theorem 7.3.1}{\textbf{Theorem 7.3.1}}, we can obtain
+  our answer.
+
+  \begin{align*}
+    \mathscr{L}^{-1} \left\{\frac{1}{s^{2}+2s+5} \right\} &= \mathscr{L}^{-1} \left\{\frac{1}{\left(s+1\right)^{2}+4} \right\} \\
+                                                          &= \mathscr{L}^{-1} \left\{\frac{1}{s^{2}+4} \mid_{s \to s+1} \right\} \\
+                                                          &= \frac{1}{2} \mathscr{L}^{-1} \left\{\frac{2}{s^{2}+2^2} \mid_{s \to s+1} \right\} \\
+                                                          &= \frac{1}{2} e^{-t} \sin\left(2t\right)
+  \end{align*}
+
+  \begin{equation*}
+    \Longrightarrow \boxed{f(t) = \frac{e^{-t} \sin\left(2t\right)}{2}, \ t \geq 0}
+  \end{equation*}
+
+  \end{solution}
+
+  \subsubsection*{Problem 7.3.16}
+  \addcontentsline{toc}{subsubsection}{Problem 7.3.16}
+  \vspace{-0.5cm}
+
+  \begin{flalign*}
+      & \text{Given: } \mathscr{L}^{-1} \left\{\frac{2s+5}{s^{2}+6s+34} \right\} & \\
+      & \text{Find:  } f(t) &
+  \end{flalign*}
+  \begin{solution}
+  Using the table from \hyperlink{def:Theorem 7.2.1}{\textbf{Theorem 7.2.1}} and
+  the Translation \hyperlink{def:Theorem 7.3.1}{\textbf{Theorem 7.3.1}}, we can obtain
+  our answer.
+
+  \begin{align*}
+    \mathscr{L}^{-1} \left\{\frac{2s+5}{s^{2}+6s+34} \right\} &= \mathscr{L}^{-1} \left\{\frac{2s+5}{\left(s+3\right)^{2}+25} \right\} \\
+                                                          &= \mathscr{L}^{-1} \left\{\frac{2\left(s+3\right)-1}{\left(s+3\right)^{2}+25} \right\} \\
+                                                          &= 2\mathscr{L}^{-1} \left\{\frac{\left(s+3\right)}{\left(s+3\right)^{2}+5^{2}} \right\} - \mathscr{L}^{-1} \left\{\frac{1}{\left(s+3\right)^{2}+5^{2}} \right\} \\
+                                                          &= 2\mathscr{L}^{-1} \left\{\frac{\left(s+3\right)}{\left(s+3\right)^{2}+5^{2}} \right\} - \frac{1}{5} \mathscr{L}^{-1} \left\{\frac{5}{\left(s+3\right)^{2}+5^{2}} \right\} \\
+                                                          &= 2\mathscr{L}^{-1} \left\{\frac{s}{s^{2}+5^{2}} \mid_{s \to s+3} \right\} - \frac{1}{5} \mathscr{L}^{-1} \left\{\frac{5}{s^{2}+5^{2}} \mid_{s \to s+3} \right\} \\
+                                                          &= 2e^{-3t}\cos\left(5t\right)-\frac{1}{5}e^{-3t}\sin\left(5t\right)
+  \end{align*}
+
+  \begin{equation*}
+    \Longrightarrow \boxed{f(t) = e^{-3t}\left(2\cos\left(5t\right)-\frac{1}{5}\sin\left(5t\right)\right), \ t \geq 0}
+  \end{equation*}
+
+  \end{solution}
+  
+\subsection*{Section 7.3: 10 Points}
+\addcontentsline{toc}{subsection}{Section 7.3: 10 Points}
+In Problems 21 - 30, use the Laplace transform to solve the given initial-value problem.
+
+  \subsubsection*{Problem 7.3.22}
+  \addcontentsline{toc}{subsubsection}{Problem 7.3.22}
+  \vspace{-0.5cm}
+
+  \begin{flalign*}
+      & \text{Given: } y'-y=1+te^{t}, \ y(0) = 0 & \\
+      & \text{Find:  } y(t) &
+  \end{flalign*}
+  \begin{solution}
+  Using the table from \hyperlink{def:Theorem 7.1.1}{\textbf{Theorem 7.1.1}} and
+  the Translation \hyperlink{def:Theorem 7.3.1}{\textbf{Theorem 7.3.1}}, we can obtain
+  our answer.
+
+  \begin{align*}
+    \mathscr{L} \left\{ t^{10}e^{-7t}\right\} &= \mathscr{L} \left\{ t^{10}\right\} \mid_{s \gets s-7} \\
+                                &= \frac{10!}{s^{10+1}} \mid_{s \gets s-7} \\
+                                &= \frac{10!}{\left(s-7\right)^{11}}
+  \end{align*}
+
+  \begin{equation*}
+    \Longrightarrow \boxed{F(s) = \frac{10!}{\left(s-7\right)^{11}}, \ t \geq 0}
+  \end{equation*}
+
+  \end{solution}
+
+  % \subsubsection*{Problem 7.3.24}
+  % \addcontentsline{toc}{subsubsection}{Problem 7.3.24}
+  % \vspace{-0.5cm}
+
+  % \begin{flalign*}
+  %     & \text{Given: } y''-4y'+4y=t^{3}e^{2t}, \ y(0) = 0, \ y'(0) = 0 & \\
+  %     & \text{Find:  } y(t) &
+  % \end{flalign*}
+  % \begin{solution}
+  % Using the table from \hyperlink{def:Theorem 7.1.1}{\textbf{Theorem 7.1.1}} and
+  % the Translation \hyperlink{def:Theorem 7.3.1}{\textbf{Theorem 7.3.1}}, we can obtain
+  % our answer.
+
+  % \begin{align*}
+  %   \mathscr{L} \left\{ t^{10}e^{-7t}\right\} &= \mathscr{L} \left\{ t^{10}\right\} \mid_{s \gets s-7} \\
+  %                               &= \frac{10!}{s^{10+1}} \mid_{s \gets s-7} \\
+  %                               &= \frac{10!}{\left(s-7\right)^{11}}
+  % \end{align*}
+
+  % \begin{equation*}
+  %   \Longrightarrow \boxed{F(s) = \frac{10!}{\left(s-7\right)^{11}}, \ t \geq 0}
+  % \end{equation*}
+
+  % \end{solution}
+
+
 
 \end{document}
