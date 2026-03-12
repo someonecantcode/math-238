@@ -433,7 +433,7 @@ It should be noted the formula for $\mathscr{L} \{ f^{\left(n\right)}\left(t\rig
 
   \begin{align*}
                                     & 2\frac{dy}{dt}+y  = 0 \\
-    \mathscr{L} \hspace{-0.10cm}: \ & 2\frac{dy}{dt}+y \\
+    \mathscr{L} \hspace{-0.10cm}: \ & 2\frac{dy}{dt}+y  = 0 \\
                     \Longrightarrow & 2\left(-y(0)+sY(s)\right)+Y(s) = 0 
   \end{align*}
   Rearrange and isolate $Y(s)$
@@ -729,19 +729,28 @@ In Problems 21 - 30, use the Laplace transform to solve the given initial-value 
       & \text{Find:  } y(t) &
   \end{flalign*}
   \begin{solution}
-  Using the table from \hyperlink{def:Theorem 7.1.1}{\textbf{Theorem 7.1.1}} and
-  the Translation \hyperlink{def:Theorem 7.3.1}{\textbf{Theorem 7.3.1}}, we can obtain
-  our answer.
+  The main process to apply the Laplace transform, using \hyperlink{def:Theorem 7.1.1}{\textbf{Theorem 7.1.1}} and \hyperlink{def:Theorem 7.2.2}{\textbf{Theorem 7.2.2}}, over the entire equation,
+  isolate $Y(s)$, and apply the inverse Laplace transform using \hyperlink{def:Theorem 7.2.1}{\textbf{Theorem 7.2.1}}.
 
   \begin{align*}
-    \mathscr{L} \left\{ t^{10}e^{-7t}\right\} &= \mathscr{L} \left\{ t^{10}\right\} \mid_{s \gets s-7} \\
-                                &= \frac{10!}{s^{10+1}} \mid_{s \gets s-7} \\
-                                &= \frac{10!}{\left(s-7\right)^{11}}
+                                    & y'-y=1+te^{t} \\
+    \mathscr{L} \hspace{-0.10cm}: \ & y'-y=1+te^{t} \\
+                    \Longrightarrow & \left(y(0)+sY(s)\right)-Y(s)=\frac{1}{s}+\int_{0}^{\infty}e^{-st}\left(te^{t}\right)dt
   \end{align*}
-
-  \begin{equation*}
-    \Longrightarrow \boxed{F(s) = \frac{10!}{\left(s-7\right)^{11}}, \ t \geq 0}
-  \end{equation*}
+  Rearrange and isolate $Y(s)$
+  \begin{align*}
+    Y(s)\left(2s+1\right) &= 2y(0) \\
+                     Y(s) &= \frac{2y(0)}{\left(2s+1\right)} \\
+                     Y(s) &= \frac{2\left(-3\right)}{\left(2s+1\right)} \\
+                     Y(s) &= -\frac{6}{\left(2s+1\right)} \\
+                     Y(s) &= -\frac{6}{2\left(s+\frac{1}{2}\right)} \\
+                     Y(s) &= -\frac{3}{\left(s+\frac{1}{2}\right)}
+  \end{align*}
+  Apply the inverse Laplace transform.
+  \begin{align*}
+     \mathscr{L}^{-1} \hspace{-0.10cm}: \ & Y(s) = -\frac{3}{\left(s+\frac{1}{2}\right)} \\
+                                        \Longrightarrow  & \boxed{y(t) = -3e^{-\frac{1}{2}t}}
+  \end{align*}
 
   \end{solution}
 
