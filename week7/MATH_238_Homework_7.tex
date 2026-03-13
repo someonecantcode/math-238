@@ -388,7 +388,7 @@ to find the given inverse Laplace transform $\mathscr{L}^{-1} \{ f(t) \}$.
   \begin{align*}
     & A=\frac{1}{2}, \ B=-1, \ C=-\frac{1}{3}, \ D=\frac{5}{6} \\
                 \Longrightarrow &= \mathscr{L}^{-1} \left\{ \frac{\frac{1}{2}}{s}+\frac{-1}{s-1}+\frac{-\frac{1}{3}}{s+1}+\frac{\frac{5}{6}}{s-2} \right\} \\
-                                &= \frac{1}{2} V - \mathscr{L}^{-1} \left\{\frac{1}{s-1} \right\} -\frac{1}{3} \mathscr{L}^{-1} \left\{\frac{1}{s+1} \right\} +\frac{5}{6} \mathscr{L}^{-1} \left\{\frac{1}{s-2} \right\}\\
+                                &= \frac{1}{2} - \mathscr{L}^{-1} \left\{\frac{1}{s-1} \right\} -\frac{1}{3} \mathscr{L}^{-1} \left\{\frac{1}{s+1} \right\} +\frac{5}{6} \mathscr{L}^{-1} \left\{\frac{1}{s-2} \right\}\\
     \mathscr{L}^{-1} \{ f(t) \} &= \frac{1}{2}-e^{t}-\frac{1}{3}e^{-t}+\frac{5}{6}e^{2t}
   \end{align*}
 
@@ -438,12 +438,12 @@ It should be noted the formula for $\mathscr{L} \{ f^{\left(n\right)}\left(t\rig
   \end{align*}
   Rearrange and isolate $Y(s)$
   \begin{align*}
-    Y(s)\left(2s+1\right) &= 2y(0) \\
-                     Y(s) &= \frac{2y(0)}{\left(2s+1\right)} \\
-                     Y(s) &= \frac{2\left(-3\right)}{\left(2s+1\right)} \\
-                     Y(s) &= -\frac{6}{\left(2s+1\right)} \\
-                     Y(s) &= -\frac{6}{2\left(s+\frac{1}{2}\right)} \\
-                     Y(s) &= -\frac{3}{\left(s+\frac{1}{2}\right)}
+    \left(2s+1\right) Y(s) &= 2y(0) \\
+                      Y(s) &= \frac{2y(0)}{\left(2s+1\right)} \\
+                      Y(s) &= \frac{2\left(-3\right)}{\left(2s+1\right)} \\
+                      Y(s) &= -\frac{6}{\left(2s+1\right)} \\
+                      Y(s) &= -\frac{6}{2\left(s+\frac{1}{2}\right)} \\
+                      Y(s) &= -\frac{3}{\left(s+\frac{1}{2}\right)}
   \end{align*}
   Apply the inverse Laplace transform.
   \begin{align*}
@@ -473,9 +473,9 @@ It should be noted the formula for $\mathscr{L} \{ f^{\left(n\right)}\left(t\rig
   Rearrange and isolate $Y(s)$.
   \begin{align*}
           -y'(0)-sy(0)+4y(0)-4s+s^{2}Y(s)-4sY(s) &= \frac{6}{s-3}-\frac{3}{s+1} \\
-          Y(s)\left(s^{2}-4s\right) &= \frac{6}{s-3}-\frac{3}{s+1}+y'(0)+y(0)\left(s-4\right) \\
-          Y(s)\left(s^{2}-4s\right) &= \frac{6}{s-3}-\frac{3}{s+1}+\left(-1\right)+\left(1\right)\left(s-4\right) \\
-          Y(s)\left(\left(s\right)\left(s-4\right)\right) &= \frac{6}{s-3}-\frac{3}{s+1}+\left(s-5\right) \\
+         \left(s^{2}-4s\right) Y(s) &= \frac{6}{s-3}-\frac{3}{s+1}+y'(0)+y(0)\left(s-4\right) \\
+         \left(s^{2}-4s\right) Y(s) &= \frac{6}{s-3}-\frac{3}{s+1}+\left(-1\right)+\left(1\right)\left(s-4\right) \\
+          \left(\left(s\right)\left(s-4\right)\right) Y(s) &= \frac{6}{s-3}-\frac{3}{s+1}+\left(s-5\right) \\
           Y(s) &= \frac{6}{s\left(s-3\right)\left(s-4\right)}-\frac{3}{s\left(s+1\right)\left(s-4\right)}+\frac{s-5}{s\left(s-4\right)} \\
           Y(s) &= \frac{A}{s}+\frac{B}{s-3}+\frac{C}{s-4}+\frac{D}{s+1}
   \end{align*}
@@ -515,9 +515,9 @@ In Problems 45 and \textbf{46} use the Laplace transform and these inverses to s
   \end{align*}
   Rearrange and isolate $Y(s)$.
   \begin{align*}
-          Y(s)\left(s^{2}-2s+5\right) &= y'(0)+y(0)\left(s-2\right) \\
-          Y(s)\left(s^{2}-2s+5\right) &= \left(3\right)+\left(1\right)\left(s-2\right) \\
-          Y(s)\left(s^{2}-2s+5\right) &= s+1 \\
+          \left(s^{2}-2s+5\right)Y(s) &= y'(0)+y(0)\left(s-2\right) \\
+          \left(s^{2}-2s+5\right)Y(s) &= \left(3\right)+\left(1\right)\left(s-2\right) \\
+          \left(s^{2}-2s+5\right)Y(s) &= s+1 \\
           Y(s) &= \frac{s+1}{s^{2}-2s+5}
   \end{align*}
   Completing the square.
@@ -736,13 +736,13 @@ In Problems 21 - 30, use the Laplace transform to solve the given initial-value 
                                     & y'-y=1+te^{t} \\
     \mathscr{L} \hspace{-0.10cm}: \ & y'-y=1+te^{t} \\
                                     & \left(y(0)+sY(s)\right)-Y(s)=\frac{1}{s}+\int_{0}^{\infty}e^{-st}\left(te^{t}\right)dt \\
-                     & y(0)+Y(s)\left(s-1\right) = \frac{1}{s}+\left[\frac{t}{1-s}e^{t\left(1-s\right)}-\frac{1}{\left(1-s\right)^{2}}e^{t\left(1-s\right)}\right]_{0}^{\infty} \\
-                     & y(0)+Y(s)\left(s-1\right)=\frac{1}{s}+\frac{1}{\left(1-s\right)^{2}} \\
-     \Longrightarrow & Y(s)\left(s-1\right)=\frac{1}{s}+\frac{1}{\left(s-1\right)^{2}}-y(0)
+                     & y(0)+\left(s-1\right)Y(s) = \frac{1}{s}+\left[\frac{t}{1-s}e^{t\left(1-s\right)}-\frac{1}{\left(1-s\right)^{2}}e^{t\left(1-s\right)}\right]_{0}^{\infty} \\
+                     & y(0)+\left(s-1\right)Y(s) = \frac{1}{s}+\frac{1}{\left(1-s\right)^{2}} \\
+     \Longrightarrow & \left(s-1\right)Y(s)=\frac{1}{s}+\frac{1}{\left(s-1\right)^{2}}-y(0)
   \end{align*}
   Rearrange and isolate $Y(s)$
   \begin{align*}
-    Y(s)\left(s-1\right)  &= \frac{1}{s}+\frac{1}{\left(s-1\right)^{2}} - (0) \\
+    \left(s-1\right) Y(s)  &= \frac{1}{s}+\frac{1}{\left(s-1\right)^{2}} - (0) \\
     Y(s)  &= \frac{1}{s\left(s-1\right)}+\frac{1}{\left(s-1\right)^{3}} \\
     Y(s)  &= \frac{A}{s}+\frac{B}{s-1} + \frac{1}{\left(s-1\right)^{3}}
   \end{align*}
@@ -756,7 +756,7 @@ In Problems 21 - 30, use the Laplace transform to solve the given initial-value 
   \begin{align*}
      \mathscr{L}^{-1} \hspace{-0.10cm}: \ & Y(s) = -\frac{1}{s}+\frac{1}{s-1} + \frac{1}{\left(s-1\right)^{3}} \\
                                           & y(t) = - \mathscr{L}^{-1} \left\{\frac{1}{s} \right\} + \mathscr{L}^{-1} \left\{\frac{1}{s-1} \right\} 
-                                                     + \mathscr{L}^{-1} \left\{\frac{1}{\left(s-1\right)^{3}} \right\} \\
+                                                     + \mathscr{L}^{-1} \left\{\frac{1}{\left(s-1\right)^{3}} \right\}
   \end{align*}
   Using inverse translation property from \hyperlink{def:Theorem 7.3.1}{\textbf{Theorem 7.3.1}}
   and the table from \hyperlink{def:Theorem 7.2.1}{\textbf{Theorem 7.2.1}}.
@@ -779,44 +779,30 @@ In Problems 21 - 30, use the Laplace transform to solve the given initial-value 
       & \text{Find:  } y(t) &
   \end{flalign*}
   \begin{solution}
-      The main process to apply the Laplace transform, using \hyperlink{def:Theorem 7.1.1}{\textbf{Theorem 7.1.1}} and \hyperlink{def:Theorem 7.2.2}{\textbf{Theorem 7.2.2}}, over the entire equation,
+  The main process to apply the Laplace transform, using \hyperlink{def:Theorem 7.1.1}{\textbf{Theorem 7.1.1}} and \hyperlink{def:Theorem 7.2.2}{\textbf{Theorem 7.2.2}}, over the entire equation,
   isolate $Y(s)$, and apply the inverse Laplace transform using \hyperlink{def:Theorem 7.2.1}{\textbf{Theorem 7.2.1}}.
 
   \begin{align*}
                                     & y''-4y'+4y=t^{3}e^{2t} \\
-    \mathscr{L} \hspace{-0.10cm}: \ & y''-4y'+4y=t^{3}e^{2t} \\
-                                    & \left(-y'\left(0\right)-sy\left(0\right)+s^{2}Y\left(s\right)\right)-4\left(-y\left(0\right)+sY\left(s\right)\right)+4Y\left(s\right) = \int_{0}^{\infty}e^{-st}\left(te^{t}\right)dt \\
-                     & y(0)+Y(s)\left(s-1\right) = \frac{1}{s}+\left[\frac{t}{1-s}e^{t\left(1-s\right)}-\frac{1}{\left(1-s\right)^{2}}e^{t\left(1-s\right)}\right]_{0}^{\infty} \\
-                     & y(0)+Y(s)\left(s-1\right)=\frac{1}{s}+\frac{1}{\left(1-s\right)^{2}} \\
-     \Longrightarrow & Y(s)\left(s-1\right)=\frac{1}{s}+\frac{1}{\left(s-1\right)^{2}}-y(0)
+    \mathscr{L} \hspace{-0.10cm}: \ & y''-4y'+4y=t^{3}e^{2t} \\ 
+                                    & \left(\cancel{-y'(0)-sy(0)} +s^{2}Y(s)\right)-4\left(\cancel{-y(0)}+sY(s)\right)+4Y(s)= \int_{0}^{\infty}e^{-st}\left(t^{3}e^{2t}\right) \,dt \\
+                     & \left(s^{2}-4s+4\right)Y(s) = \int_{0}^{\infty}t^{3}e^{-t\left(s-2\right)} \, dt \\
+                     & \left(s^{2}-4s+4\right)Y(s) = \left[-\frac{t^{3}}{s-2}e^{-t\left(s-2\right)}-\frac{3t^{2}}{\left(s-2\right)^{2}}e^{-t\left(s-2\right)}-\frac{6t}{\left(s-2\right)^{3}}e^{-t\left(s-2\right)}-\frac{6}{\left(s-2\right)^{4}}e^{-t\left(s-2\right)}\right]_{0}^{\infty} \\
+     \Longrightarrow & \left(s^{2}-4s+4\right)Y(s) = \frac{6}{\left(s-2\right)^{4}}
   \end{align*}
   Rearrange and isolate $Y(s)$
   \begin{align*}
-    Y(s)\left(s-1\right)  &= \frac{1}{s}+\frac{1}{\left(s-1\right)^{2}} - (0) \\
-    Y(s)  &= \frac{1}{s\left(s-1\right)}+\frac{1}{\left(s-1\right)^{3}} \\
-    Y(s)  &= \frac{A}{s}+\frac{B}{s-1} + \frac{1}{\left(s-1\right)^{3}}
-  \end{align*}
-
-  Using Heaviside cover up method for distinct roots.
-  \begin{align*}
-                         & A=-1, \ B=1 \\
-    \Longrightarrow Y(s) &= -\frac{1}{s}+\frac{1}{s-1} + \frac{1}{\left(s-1\right)^{3}}
-  \end{align*}
-  Apply the inverse Laplace transform.
-  \begin{align*}
-     \mathscr{L}^{-1} \hspace{-0.10cm}: \ & Y(s) = -\frac{1}{s}+\frac{1}{s-1} + \frac{1}{\left(s-1\right)^{3}} \\
-                                          & y(t) = - \mathscr{L}^{-1} \left\{\frac{1}{s} \right\} + \mathscr{L}^{-1} \left\{\frac{1}{s-1} \right\} 
-                                                     + \mathscr{L}^{-1} \left\{\frac{1}{\left(s-1\right)^{3}} \right\} \\
+    Y(s)  &= \frac{6}{\left(s^{2}-4s+4\right)\left(s-2\right)^{4}}\\
+    Y(s)  &= \frac{6}{\left(s-2\right)^{6}} \\
+    Y(s)  &= \frac{6}{5!}\frac{5!}{\left(s-2\right)^{5+1}}
   \end{align*}
   Using inverse translation property from \hyperlink{def:Theorem 7.3.1}{\textbf{Theorem 7.3.1}}
   and the table from \hyperlink{def:Theorem 7.2.1}{\textbf{Theorem 7.2.1}}.
   \begin{align*}
-    & y(t) = - \mathscr{L}^{-1} \left\{\frac{1}{s} \right\} + \mathscr{L}^{-1} \left\{\frac{1}{s-1} \right\} 
-                                                     + \mathscr{L}^{-1} \left\{\frac{1}{s^{3}} \mid_{s \to s-1} \right\} \\
-      & y(t) =  -1 + e^{-t} + \frac{1}{2!} \mathscr{L}^{-1} \left\{\frac{2!}{s^{2+1}} \mid_{s \to s-1} \right\} \\
-          \Longrightarrow  & \boxed{y(t) = -1 + e^{-t} + \frac{1}{2} e^{t} t^{2}}
+     \mathscr{L}^{-1} \hspace{-0.10cm}: \ & Y(s) = \frac{6}{5!}\frac{5!}{\left(s-2\right)^{5+1}} \\
+                                          & y(t) = \frac{6}{5!} \mathscr{L}^{-1} \left\{\frac{5!}{\left(s-2\right)^{5+1}} \mid_{s \to s-2} \right\} \\
+                         \Longrightarrow  & \boxed{y(t) = \frac{1}{20} t^{5} e^{2t} }
   \end{align*}
-
 
   \end{solution}
 
