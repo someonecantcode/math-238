@@ -763,37 +763,62 @@ In Problems 21 - 30, use the Laplace transform to solve the given initial-value 
   \begin{align*}
     & y(t) = - \mathscr{L}^{-1} \left\{\frac{1}{s} \right\} + \mathscr{L}^{-1} \left\{\frac{1}{s-1} \right\} 
                                                      + \mathscr{L}^{-1} \left\{\frac{1}{s^{3}} \mid_{s \to s-1} \right\} \\
-      & y(t) =  -1+e^{-t} + \frac{1}{2!} \mathscr{L}^{-1} \left\{\frac{2!}{s^{2+1}} \mid_{s \to s-1} \right\} \\
-    & y(t) = -1+e^{-t}+e^{-t} + \frac{1}{2}t  \\
-          \Longrightarrow  & \boxed{y(t) = }
+      & y(t) =  -1 + e^{-t} + \frac{1}{2!} \mathscr{L}^{-1} \left\{\frac{2!}{s^{2+1}} \mid_{s \to s-1} \right\} \\
+          \Longrightarrow  & \boxed{y(t) = -1 + e^{-t} + \frac{1}{2} e^{t} t^{2}}
   \end{align*}
 
   \end{solution}
 
-  % \subsubsection*{Problem 7.3.24}
-  % \addcontentsline{toc}{subsubsection}{Problem 7.3.24}
-  % \vspace{-0.5cm}
+  %----------------------------
+  \subsubsection*{Problem 7.3.24}
+  \addcontentsline{toc}{subsubsection}{Problem 7.3.24}
+  \vspace{-0.5cm}
 
-  % \begin{flalign*}
-  %     & \text{Given: } y''-4y'+4y=t^{3}e^{2t}, \ y(0) = 0, \ y'(0) = 0 & \\
-  %     & \text{Find:  } y(t) &
-  % \end{flalign*}
-  % \begin{solution}
-  % Using the table from \hyperlink{def:Theorem 7.1.1}{\textbf{Theorem 7.1.1}} and
-  % the Translation \hyperlink{def:Theorem 7.3.1}{\textbf{Theorem 7.3.1}}, we can obtain
-  % our answer.
+  \begin{flalign*}
+      & \text{Given: } y''-4y'+4y=t^{3}e^{2t}, \ y(0) = 0, \ y'(0) = 0 & \\
+      & \text{Find:  } y(t) &
+  \end{flalign*}
+  \begin{solution}
+      The main process to apply the Laplace transform, using \hyperlink{def:Theorem 7.1.1}{\textbf{Theorem 7.1.1}} and \hyperlink{def:Theorem 7.2.2}{\textbf{Theorem 7.2.2}}, over the entire equation,
+  isolate $Y(s)$, and apply the inverse Laplace transform using \hyperlink{def:Theorem 7.2.1}{\textbf{Theorem 7.2.1}}.
 
-  % \begin{align*}
-  %   \mathscr{L} \left\{ t^{10}e^{-7t}\right\} &= \mathscr{L} \left\{ t^{10}\right\} \mid_{s \gets s-7} \\
-  %                               &= \frac{10!}{s^{10+1}} \mid_{s \gets s-7} \\
-  %                               &= \frac{10!}{\left(s-7\right)^{11}}
-  % \end{align*}
+  \begin{align*}
+                                    & y''-4y'+4y=t^{3}e^{2t} \\
+    \mathscr{L} \hspace{-0.10cm}: \ & y''-4y'+4y=t^{3}e^{2t} \\
+                                    & \left(-y'\left(0\right)-sy\left(0\right)+s^{2}Y\left(s\right)\right)-4\left(-y\left(0\right)+sY\left(s\right)\right)+4Y\left(s\right) = \int_{0}^{\infty}e^{-st}\left(te^{t}\right)dt \\
+                     & y(0)+Y(s)\left(s-1\right) = \frac{1}{s}+\left[\frac{t}{1-s}e^{t\left(1-s\right)}-\frac{1}{\left(1-s\right)^{2}}e^{t\left(1-s\right)}\right]_{0}^{\infty} \\
+                     & y(0)+Y(s)\left(s-1\right)=\frac{1}{s}+\frac{1}{\left(1-s\right)^{2}} \\
+     \Longrightarrow & Y(s)\left(s-1\right)=\frac{1}{s}+\frac{1}{\left(s-1\right)^{2}}-y(0)
+  \end{align*}
+  Rearrange and isolate $Y(s)$
+  \begin{align*}
+    Y(s)\left(s-1\right)  &= \frac{1}{s}+\frac{1}{\left(s-1\right)^{2}} - (0) \\
+    Y(s)  &= \frac{1}{s\left(s-1\right)}+\frac{1}{\left(s-1\right)^{3}} \\
+    Y(s)  &= \frac{A}{s}+\frac{B}{s-1} + \frac{1}{\left(s-1\right)^{3}}
+  \end{align*}
 
-  % \begin{equation*}
-  %   \Longrightarrow \boxed{F(s) = \frac{10!}{\left(s-7\right)^{11}}, \ t \geq 0}
-  % \end{equation*}
+  Using Heaviside cover up method for distinct roots.
+  \begin{align*}
+                         & A=-1, \ B=1 \\
+    \Longrightarrow Y(s) &= -\frac{1}{s}+\frac{1}{s-1} + \frac{1}{\left(s-1\right)^{3}}
+  \end{align*}
+  Apply the inverse Laplace transform.
+  \begin{align*}
+     \mathscr{L}^{-1} \hspace{-0.10cm}: \ & Y(s) = -\frac{1}{s}+\frac{1}{s-1} + \frac{1}{\left(s-1\right)^{3}} \\
+                                          & y(t) = - \mathscr{L}^{-1} \left\{\frac{1}{s} \right\} + \mathscr{L}^{-1} \left\{\frac{1}{s-1} \right\} 
+                                                     + \mathscr{L}^{-1} \left\{\frac{1}{\left(s-1\right)^{3}} \right\} \\
+  \end{align*}
+  Using inverse translation property from \hyperlink{def:Theorem 7.3.1}{\textbf{Theorem 7.3.1}}
+  and the table from \hyperlink{def:Theorem 7.2.1}{\textbf{Theorem 7.2.1}}.
+  \begin{align*}
+    & y(t) = - \mathscr{L}^{-1} \left\{\frac{1}{s} \right\} + \mathscr{L}^{-1} \left\{\frac{1}{s-1} \right\} 
+                                                     + \mathscr{L}^{-1} \left\{\frac{1}{s^{3}} \mid_{s \to s-1} \right\} \\
+      & y(t) =  -1 + e^{-t} + \frac{1}{2!} \mathscr{L}^{-1} \left\{\frac{2!}{s^{2+1}} \mid_{s \to s-1} \right\} \\
+          \Longrightarrow  & \boxed{y(t) = -1 + e^{-t} + \frac{1}{2} e^{t} t^{2}}
+  \end{align*}
 
-  % \end{solution}
+
+  \end{solution}
 
 
 
