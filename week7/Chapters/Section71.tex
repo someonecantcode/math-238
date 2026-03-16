@@ -1,0 +1,180 @@
+\section*{Homework for Section 7.1: 20 Points}
+\addcontentsline{toc}{section}{Homework for Section 7.1: 20 Points}
+\vspace{-0.5cm}
+
+In Problems 1 - 18, use \hyperlink{def:Laplace 7.1.1}{\textbf{Definition 7.1.1}} to find $\mathscr{L} \{ f(t) \}$.
+
+\begin{boxeddefinition}[7.1.1] \hypertarget{def:Laplace 7.1.1}{}
+  \ \newline
+  Let $f$ be a function defined for $t \geq 0$. Then the integral
+    \begin{equation}
+        \mathscr{L}\{f(t)\} = \int_{0}^{\infty} e^{-st} f(t) \, dt
+    \end{equation}
+  is said to be the \textbf{Laplace transform} of $f$, provided that the integral converges.  
+\end{boxeddefinition}
+\addcontentsline{toc}{subsection}{\textbf{Definition 7.1.1}}
+
+  \subsection*{Problem 7.1.4}
+  \addcontentsline{toc}{subsection}{Problem 7.1.4}
+  \vspace{-0.5cm}
+
+  \begin{flalign*}
+    & \text{Given: } f(t) =
+      \begin{cases}
+          2t+1    & 0 \leq t \leq 1  \\[2mm]
+          0       & t \geq 1
+      \end{cases} & \\
+    & \text{Find:  } \mathscr{L}\{f(t)\} &   
+  \end{flalign*}
+  \begin{solution}
+    Using \hyperlink{def:Laplace 7.1.1}{\textbf{Definition 7.1.1}}, we split the integral 
+    to conform with the piece $f(t)$ function.
+
+    \begin{align*}
+      \mathscr{L}\{f(t)\} &= \int_{0}^{\infty} e^{-st} f(t) \, dt \\
+      \mathscr{L}\{f(t)\} &= \int_{0}^{1} e^{-st} f(t) \, dt + \int_{1}^{\infty} e^{-st} f(t) \, dt \\
+      \mathscr{L}\{f(t)\} &= \int_{0}^{1} e^{-st} \left(2t+1\right) \, dt + \cancelto{0}{\int_{1}^{\infty} e^{-st} (0) \, dt} \\
+      \mathscr{L}\{f(t)\} &= \int_{1}^{\infty} e^{-st} \left(2t+1\right) \, dt \\
+      \mathscr{L}\{f(t)\} &= \left[-\frac{\left(2t+1\right)}{s}e^{-st}-\frac{2}{s^{2}}e^{-st} \right]_{t=0}^{t=1} 
+    \end{align*}
+
+    \begin{align*}
+                       &  \mathscr{L}\{f(t)\} = \left(-\frac{\left(2\left(1\right)+1\right)}{s}e^{-s\left(1\right)}-\frac{2}{s^{2}}e^{-s\left(1\right)}\right)-\left(-\frac{\left(2\left(0\right)+1\right)}{s}e^{-s\left(0\right)}-\frac{2}{s^{2}}e^{-s\left(0\right)}\right) \\
+                       &  \mathscr{L}\{f(t)\} = \left(-\frac{3}{s}e^{-s}-\frac{2}{s^{2}}e^{-s}\right)+\left(\frac{1}{s}+\frac{2}{s^{2}}\right) \\
+                       &  \mathscr{L}\{f(t)\} = \frac{1}{s}\left(1-3e^{-s}\right)+\frac{2}{s^{2}}\left(1-e^{-s}\right) \\
+      \Longrightarrow  &  \boxed{\mathscr{L}\{f(t)\} = \frac{1}{s}\left(1-3e^{-s}\right)+\frac{2}{s^{2}}\left(1-e^{-s}\right), \ s > 0}
+    \end{align*}
+
+  \end{solution}
+
+  \subsection*{Problem 7.1.12}
+  \addcontentsline{toc}{subsection}{Problem 7.1.12}
+  \vspace{-0.5cm}
+
+  \begin{flalign*}
+      & \text{Given: } f(t) = e^{-2t-5} & \\
+      & \text{Find:  } \mathscr{L}\{f(t)\} &
+  \end{flalign*}
+  \begin{solution}
+    Using \hyperlink{def:Laplace 7.1.1}{\textbf{Definition 7.1.1}}, we split the integral 
+    to conform with the piece $f(t)$ function.
+    
+    \begin{align*}
+      \mathscr{L}\{f(t)\} &= \int_{0}^{\infty} e^{-st} f(t) \, dt \\
+      \mathscr{L}\{f(t)\} &= \int_{0}^{\infty} e^{-st} \left(e^{-2t-5}\right) \, dt  \\
+      \mathscr{L}\{f(t)\} &= \int_{0}^{\infty}e^{\left(-t\left(s+2\right)-5\right)} \, dt \\
+      \mathscr{L}\{f(t)\} &= e^{-5}\int_{0}^{\infty}e^{-t\left(s+2\right)} \, dt \\
+      \mathscr{L}\{f(t)\} &= \left[ -\frac{e^{-5}}{s+2}\left(e^{-t}\right) \right]_{t=0}^{t=\infty} \\
+      \mathscr{L}\{f(t)\} &=  -\frac{e^{-5}}{s+2} \left[ e^{-t} \right]_{t=0}^{t=\infty}
+    \end{align*}
+
+    \begin{align*}
+                       &  \mathscr{L}\{f(t)\} = -\frac{e^{-5}}{s+2}\left(\lim_{t \to \infty} \left(e^{-t} \right) -e^{-\left(0\right)}\right) \\
+                       &  \mathscr{L}\{f(t)\} = -\frac{e^{-5}}{s+2}\left(0-1\right) \\
+      \Longrightarrow  &  \boxed{\mathscr{L}\{f(t)\} = \frac{e^{-5}}{s+2}, \ s > -2}
+    \end{align*}
+  \end{solution}
+
+  \subsection*{Problem 7.1.14}
+  \addcontentsline{toc}{subsection}{Problem 7.1.14}
+  \vspace{-0.5cm}
+
+  \begin{flalign*}
+      & \text{Given: } f(t) = t^{2}e^{-2t} & \\
+      & \text{Find:  } \mathscr{L}\{f(t)\} &
+  \end{flalign*}
+  \begin{solution}
+    Using \hyperlink{def:Laplace 7.1.1}{\textbf{Definition 7.1.1}}, we can plug into the integral 
+    and evaluate.
+
+    \begin{align*}
+      \mathscr{L}\{f(t)\} ={}& \int_{0}^{\infty} e^{-st} f(t) \, dt \\
+      \mathscr{L}\{f(t)\} ={}& \int_{0}^{\infty} e^{-st} \left(t^{2}e^{-2t}\right) \, dt  \\
+      \mathscr{L}\{f(t)\} ={}& \int_{0}^{\infty} t^{2}e^{-t\left(s+2\right)}  \, dt \\
+      \mathscr{L}\{f(t)\} ={}& \left[ -\frac{t^{2}}{s+2}e^{-t\left(s+2\right)}-\frac{2}{\left(s+2\right)^{2}}te^{-t\left(s+2\right)}-\frac{2}{\left(s+2\right)^{3}}e^{-t\left(s+2\right)} \right]_{t=0}^{t=\infty} \\
+      \mathscr{L}\{f(t)\} ={}& \lim_{t \to \infty} \left(-\frac{t^{2}}{s+2}e^{-t\left(s+2\right)}-\frac{2}{\left(s+2\right)^{2}}te^{-t\left(s+2\right)}-\frac{2}{\left(s+2\right)^{3}}e^{-t\left(s+2\right)}\right) \\
+       & - \left(\cancel{-\frac{\left(0\right)^{2}}{s+2}e^{-\left(0\right)\left(s+2\right)}} \cancel{-\frac{2}{\left(s+2\right)^{2}}\left(0\right)e^{-\left(0\right)\left(s+2\right)}} -\frac{2}{\left(s+2\right)^{3}}e^{-\left(0\right)\left(s+2\right)}\right) \\
+      \mathscr{L}\{f(t)\} ={}& 0 - \left(- \frac{2}{\left(s+2\right)^{3}} \right) 
+    \end{align*}
+
+    \begin{equation*}
+      \Longrightarrow \boxed{\mathscr{L}\{f(t)\} = \frac{2}{\left(s+2\right)^{3}}, \ s > -2}
+    \end{equation*}
+  \end{solution}
+
+  %--------------------------%
+  \newpage
+  In Problems 19 - 36, use \hyperlink{def:Theorem 7.1.1}{\textbf{Theorem 7.1.1}} to find $\mathscr{L} \{ f(t) \}$.
+
+  \phantomsection
+  \addcontentsline{toc}{subsection}{\textbf{Theorem 7.1.1}}
+  \begin{boxedtheorem}[7.1.1] \hypertarget{def:Theorem 7.1.1}{}
+  \ \newline
+    \textbf{Transforms of Some Basic Functions}
+    \begin{enumerate}[label=(\alph*), itemsep=1ex]
+      \item $\displaystyle \mathscr{L}\{1\} = \frac{1}{s}$
+      \item $\displaystyle \mathscr{L}\{t^n\} = \frac{n!}{s^{n+1}}, \quad n = 1, 2, 3, \dots$
+      \item $\displaystyle \mathscr{L}\{e^{at}\} = \frac{1}{s - a}$
+      \item $\displaystyle \mathscr{L}\{\sin kt\} = \frac{k}{s^2 + k^2}$
+      \item $\displaystyle \mathscr{L}\{\cos kt\} = \frac{s}{s^2 + k^2}$
+      \item $\displaystyle \mathscr{L}\{\sinh kt\} = \frac{k}{s^2 - k^2}$
+      \item $\displaystyle \mathscr{L}\{\cosh kt\} = \frac{s}{s^2 - k^2}$
+    \end{enumerate}
+  \end{boxedtheorem}
+  
+  
+\subsection*{Problem 7.1.26}
+\addcontentsline{toc}{subsection}{Problem 7.1.26}
+\vspace{-0.5cm}
+
+\begin{flalign*}
+    & \text{Given: } f(t) = \left(2t-1\right)^{3} & \\
+    & \text{Find:  } \mathscr{L}\{f(t)\} &
+\end{flalign*}
+\begin{solution}
+  Using the table from \hyperlink{def:Theorem 7.1.1}{\textbf{Theorem 7.1.1}}, we can use 
+  the linear property of the Laplacian and evaluate. Here we are using the power rule.
+
+  \begin{align*}
+    \mathscr{L}\{f(t)\} &= \mathscr{L}\left\{\left(2t-1\right)^{3} \right\} \\
+                        &= \mathscr{L}\left\{8t^{3}-3\left(2t\right)^{2}\left(1\right)+3\left(2t\right)\left(1\right)^{2}-\left(1\right)^{3} \right\} \\
+                        &= \mathscr{L}\left\{8t^{3}-12t^{2}+6t-1 \right\} \\
+                        &= \mathscr{L}\left\{8t^{3} \right\} + \mathscr{L}\left\{-12t^{2} \right\} + \mathscr{L}\left\{6t \right\} - \mathscr{L}\left\{1 \right\} \\
+                        &= 8\mathscr{L}\left\{t^{3} \right\} - 12\mathscr{L}\left\{t^{2} \right\} + 6\mathscr{L}\left\{t \right\} - \mathscr{L}\left\{1 \right\} \\
+                        &= 8\left(\frac{3!}{s^{3+1}}\right) - 12\left(\frac{2!}{s^{2+1}}\right) + 6\left(\frac{1!}{s^{1+1}}\right) - \left(\frac{1}{s}\right) \\
+    \mathscr{L}\{f(t)\} &= \frac{48}{s^{4}}-\frac{24}{s^{3}}+\frac{6}{s^{2}}-\frac{1}{s}
+  \end{align*}
+
+  \begin{equation*}
+    \Longrightarrow \boxed{\mathscr{L}\{f(t)\} = \frac{48}{s^{4}}-\frac{24}{s^{3}}+\frac{6}{s^{2}}-\frac{1}{s}, \ s > 0}
+  \end{equation*}
+
+\end{solution}
+
+\newpage
+\subsection*{Problem 7.1.38}
+\addcontentsline{toc}{subsection}{Problem 7.1.38}
+\vspace{-0.5cm}
+
+\begin{flalign*}
+    & \text{Given: } f(t) = \cos^{2} t & \\
+    & \text{Find:  } \mathscr{L}\{f(t)\} &
+\end{flalign*}
+\begin{solution}
+  Using the table from \hyperlink{def:Theorem 7.1.1}{\textbf{Theorem 7.1.1}}, we can use 
+  the linear property of the Laplacian and evaluate.
+
+  \begin{align*}
+    \mathscr{L}\{f(t)\} &= \mathscr{L}\left\{\cos^{2} t \right\} \\
+                        &= \mathscr{L}\left\{\frac{1+\cos\left(2t\right)}{2} \right\} \\
+                        &= \frac{1}{2} \mathscr{L}\left\{1 \right\} + \frac{1}{2} \mathscr{L}\left\{\cos\left(2t\right) \right\} \\
+                        &= \frac{1}{2} \left(\frac{1}{s} \right) + \frac{1}{2} \left(\frac{s}{s^2 + 2^2} \right) \\
+    \mathscr{L}\{f(t)\} &= \frac{1}{2} \left(\frac{1}{s} + \frac{s}{s^2 + 4} \right)
+  \end{align*}
+
+  \vspace{-0.5cm}
+  \begin{equation*}
+    \Longrightarrow \boxed{\mathscr{L}\{f(t)\} = \frac{1}{2} \left(\frac{1}{s} + \frac{s}{s^2 + 4} \right), \ s > 0}
+  \end{equation*}
+
+\end{solution}
