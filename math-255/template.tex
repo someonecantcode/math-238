@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, graphicx}
+\usepackage{pgfplots, tikz, cancel, framed, hyperref}
+
+\graphicspath{{./Images}}
+
+
+% \geometry{margin=1in}
+\usepackage[left=1in, right=1in, top=0.75in, bottom=1in]{geometry}
+\pgfplotsset{compat=1.18}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0pt}
+
+\newtheoremstyle{solution}
+  {15pt}
+  {15pt}
+  {}
+  {}
+  {\bfseries}
+  {: }
+  { }
+  {}
+
+\theoremstyle{solution}
+\newtheorem*{solution}{SOLUTION}
+
+\usetikzlibrary{calc,shapes}
+
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+\pgfmathdeclarefunction{erf}{1}{%
+  \pgfmathparse{(2/sqrt(pi))*((#1) - ((#1)^3)/3 + ((#1)^5)/10 - ((#1)^7)/42 + ((#1)^9)/216)}%
+}
+
+
+\pgfmathdeclarefunction{erfi}{1}{%
+  \pgfmathparse{(2/sqrt(pi))*((#1) + ((#1)^3)/3 + ((#1)^5)/10 + ((#1)^7)/42 + ((#1)^9)/216)}%
+}
+
+
+
+\pgfplotsset{my style/.append style={axis x line=middle, axis y line=
+middle, xlabel={$x$}, ylabel={$y$} }}
+
+%------------------------
+\title{TEMPLATE TITLE}
+\author{Brendan Tea}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Jamiiru Homework for Chapter 1}
+
+\begin{itemize}
+    \item 
+\end{itemize}
+
+
+\begin{enumerate}
+    \item 
+\end{enumerate}
+
+
+wow this is so cool!! $$ $$, $ax^2+bx+c=0$, where
+
+
+\section{Vector Calculus is all about this}
+Generalized Stokes Theorem
+\begin{equation}
+    \int_{\omega}^{} d \omega = \int_{\partial \Omega}^{} \omega
+\end{equation}
+
+You are integrating over the boundary over the region.
+
+\end{document}
